@@ -1,9 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://dw5rqscj1k8fr"]
-
-[ext_resource type="Texture2D" uid="uid://oph67jw6xgab" path="res://idle anim.png" id="1_glpr6"]
-
-[node name="character" type="Sprite2D"]
-texture_filter = 1
-scale = Vector2(1, 0.875)
-texture = ExtResource("1_glpr6")
-hframes = 2
