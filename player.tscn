@@ -1,44 +1,51 @@
-[gd_scene load_steps=7 format=3 uid="uid://dbyejsyow237n"]
+[gd_scene load_steps=8 format=3 uid="uid://dbyejsyow237n"]
 
-[ext_resource type="Texture2D" uid="uid://b0vdheuts2mrw" path="res://assests/sprite sheet main char.png" id="1_4flbx"]
 [ext_resource type="Script" uid="uid://db84nu0oqvdeq" path="res://player.gd" id="1_onrkg"]
+[ext_resource type="Texture2D" uid="uid://cxqw7185msl8c" path="res://assests/sprite sheet done.png" id="2_onrkg"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_onrkg"]
-atlas = ExtResource("1_4flbx")
-region = Rect2(192, 64, 48, 64)
+[sub_resource type="CircleShape2D" id="CircleShape2D_onrkg"]
+radius = 8.077216
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_i3pqv"]
-atlas = ExtResource("1_4flbx")
-region = Rect2(240, 64, 48, 64)
+atlas = ExtResource("2_onrkg")
+region = Rect2(48, 0, 48, 64)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_hqtel"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_hqtel"]
+atlas = ExtResource("2_onrkg")
+region = Rect2(96, 0, 48, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_sweqy"]
 animations = [{
 "frames": [{
-"duration": 3.0,
-"texture": SubResource("AtlasTexture_onrkg")
-}, {
-"duration": 3.0,
+"duration": 2.0,
 "texture": SubResource("AtlasTexture_i3pqv")
+}, {
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_hqtel")
 }],
 "loop": true,
-"name": &"idle",
+"name": &"default",
 "speed": 5.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sweqy"]
-size = Vector2(16, 29.5)
+size = Vector2(16, 37)
 
 [node name="player" type="CharacterBody2D"]
 script = ExtResource("1_onrkg")
 
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(1, -22)
+rotation = 3.1415927
+scale = Vector2(1.6545925, 0.79426163)
+shape = SubResource("CircleShape2D_onrkg")
+
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -32)
-sprite_frames = SubResource("SpriteFrames_hqtel")
-animation = &"idle"
-autoplay = "idle"
-frame = 1
-frame_progress = 0.538004
+sprite_frames = SubResource("SpriteFrames_sweqy")
+autoplay = "default"
+frame_progress = 0.9442412
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -14.75)
+position = Vector2(3, -18.5)
 shape = SubResource("RectangleShape2D_sweqy")
