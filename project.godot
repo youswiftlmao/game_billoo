@@ -18,6 +18,10 @@ config/features=PackedStringArray("4.5", "GL Compatibility")
 
 enabled=PackedStringArray("res://addons/godot_super-wakatime/plugin.cfg")
 
+[layer_names]
+
+2d_physics/layer_7="coins and picks"
+
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
