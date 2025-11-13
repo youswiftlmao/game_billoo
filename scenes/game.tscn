@@ -1,9 +1,8 @@
-[gd_scene load_steps=17 format=3 uid="uid://cb2pqgoi3bf3e"]
+[gd_scene load_steps=16 format=3 uid="uid://cb2pqgoi3bf3e"]
 
 [ext_resource type="Texture2D" uid="uid://c3qaq8pfb10q4" path="res://addons/TILESHEET ALL DONE.png" id="1_yqjtg"]
 [ext_resource type="PackedScene" uid="uid://c36gx83vrkgu0" path="res://scenes/player.tscn" id="2_lnu2h"]
 [ext_resource type="PackedScene" uid="uid://cv5bvg17p3spp" path="res://scenes/platform.tscn" id="3_lnu2h"]
-[ext_resource type="PackedScene" uid="uid://bbr556a3bq2tp" path="res://scenes/spike.tscn" id="4_lbhrr"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_feb5d"]
 texture = ExtResource("1_yqjtg")
@@ -420,7 +419,7 @@ libraries = {
 autoplay = "new_animation"
 
 [node name="player" parent="." instance=ExtResource("2_lnu2h")]
-position = Vector2(-10.999989, 65.000015)
+position = Vector2(7.9999995, 83.00001)
 scale = Vector2(0.78388774, 0.78388774)
 
 [node name="Camera2D" type="Camera2D" parent="player"]
@@ -429,6 +428,3 @@ zoom = Vector2(3.5, 3.5)
 limit_bottom = 380
 limit_smoothed = true
 position_smoothing_enabled = true
-
-[node name="spike" parent="." instance=ExtResource("4_lbhrr")]
-position = Vector2(30, 74)
