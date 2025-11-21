@@ -1,9 +1,10 @@
-[gd_scene load_steps=19 format=3 uid="uid://cb2pqgoi3bf3e"]
+[gd_scene load_steps=20 format=3 uid="uid://cb2pqgoi3bf3e"]
 
 [ext_resource type="Texture2D" uid="uid://c3qaq8pfb10q4" path="res://addons/TILESHEET ALL DONE.png" id="1_yqjtg"]
 [ext_resource type="Texture2D" uid="uid://bhbs7khfxop7i" path="res://assests/spike pls work speed.png" id="2_lbhrr"]
 [ext_resource type="PackedScene" uid="uid://c36gx83vrkgu0" path="res://scenes/player.tscn" id="2_lnu2h"]
 [ext_resource type="PackedScene" uid="uid://cv5bvg17p3spp" path="res://scenes/platform.tscn" id="3_lnu2h"]
+[ext_resource type="PackedScene" uid="uid://bdau7guhjl1t0" path="res://scenes/bat.tscn" id="5_iywne"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_feb5d"]
 texture = ExtResource("1_yqjtg")
@@ -451,3 +452,6 @@ zoom = Vector2(3.5, 3.5)
 limit_bottom = 380
 limit_smoothed = true
 position_smoothing_enabled = true
+
+[node name="bat" parent="." instance=ExtResource("5_iywne")]
+position = Vector2(127, 38)
