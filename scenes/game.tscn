@@ -454,4 +454,5 @@ limit_smoothed = true
 position_smoothing_enabled = true
 
 [node name="bat" parent="." instance=ExtResource("5_iywne")]
-position = Vector2(127, 38)
+position = Vector2(128, 43)
+scale = Vector2(1.6237726, 1.6317979)
