@@ -119,5 +119,8 @@ shape = SubResource("RectangleShape2D_g2els")
 position = Vector2(-1, -29)
 shape = SubResource("CircleShape2D_qhqgy")
 
+[node name="AttackCD" type="Timer" parent="."]
+
 [connection signal="body_entered" from="phitbox" to="." method="_on_phitbox_body_entered"]
 [connection signal="body_exited" from="phitbox" to="." method="_on_phitbox_body_exited"]
+[connection signal="timeout" from="AttackCD" to="." method="_on_attack_cd_timeout"]

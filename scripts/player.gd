@@ -28,9 +28,16 @@ func respawn():
 	
 func _physics_process(delta: float) -> void:
 	enemy_attack()
+	
+	if HP <= 0 :
+		player_alive = false
+		HP = 0
+		print("player has been eliminated")
+		self.queue_free()
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta
+
 	
 	for i in get_slide_collision_count():
 		var  collision = get_slide_collision(i)
@@ -91,5 +98,12 @@ func _on_phitbox_body_exited(body: Node2D) -> void:
 		e_inattack_range =  false
 		
 func enemy_attack():
-	if e_inattack_range:
-		print("owie - cat")
+	if e_inattack_range and e_attackCD == true:
+		HP = HP - 5
+		e_attackCD = false
+		$AttackCD.start()
+		print(HP)
+
+
+func _on_attack_cd_timeout() -> void:
+	e_attackCD = true

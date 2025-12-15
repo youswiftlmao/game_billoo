@@ -49,10 +49,10 @@ animations = [{
 size = Vector2(206.5663, 98.832504)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5fn3r"]
-size = Vector2(20, 10)
+size = Vector2(13.597937, 10)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_48wkk"]
-radius = 10.540896
+radius = 7.427155
 
 [node name="bat" type="CharacterBody2D"]
 scale = Vector2(1.6178926, 1.6317979)
