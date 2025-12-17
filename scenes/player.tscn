@@ -1,8 +1,25 @@
-[gd_scene load_steps=16 format=3 uid="uid://c36gx83vrkgu0"]
+[gd_scene load_steps=21 format=3 uid="uid://c36gx83vrkgu0"]
 
 [ext_resource type="Script" uid="uid://db84nu0oqvdeq" path="res://scripts/player.gd" id="1_onrkg"]
+[ext_resource type="Texture2D" uid="uid://ds8uqskraqnob" path="res://assests/WORKING ATTACK.png" id="2_dqkch"]
 [ext_resource type="Texture2D" uid="uid://cxqw7185msl8c" path="res://assests/sprite sheet done.png" id="2_onrkg"]
 [ext_resource type="Texture2D" uid="uid://b41xqlqhgrv7n" path="res://assests/run.png" id="3_qhqgy"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y4r1p"]
+atlas = ExtResource("2_dqkch")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d2wvv"]
+atlas = ExtResource("2_dqkch")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3v2ag"]
+atlas = ExtResource("2_dqkch")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jej6c"]
+atlas = ExtResource("2_dqkch")
+region = Rect2(192, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_i3pqv"]
 atlas = ExtResource("2_onrkg")
@@ -42,6 +59,23 @@ region = Rect2(144, 0, 48, 64)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_sweqy"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y4r1p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d2wvv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3v2ag")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jej6c")
+}],
+"loop": false,
+"name": &"attack",
+"speed": 8.0
+}, {
 "frames": [{
 "duration": 2.0,
 "texture": SubResource("AtlasTexture_i3pqv")
@@ -103,8 +137,10 @@ script = ExtResource("1_onrkg")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -32)
 sprite_frames = SubResource("SpriteFrames_sweqy")
-animation = &"workingjump"
+animation = &"attack"
 autoplay = "default"
+frame = 3
+frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 z_index = 122
@@ -121,6 +157,10 @@ shape = SubResource("CircleShape2D_qhqgy")
 
 [node name="AttackCD" type="Timer" parent="."]
 
+[node name="deal_attack_timer" type="Timer" parent="."]
+wait_time = 0.5
+
 [connection signal="body_entered" from="phitbox" to="." method="_on_phitbox_body_entered"]
 [connection signal="body_exited" from="phitbox" to="." method="_on_phitbox_body_exited"]
 [connection signal="timeout" from="AttackCD" to="." method="_on_attack_cd_timeout"]
+[connection signal="timeout" from="deal_attack_timer" to="." method="_on_deal_attack_timer_timeout"]

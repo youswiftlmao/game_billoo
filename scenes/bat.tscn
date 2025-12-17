@@ -81,5 +81,11 @@ position = Vector2(0, -1)
 [node name="collisionshape2D" type="CollisionShape2D" parent="bhitbox"]
 shape = SubResource("CircleShape2D_48wkk")
 
+[node name="TAKEDAMAGECD" type="Timer" parent="."]
+wait_time = 0.5
+
 [connection signal="body_entered" from="detection" to="." method="_on_detection_body_entered"]
 [connection signal="body_exited" from="detection" to="." method="_on_detection_body_exited"]
+[connection signal="body_entered" from="bhitbox" to="." method="_on_bhitbox_body_entered"]
+[connection signal="body_exited" from="bhitbox" to="." method="_on_bhitbox_body_exited"]
+[connection signal="timeout" from="TAKEDAMAGECD" to="." method="_on_takedamagecd_timeout"]
