@@ -160,6 +160,10 @@ shape = SubResource("CircleShape2D_qhqgy")
 [node name="deal_attack_timer" type="Timer" parent="."]
 wait_time = 0.5
 
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(-1, -24)
+zoom = Vector2(3.5, 3.5)
+
 [connection signal="body_entered" from="phitbox" to="." method="_on_phitbox_body_entered"]
 [connection signal="body_exited" from="phitbox" to="." method="_on_phitbox_body_exited"]
 [connection signal="timeout" from="AttackCD" to="." method="_on_attack_cd_timeout"]

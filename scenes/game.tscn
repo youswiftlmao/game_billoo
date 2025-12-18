@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://cv5bvg17p3spp" path="res://scenes/platform.tscn" id="3_lnu2h"]
 [ext_resource type="PackedScene" uid="uid://bdau7guhjl1t0" path="res://scenes/bat.tscn" id="5_iywne"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_feb5d"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_p57ef"]
 texture = ExtResource("1_yqjtg")
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
@@ -194,7 +194,7 @@ texture = ExtResource("1_yqjtg")
 18:5/0 = 0
 19:5/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fc0e3"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_u5sy4"]
 texture = ExtResource("1_yqjtg")
 0:0/size_in_atlas = Vector2i(2, 2)
 0:0/0 = 0
@@ -257,8 +257,8 @@ texture = ExtResource("1_yqjtg")
 
 [sub_resource type="TileSet" id="TileSet_7jktm"]
 physics_layer_0/collision_layer = 1
-sources/1 = SubResource("TileSetAtlasSource_fc0e3")
-sources/0 = SubResource("TileSetAtlasSource_feb5d")
+sources/1 = SubResource("TileSetAtlasSource_u5sy4")
+sources/0 = SubResource("TileSetAtlasSource_p57ef")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_iywne"]
 texture = ExtResource("2_lbhrr")
@@ -445,13 +445,6 @@ autoplay = "new_animation"
 [node name="player" parent="." instance=ExtResource("2_lnu2h")]
 position = Vector2(7.9999995, 83.00001)
 scale = Vector2(0.78388774, 0.78388774)
-
-[node name="Camera2D" type="Camera2D" parent="player"]
-position = Vector2(4, -22)
-zoom = Vector2(3.5, 3.5)
-limit_bottom = 380
-limit_smoothed = true
-position_smoothing_enabled = true
 
 [node name="bat" parent="." instance=ExtResource("5_iywne")]
 position = Vector2(128, 43)
