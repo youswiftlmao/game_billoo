@@ -162,14 +162,15 @@ animations = [{
 size = Vector2(17.252539, 10.603696)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_qhqgy"]
-radius = 33.01515
+radius = 36.013885
 
 [node name="player" type="CharacterBody2D"]
+position = Vector2(0, -20)
 collision_layer = 3
 script = ExtResource("1_onrkg")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(0, -32)
+position = Vector2(0, -12)
 sprite_frames = SubResource("SpriteFrames_sweqy")
 animation = &"death"
 autoplay = "default"
@@ -178,7 +179,7 @@ frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 z_index = 122
-position = Vector2(0.99999994, -27.805653)
+position = Vector2(0.99999994, -8)
 rotation = -3.1415925
 scale = Vector2(1.6545925, 5.2445207)
 shape = SubResource("RectangleShape2D_g2els")
@@ -186,7 +187,7 @@ shape = SubResource("RectangleShape2D_g2els")
 [node name="phitbox" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="phitbox"]
-position = Vector2(-1, -29)
+position = Vector2(-1, -2)
 shape = SubResource("CircleShape2D_qhqgy")
 
 [node name="AttackCD" type="Timer" parent="."]
@@ -195,7 +196,7 @@ shape = SubResource("CircleShape2D_qhqgy")
 wait_time = 0.5
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(-1, -24)
+position = Vector2(0, -6)
 zoom = Vector2(3.5, 3.5)
 
 [connection signal="body_entered" from="phitbox" to="." method="_on_phitbox_body_entered"]

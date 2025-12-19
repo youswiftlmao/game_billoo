@@ -120,18 +120,17 @@ func attack():
 		attack_ip = true
 		$AnimatedSprite2D.play("attack")
 		$deal_attack_timer.start()
+		
+		
 
-		# Slight knockback when attacking
-		var knockback_distance = 10  # small push
-		var direction = -1 if animated_sprite.flip_h else 1
-		velocity.x += direction * knockback_distance
+
 
 
 func _on_deal_attack_timer_timeout() -> void:
 	$deal_attack_timer.stop()
 	Global.player_current_attack =  false
 	attack_ip = false
-func shake_camera(duration: float = 0.1, intensity: float = 2.0) -> void:
+func shake_camera(duration: float = 0.1, intensity: float = .0) -> void:
 	var elapsed = 0.0
 	while elapsed < duration:
 		var offset = Vector2(randf_range(-intensity, intensity), randf_range(-intensity, intensity))

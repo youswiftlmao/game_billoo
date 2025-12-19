@@ -258,7 +258,7 @@ physics_layer_0/collision_layer = 1
 sources/1 = SubResource("TileSetAtlasSource_l7e5k")
 sources/0 = SubResource("TileSetAtlasSource_mmtqo")
 
-[node name="level two" type="Node"]
+[node name="level two" type="Node2D"]
 
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2(151, 39)

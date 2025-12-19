@@ -447,5 +447,4 @@ position = Vector2(7.9999995, 83.00001)
 scale = Vector2(0.78388774, 0.78388774)
 
 [node name="bat" parent="." instance=ExtResource("5_iywne")]
-position = Vector2(128, 43)
-scale = Vector2(1.6237726, 1.6317979)
+position = Vector2(118, 16)
