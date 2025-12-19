@@ -32,11 +32,18 @@ func _physics_process(delta: float) -> void:
 	enemy_attack()
 	attack()
 	
-	if HP <= 0 :
+	if HP <= 0 and player_alive:
 		player_alive = false
 		HP = 0
 		print("player has been eliminated")
-		self.queue_free() 
+
+		can_move = false
+		attack_ip = true
+		animated_sprite.play("death")
+
+		await get_tree().create_timer(2.0).timeout
+		get_tree().reload_current_scene()
+		return
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta
@@ -108,16 +115,27 @@ func enemy_attack():
 func _on_attack_cd_timeout() -> void:
 	e_attackCD = true
 func attack():
-	
-	
 	if Input.is_action_just_pressed("attack"):
 		Global.player_current_attack = true
 		attack_ip = true
 		$AnimatedSprite2D.play("attack")
 		$deal_attack_timer.start()
 
+		# Slight knockback when attacking
+		var knockback_distance = 10  # small push
+		var direction = -1 if animated_sprite.flip_h else 1
+		velocity.x += direction * knockback_distance
+
 
 func _on_deal_attack_timer_timeout() -> void:
 	$deal_attack_timer.stop()
 	Global.player_current_attack =  false
 	attack_ip = false
+func shake_camera(duration: float = 0.1, intensity: float = 2.0) -> void:
+	var elapsed = 0.0
+	while elapsed < duration:
+		var offset = Vector2(randf_range(-intensity, intensity), randf_range(-intensity, intensity))
+		$Camera2D.offset = offset
+		await get_tree().process_frame
+		elapsed += get_process_delta_time()
+	$Camera2D.offset = Vector2.ZERO  # reset after shake

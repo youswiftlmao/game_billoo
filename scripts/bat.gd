@@ -44,14 +44,49 @@ func _on_bhitbox_body_exited(body: Node2D) -> void:
 		
 func deal_with_damage():
 	if player_inattack_zone and Global.player_current_attack == true:
-		if  can_take_damage == true:
+		if can_take_damage == true:
 			$TAKEDAMAGECD.start()
 			can_take_damage = false
-			health = health - 20
+			health -= 20
 			print("bat got slimed = ", health)
-			if health <= 0:
-				self.queue_free()
+			
+			# Call the player's shake_camera function
+			if player:
+				player.shake_camera(0.1, 5.0)  # duration = 0.1s, intensity = 5px
 
+			# Brief freeze + smooth knockback
+			var original_chase = playerchase
+			playerchase = false  # freeze for knockback
+
+			if health > 0:
+				var knockback_distance = 50
+				var knockback_time = 0.2
+				var elapsed = 0.0
+				var direction = 1 if player.position.x < position.x else -1
+				while elapsed < knockback_time:
+					position.x += direction * knockback_distance * get_process_delta_time() / knockback_time
+					await get_tree().process_frame
+					elapsed += get_process_delta_time()
+
+				# Resume chasing after knockback
+				playerchase = original_chase
+
+			# If dead
+			if health <= 0:
+				playerchase = false
+				can_take_damage = false
+				$AnimatedSprite2D.play("death")
+
+				# Freeze briefly for death animation
+				await get_tree().create_timer(0.5).timeout
+
+				# Fall smoothly
+				var fall_speed = 150
+				while position.y < 1000:  # arbitrary off-screen value
+					position.y += fall_speed * get_process_delta_time()
+					await get_tree().process_frame
+
+				queue_free()
 
 func _on_takedamagecd_timeout() -> void:
 	can_take_damage = true
