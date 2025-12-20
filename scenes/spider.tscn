@@ -1,5 +1,6 @@
-[gd_scene load_steps=10 format=3 uid="uid://cjxsnsy71ua4k"]
+[gd_scene load_steps=12 format=3 uid="uid://cjxsnsy71ua4k"]
 
+[ext_resource type="Script" uid="uid://dytpyqd4wu2po" path="res://scripts/spider.gd" id="1_algeo"]
 [ext_resource type="Texture2D" uid="uid://ctd8thmve1k7y" path="res://assests/spider.png" id="2_k5hg5"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_c7em6"]
@@ -63,16 +64,19 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_047qd"]
-size = Vector2(122.61908, 20)
+size = Vector2(83.03572, 3.5714307)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c7em6"]
+size = Vector2(15.1785755, 7.1428595)
 
 [node name="spider" type="CharacterBody2D"]
 scale = Vector2(2.2399995, 2.2399995)
+script = ExtResource("1_algeo")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_wdplg")
-animation = &"death"
-frame = 1
-frame_progress = 1.0
+animation = &"idle"
+autoplay = "idle"
 
 [node name="detection_area" type="Area2D" parent="."]
 scale = Vector2(0.99999994, 0.99999994)
@@ -80,4 +84,13 @@ collision_layer = 2
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="detection_area"]
+position = Vector2(0, 6.2500043)
+scale = Vector2(1.0000002, 1.0000002)
 shape = SubResource("RectangleShape2D_047qd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 4.464287)
+shape = SubResource("RectangleShape2D_c7em6")
+
+[connection signal="body_entered" from="detection_area" to="." method="_on_detection_area_body_entered"]
+[connection signal="body_exited" from="detection_area" to="." method="_on_detection_area_body_exited"]

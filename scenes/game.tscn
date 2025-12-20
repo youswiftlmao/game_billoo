@@ -1,10 +1,11 @@
-[gd_scene load_steps=20 format=3 uid="uid://cb2pqgoi3bf3e"]
+[gd_scene load_steps=21 format=3 uid="uid://cb2pqgoi3bf3e"]
 
 [ext_resource type="Texture2D" uid="uid://c3qaq8pfb10q4" path="res://addons/TILESHEET ALL DONE.png" id="1_yqjtg"]
 [ext_resource type="Texture2D" uid="uid://bhbs7khfxop7i" path="res://assests/spike pls work speed.png" id="2_lbhrr"]
 [ext_resource type="PackedScene" uid="uid://c36gx83vrkgu0" path="res://scenes/player.tscn" id="2_lnu2h"]
 [ext_resource type="PackedScene" uid="uid://cv5bvg17p3spp" path="res://scenes/platform.tscn" id="3_lnu2h"]
-[ext_resource type="PackedScene" uid="uid://bdau7guhjl1t0" path="res://scenes/bat.tscn" id="5_iywne"]
+[ext_resource type="PackedScene" uid="uid://cjxsnsy71ua4k" path="res://scenes/spider.tscn" id="6_u5sy4"]
+[ext_resource type="PackedScene" uid="uid://ti48perjy5ef" path="res://scenes/ghost.tscn" id="7_gee14"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_p57ef"]
 texture = ExtResource("1_yqjtg")
@@ -443,8 +444,11 @@ libraries = {
 autoplay = "new_animation"
 
 [node name="player" parent="." instance=ExtResource("2_lnu2h")]
-position = Vector2(7.9999995, 83.00001)
+position = Vector2(-39.999996, 18.000015)
 scale = Vector2(0.78388774, 0.78388774)
 
-[node name="bat" parent="." instance=ExtResource("5_iywne")]
-position = Vector2(118, 16)
+[node name="spider" parent="." instance=ExtResource("6_u5sy4")]
+position = Vector2(126, 96)
+
+[node name="ghost" parent="." instance=ExtResource("7_gee14")]
+position = Vector2(123, 28)
