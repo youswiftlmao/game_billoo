@@ -165,6 +165,7 @@ size = Vector2(17.252539, 10.603696)
 radius = 36.013885
 
 [node name="player" type="CharacterBody2D"]
+z_index = 2
 position = Vector2(0, -20)
 collision_layer = 3
 script = ExtResource("1_onrkg")
@@ -198,6 +199,17 @@ wait_time = 0.5
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(0, -6)
 zoom = Vector2(3.5, 3.5)
+
+[node name="healthbar" type="ProgressBar" parent="."]
+modulate = Color(0.30980393, 0.7176471, 0.22745098, 1)
+offset_left = -35.0
+offset_top = -48.0
+offset_right = 655.0
+offset_bottom = 52.0
+scale = Vector2(0.1, 0.1)
+show_percentage = false
+
+[node name="regen" type="Timer" parent="."]
 
 [connection signal="body_entered" from="phitbox" to="." method="_on_phitbox_body_entered"]
 [connection signal="body_exited" from="phitbox" to="." method="_on_phitbox_body_exited"]

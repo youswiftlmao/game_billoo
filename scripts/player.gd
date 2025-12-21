@@ -109,7 +109,7 @@ func _on_phitbox_body_entered(body: Node2D) -> void:
 
 		
 
-func _on_phitbox_body_exited(body: Node2D) -> void:
+func _on_phitbox_body_exited(body: Node2D) -> void: 
 	if body.has_method("enemy"):
 		e_inattack_range =  false
 	else:
@@ -122,10 +122,17 @@ func enemy_attack():
 		e_attackCD = false
 		$AttackCD.start()
 		print(HP)
+	else:
+		if g_inattack_range and g_attackCD == true:
+			HP = HP - 10
+			g_attackCD = false
+			$AttackCD.start()
+			print(HP)
 
 
 func _on_attack_cd_timeout() -> void:
 	e_attackCD = true
+	g_attackCD = true
 func attack():
 	if Input.is_action_just_pressed("attack"):
 		Global.player_current_attack = true
