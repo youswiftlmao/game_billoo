@@ -48,13 +48,14 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lv0ya"]
 size = Vector2(206.5663, 98.832504)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_5fn3r"]
-size = Vector2(13.597937, 10)
-
 [sub_resource type="CircleShape2D" id="CircleShape2D_48wkk"]
 radius = 7.427155
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_48wkk"]
+size = Vector2(1.236176, 1.225642)
+
 [node name="bat" type="CharacterBody2D"]
+z_index = 1
 scale = Vector2(1.6178926, 1.6317979)
 script = ExtResource("1_cnldk")
 
@@ -72,10 +73,6 @@ position = Vector2(-0.618088, 0.61282086)
 scale = Vector2(0.62836236, 0.5543262)
 shape = SubResource("RectangleShape2D_lv0ya")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -1)
-shape = SubResource("RectangleShape2D_5fn3r")
-
 [node name="bhitbox" type="Area2D" parent="."]
 position = Vector2(0, -1)
 
@@ -84,6 +81,13 @@ shape = SubResource("CircleShape2D_48wkk")
 
 [node name="TAKEDAMAGECD" type="Timer" parent="."]
 wait_time = 0.5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+z_index = -2
+y_sort_enabled = true
+position = Vector2(0, -0.612821)
+shape = SubResource("RectangleShape2D_48wkk")
+one_way_collision = true
 
 [connection signal="body_entered" from="detection" to="." method="_on_detection_body_entered"]
 [connection signal="body_exited" from="detection" to="." method="_on_detection_body_exited"]

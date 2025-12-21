@@ -6,7 +6,10 @@ const SPEED = 200.0
 const JUMP_VELOCITY = -320.0
 
 var e_inattack_range =  false
+var g_inattack_range = false
+
 var e_attackCD =  true
+var g_attackCD =  true
 var HP = 100
 var player_alive = true 
 
@@ -98,11 +101,20 @@ func player():
 func _on_phitbox_body_entered(body: Node2D) -> void:
 	if body.has_method("enemy"):
 		e_inattack_range =  true
+	else:
+		if body.has_method("ghost"):
+			g_inattack_range = true
+		
+		
+
 		
 
 func _on_phitbox_body_exited(body: Node2D) -> void:
 	if body.has_method("enemy"):
 		e_inattack_range =  false
+	else:
+		if body.has_method("ghost"):
+			g_inattack_range = false
 		
 func enemy_attack():
 	if e_inattack_range and e_attackCD == true:
