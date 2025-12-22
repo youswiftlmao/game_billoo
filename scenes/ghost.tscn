@@ -94,6 +94,16 @@ shape = SubResource("CircleShape2D_l5lq6")
 [node name="TAKEDAMAGECD" type="Timer" parent="."]
 wait_time = 0.5
 
+[node name="healthbar" type="ProgressBar" parent="."]
+modulate = Color(0.30980393, 0.7176471, 0.22745098, 1)
+offset_left = -15.0
+offset_top = -24.0
+offset_right = 284.99997
+offset_bottom = 19.128014
+scale = Vector2(0.1, 0.1)
+max_value = 70.0
+show_percentage = false
+
 [connection signal="body_entered" from="detection zone" to="." method="_on_detection_zone_body_entered"]
 [connection signal="body_exited" from="detection zone" to="." method="_on_detection_zone_body_exited"]
 [connection signal="body_entered" from="ghitbox" to="." method="_on_ghitbox_body_entered"]

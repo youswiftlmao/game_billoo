@@ -89,6 +89,16 @@ position = Vector2(0, -0.612821)
 shape = SubResource("RectangleShape2D_48wkk")
 one_way_collision = true
 
+[node name="healthbar" type="ProgressBar" parent="."]
+modulate = Color(0.30980393, 0.7176471, 0.22745098, 1)
+offset_left = -9.889408
+offset_top = -12.25642
+offset_right = 181.71786
+offset_bottom = 20.871761
+scale = Vector2(0.1, 0.1)
+max_value = 50.0
+show_percentage = false
+
 [connection signal="body_entered" from="detection" to="." method="_on_detection_body_entered"]
 [connection signal="body_exited" from="detection" to="." method="_on_detection_body_exited"]
 [connection signal="body_entered" from="bhitbox" to="." method="_on_bhitbox_body_entered"]

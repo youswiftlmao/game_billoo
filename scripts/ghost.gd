@@ -11,6 +11,7 @@ var dead = false
 
 
 func _physics_process(delta: float) -> void:
+	updhp()
 	deal_with_damage() 
 	
 	if playerchase:
@@ -103,3 +104,7 @@ func deal_with_damage():
 
 func _on_takedamagecd_timeout() -> void:
 	cantakedmg = true
+
+func updhp():
+	var healthbar = $healthbar
+	healthbar.value = health

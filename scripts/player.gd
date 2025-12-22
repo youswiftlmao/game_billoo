@@ -2,11 +2,13 @@ extends CharacterBody2D
 
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 
+
 const SPEED = 200.0
 const JUMP_VELOCITY = -320.0
 
 var e_inattack_range =  false
 var g_inattack_range = false
+var HEARTLIST : Array[TextureRect]
 
 var e_attackCD =  true
 var g_attackCD =  true
@@ -18,6 +20,7 @@ var attack_ip = false
 
 var took_damage = false
 var can_move = true
+
 
 func respawn():
 	self.visible = false
@@ -34,7 +37,10 @@ func respawn():
 func _physics_process(delta: float) -> void:
 	enemy_attack()
 	attack()
-	upd_HP()
+	updhp()
+
+
+
 	
 	if HP <= 0 and player_alive:
 		player_alive = false
@@ -160,21 +166,20 @@ func shake_camera(duration: float = 0.1, intensity: float = .0) -> void:
 		elapsed += get_process_delta_time()
 	$Camera2D.offset = Vector2.ZERO  # reset after shake
 
-func upd_HP(): # if hp total change come beck here
-	var healthbar = $healthbar
-	healthbar.value = HP
+
+	
 
 
 func _on_regen_timeout() -> void:
-	if HP < 100 :
-		HP = HP + 20 
+	if HP < 100:
+		HP = HP  + 20
 	if HP > 100:
 		HP = 100
 	if HP <= 0:
-		HP = 0 
+		HP = 0
 	
 	
-	
-	
-	
+func updhp():
+	var hpbar = $healtbar
+	hpbar.value = HP
 	

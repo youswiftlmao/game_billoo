@@ -7,6 +7,7 @@ var player_inattack_zone = false
 var can_take_damage = true
 
 func _physics_process(delta: float) -> void:
+	updhp()
 	deal_with_damage()
 	
 	if playerchase:
@@ -92,4 +93,11 @@ func deal_with_damage():
 
 func _on_takedamagecd_timeout() -> void:
 	can_take_damage = true
+	
+func updhp():
+	var healthbar = $healthbar
+	healthbar.value = health
+
+
+
 	

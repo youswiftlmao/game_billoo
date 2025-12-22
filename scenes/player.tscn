@@ -200,17 +200,17 @@ wait_time = 0.5
 position = Vector2(0, -6)
 zoom = Vector2(4, 4)
 
-[node name="healthbar" type="ProgressBar" parent="."]
-modulate = Color(0.30980393, 0.7176471, 0.22745098, 1)
+[node name="healtbar" type="ProgressBar" parent="."]
+modulate = Color(0.46666667, 0.11764706, 0.63529414, 1)
 offset_left = -157.0
-offset_top = -93.0
-offset_right = 712.99976
-offset_bottom = 7.0
+offset_top = -99.0
+offset_right = 612.99994
+offset_bottom = 8.000061
 scale = Vector2(0.1, 0.1)
 show_percentage = false
 
 [node name="regen" type="Timer" parent="."]
-wait_time = 5.0
+wait_time = 20.155
 autostart = true
 
 [connection signal="body_entered" from="phitbox" to="." method="_on_phitbox_body_entered"]
