@@ -22,8 +22,10 @@ func _physics_process(delta: float) -> void:
 		else:
 			$AnimatedSprite2D.flip_h = true
 			
-	else:
+	elif health > 0 :
 			$AnimatedSprite2D.play("idle")
+	else:
+			$AnimatedSprite2D.play("death")
 
 
 
@@ -52,6 +54,8 @@ func _on_ghitbox_body_exited(body: Node2D) -> void:
 		player_in_attack_zone = false
 		
 func deal_with_damage():
+	if health <= 0:
+		cantakedmg = false
 	if player_in_attack_zone and Global.player_current_attack == true :
 		if cantakedmg == true:
 			health = health - 20
@@ -78,11 +82,11 @@ func deal_with_damage():
 				# Resume chasing after knockback
 				playerchase = original_chase
 
-			# If dead
+			# If deaddddd
 			if health <= 0:
 				playerchase = false
 				cantakedmg = false
-				$AnimatedSprite2D.play("death")
+				
 
 				# Freeze briefly for death animation
 				await get_tree().create_timer(0.5).timeout

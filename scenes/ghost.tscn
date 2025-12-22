@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://ti48perjy5ef"]
+[gd_scene load_steps=12 format=3 uid="uid://ti48perjy5ef"]
 
 [ext_resource type="Script" uid="uid://bh7hcpfqvei2r" path="res://scripts/ghost.gd" id="1_l5lq6"]
 [ext_resource type="Texture2D" uid="uid://cg3stefw6fw32" path="res://assests/ghost.png" id="1_t76o2"]
@@ -6,10 +6,6 @@
 [sub_resource type="AtlasTexture" id="AtlasTexture_l5lq6"]
 atlas = ExtResource("1_t76o2")
 region = Rect2(0, 64, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_bbnym"]
-atlas = ExtResource("1_t76o2")
-region = Rect2(32, 64, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_veat2"]
 atlas = ExtResource("1_t76o2")
@@ -32,9 +28,6 @@ animations = [{
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_l5lq6")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_bbnym")
 }],
 "loop": false,
 "name": &"death",
@@ -79,6 +72,7 @@ script = ExtResource("1_l5lq6")
 rotation = 0.0033887606
 sprite_frames = SubResource("SpriteFrames_wj1r3")
 animation = &"death"
+frame_progress = 1.0
 
 [node name="detection zone" type="Area2D" parent="."]
 collision_layer = 2

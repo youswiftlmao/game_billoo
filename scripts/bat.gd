@@ -43,6 +43,8 @@ func _on_bhitbox_body_exited(body: Node2D) -> void:
 		player_inattack_zone = false
 		
 func deal_with_damage():
+	if health <= 0:
+		can_take_damage = false
 	if player_inattack_zone and Global.player_current_attack == true:
 		if can_take_damage == true:
 			$TAKEDAMAGECD.start()

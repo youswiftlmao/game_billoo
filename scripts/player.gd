@@ -34,6 +34,7 @@ func respawn():
 func _physics_process(delta: float) -> void:
 	enemy_attack()
 	attack()
+	upd_HP()
 	
 	if HP <= 0 and player_alive:
 		player_alive = false
@@ -67,10 +68,11 @@ func _physics_process(delta: float) -> void:
 	#gets input direction: -1,0,1
 	var direction := Input.get_axis("move_left", "move_right")
 	#flips sprite
-	if direction > 0:
+	if HP >=1:
+		if direction > 0:
 			animated_sprite.flip_h = false
-	elif direction < 0:
-		animated_sprite.flip_h = true
+		elif direction < 0:
+			animated_sprite.flip_h = true
 		
 	#play animation
 	if is_on_floor():
@@ -157,3 +159,22 @@ func shake_camera(duration: float = 0.1, intensity: float = .0) -> void:
 		await get_tree().process_frame
 		elapsed += get_process_delta_time()
 	$Camera2D.offset = Vector2.ZERO  # reset after shake
+
+func upd_HP(): # if hp total change come beck here
+	var healthbar = $healthbar
+	healthbar.value = HP
+
+
+func _on_regen_timeout() -> void:
+	if HP < 100 :
+		HP = HP + 20 
+	if HP > 100:
+		HP = 100
+	if HP <= 0:
+		HP = 0 
+	
+	
+	
+	
+	
+	
