@@ -22,15 +22,7 @@ var took_damage = false
 var can_move = true
 
 
-func respawn():
-	self.visible = false
-	can_move = false
-	await get_tree().create_timer(0.5).timeout
-	self.global_position = Vector2(10,1)
-	self.visible = true
-	can_move =  true
-	await get_tree().create_timer(0.5).timeout
-	took_damage = false
+
 
 	
 	
@@ -38,10 +30,15 @@ func _physics_process(delta: float) -> void:
 	enemy_attack()
 	attack()
 	updhp()
+	# Collision checking (e.g. if touching spikes)
+# Collision checking (e.g. if touching spikes)
+	for i in range(get_slide_collision_count()):
+		var collision = get_slide_collision(i)
 
-
-
+		if collision.get_collider().name == "tilemapspikes":
+			HP = HP - HP
 	
+
 	if HP <= 0 and player_alive:
 		player_alive = false
 		HP = 0
@@ -182,4 +179,5 @@ func _on_regen_timeout() -> void:
 func updhp():
 	var hpbar = $healtbar
 	hpbar.value = HP
+	
 	

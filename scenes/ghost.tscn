@@ -84,7 +84,6 @@ shape = SubResource("RectangleShape2D_seks5")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0.5, 1.5)
 shape = SubResource("RectangleShape2D_l5lq6")
-one_way_collision = true
 
 [node name="ghitbox" type="Area2D" parent="."]
 
