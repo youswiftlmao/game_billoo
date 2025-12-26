@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://b5lbo8ith05g1"]
+
+[ext_resource type="Texture2D" uid="uid://b45h4by6t74at" path="res://assests/big plat.png" id="1_tw06i"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0cwug"]
+size = Vector2(64, 5)
+
+[node name="bigplat" type="AnimatableBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_tw06i")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_0cwug")
+one_way_collision = true
