@@ -55,7 +55,7 @@ radius = 7.427155
 size = Vector2(1.236176, 1.225642)
 
 [node name="bat" type="CharacterBody2D"]
-z_index = 1
+z_index = 15
 scale = Vector2(1.6178926, 1.6317979)
 script = ExtResource("1_cnldk")
 

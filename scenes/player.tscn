@@ -206,16 +206,18 @@ wait_time = 10.0
 autostart = true
 
 [node name="Bar" type="Sprite2D" parent="."]
-position = Vector2(-112, -94)
+z_index = 10
+position = Vector2(-86, -74)
 scale = Vector2(0.99999994, 0.99999994)
 texture = ExtResource("6_tuyoq")
 
 [node name="healtbar" type="ProgressBar" parent="."]
 modulate = Color(0.5333924, 0.0014055142, 0.70975846, 1)
-offset_left = -157.0
-offset_top = -99.0
-offset_right = 612.99994
-offset_bottom = 8.000061
+z_index = 10
+offset_left = -131.0
+offset_top = -79.0
+offset_right = 638.99994
+offset_bottom = 28.000061
 scale = Vector2(0.1, 0.1)
 show_percentage = false
 

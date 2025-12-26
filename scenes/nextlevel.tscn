@@ -1,0 +1,36 @@
+[gd_scene load_steps=6 format=3 uid="uid://ctrs5sgypq0qj"]
+
+[ext_resource type="Texture2D" uid="uid://dyooouyoqgvca" path="res://assests/orb.png" id="1_lewo4"]
+[ext_resource type="Script" uid="uid://dqfyw406275vi" path="res://scripts/nextlevel.gd" id="2_1xl7v"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5n106"]
+atlas = ExtResource("1_lewo4")
+region = Rect2(0, 0, 16, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5m5e0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5n106")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h0pde"]
+size = Vector2(16, 40)
+
+[node name="nextlevel" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_5m5e0")
+autoplay = "default"
+frame_progress = 0.9904304
+script = ExtResource("2_1xl7v")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, 4)
+shape = SubResource("RectangleShape2D_h0pde")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

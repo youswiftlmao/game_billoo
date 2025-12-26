@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://chesm50fe1kow"]
+
+[ext_resource type="Texture2D" uid="uid://cvd2nsqbcgqql" path="res://assests/LAVA.png" id="1_a5s42"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_a5s42"]
+
+[node name="lava" type="Sprite2D"]
+material = SubResource("CanvasItemMaterial_a5s42")
+texture = ExtResource("1_a5s42")
