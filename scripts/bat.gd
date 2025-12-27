@@ -46,6 +46,7 @@ func _on_bhitbox_body_exited(body: Node2D) -> void:
 func deal_with_damage():
 	if health <= 0:
 		can_take_damage = false
+		health = 0
 	if player_inattack_zone and Global.player_current_attack == true:
 		if can_take_damage == true:
 			$TAKEDAMAGECD.start()
@@ -87,8 +88,7 @@ func deal_with_damage():
 				var fall_speed = 150
 				while position.y < 1000:  # arbitrary off-screen value
 					position.y += fall_speed * get_process_delta_time()
-					await get_tree().process_frame
-
+					
 				queue_free()
 
 func _on_takedamagecd_timeout() -> void:
