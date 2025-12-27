@@ -1,5 +1,4 @@
 extends AnimatedSprite2D
-
 var triggered := false  # prevent multiple triggers
 
 func _on_area_2d_body_entered(body: Node2D) -> void:

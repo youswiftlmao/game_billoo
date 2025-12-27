@@ -593,7 +593,7 @@ texture = ExtResource("5_ughyh")
 position = Vector2(-36, 37)
 
 [node name="nextlevel" parent="." instance=ExtResource("7_yyd14")]
-position = Vector2(-1429, 187)
+position = Vector2(17, 55)
 
 [node name="TileMap2" type="TileMap" parent="."]
 z_index = -20

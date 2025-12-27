@@ -96,7 +96,7 @@ func deal_with_damage():
 				var fall_speed = 150
 				while position.y < 1000:  # arbitrary off-screen value
 					position.y += fall_speed * get_process_delta_time()
-					await get_tree().process_frame
+					
 
 				queue_free()
 				

@@ -4,11 +4,12 @@ extends CharacterBody2D
 
 
 const SPEED = 200.0
-const JUMP_VELOCITY = -320.0
+const JUMP_VELOCITY = -335.0
 
 var e_inattack_range =  false
 var g_inattack_range = false
 var HEARTLIST : Array[TextureRect]
+var ATTACKED := false
 
 var e_attackCD =  true
 var g_attackCD =  true
@@ -41,6 +42,7 @@ func _physics_process(delta: float) -> void:
 
 	if HP <= 0 and player_alive:
 		player_alive = false
+		
 		HP = 0
 		print("player has been eliminated")
 
@@ -122,17 +124,19 @@ func _on_phitbox_body_exited(body: Node2D) -> void:
 			g_inattack_range = false
 		
 func enemy_attack():
-	if e_inattack_range and e_attackCD == true:
-		HP = HP - 10
-		e_attackCD = false
-		$AttackCD.start()
-		print(HP)
-	else:
-		if g_inattack_range and g_attackCD == true:
-			HP = HP - 20
-			g_attackCD = false
+	if HP >= 1:
+		if e_inattack_range and e_attackCD == true:
+			HP = HP - 10
+			e_attackCD = false
 			$AttackCD.start()
 			print(HP)
+		elif  g_inattack_range and g_attackCD == true:
+				HP = HP - 20
+				g_attackCD = false
+				$AttackCD.start()
+				print(HP)
+	else:
+		return
 
 
 func _on_attack_cd_timeout() -> void:
@@ -179,5 +183,5 @@ func _on_regen_timeout() -> void:
 func updhp():
 	var hpbar = $healtbar
 	hpbar.value = HP
-	
+
 	
