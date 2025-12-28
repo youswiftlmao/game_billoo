@@ -38,6 +38,8 @@ func _physics_process(delta: float) -> void:
 
 		if collision.get_collider().name == "tilemapspikes":
 			HP = HP - HP
+		else:
+			pass
 	
 
 	if HP <= 0 and player_alive:

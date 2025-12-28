@@ -1,0 +1,34 @@
+[gd_scene load_steps=6 format=3 uid="uid://c73fs3yroorn7"]
+
+[ext_resource type="Texture2D" uid="uid://dyooouyoqgvca" path="res://assests/orb.png" id="1_q0wc4"]
+[ext_resource type="Script" uid="uid://c3rsewbd70sg5" path="res://lvl_20_3.gd" id="2_jq380"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d4il3"]
+atlas = ExtResource("1_q0wc4")
+region = Rect2(0, 0, 16, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_uhf3l"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d4il3")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_40osy"]
+size = Vector2(17, 43)
+
+[node name="lvl20_3" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_uhf3l")
+script = ExtResource("2_jq380")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0.5, 2.5)
+shape = SubResource("RectangleShape2D_40osy")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
