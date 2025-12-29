@@ -70,14 +70,14 @@ size = Vector2(17.27277, 9.363677)
 size = Vector2(18.181862, 9.545478)
 
 [node name="spider" type="CharacterBody2D"]
-scale = Vector2(4.159995, 4.159995)
+scale = Vector2(3.439995, 3.439995)
 script = ExtResource("1_algeo")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_wghsh")
 animation = &"walk"
 autoplay = "walk"
-frame_progress = 0.896647
+frame_progress = 0.48402518
 
 [node name="hitbox" type="Area2D" parent="."]
 
