@@ -487,9 +487,6 @@ position = Vector2(2375, -118)
 [node name="platform12" parent="." instance=ExtResource("4_ikojo")]
 position = Vector2(2637, -121)
 
-[node name="platform13" parent="." instance=ExtResource("4_ikojo")]
-position = Vector2(2498, 25)
-
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(2499, -119)
 texture = ExtResource("1_jun80")
@@ -714,3 +711,10 @@ position = Vector2(4943, -553)
 
 [node name="lvl20_3" parent="." instance=ExtResource("10_ffb46")]
 position = Vector2(5196, -502)
+script = null
+
+[node name="bigplat6" parent="." instance=ExtResource("6_e70pa")]
+position = Vector2(2471, 26)
+
+[node name="bigplat21" parent="." instance=ExtResource("6_e70pa")]
+position = Vector2(2511, 26)

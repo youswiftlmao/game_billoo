@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://c73fs3yroorn7"]
 
 [ext_resource type="Texture2D" uid="uid://dyooouyoqgvca" path="res://assests/orb.png" id="1_q0wc4"]
-[ext_resource type="Script" uid="uid://c3rsewbd70sg5" path="res://lvl_20_3.gd" id="2_jq380"]
+[ext_resource type="Script" uid="uid://buuy7vul2qju" path="res://scripts/lvl_20_3.gd" id="2_q0wc4"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_d4il3"]
 atlas = ExtResource("1_q0wc4")
@@ -23,7 +23,7 @@ size = Vector2(17, 43)
 
 [node name="lvl20_3" type="AnimatedSprite2D"]
 sprite_frames = SubResource("SpriteFrames_uhf3l")
-script = ExtResource("2_jq380")
+script = ExtResource("2_q0wc4")
 
 [node name="Area2D" type="Area2D" parent="."]
 

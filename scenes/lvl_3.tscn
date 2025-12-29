@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://dswm7su8la55o"]
+[gd_scene load_steps=14 format=3 uid="uid://dswm7su8la55o"]
 
 [ext_resource type="Texture2D" uid="uid://c3qaq8pfb10q4" path="res://addons/TILESHEET ALL DONE.png" id="1_dk4lx"]
 [ext_resource type="PackedScene" uid="uid://c36gx83vrkgu0" path="res://scenes/player.tscn" id="2_nfdhv"]
 [ext_resource type="Texture2D" uid="uid://bhbs7khfxop7i" path="res://assests/spike pls work speed.png" id="3_gx3n5"]
+[ext_resource type="Texture2D" uid="uid://bbtt8kuuli5dn" path="res://assests/big spike.png" id="4_nfdhv"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_oet2r"]
 texture = ExtResource("1_dk4lx")
@@ -269,7 +270,7 @@ physics_layer_0/collision_layer = 1
 sources/1 = SubResource("TileSetAtlasSource_xsimr")
 sources/0 = SubResource("TileSetAtlasSource_oet2r")
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tkm7p"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gx3n5"]
 texture = ExtResource("3_gx3n5")
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -0.71943474, 8, -0.35971642, 8, 8, -8, 8)
@@ -280,9 +281,64 @@ texture = ExtResource("3_gx3n5")
 1:1/0 = 0
 1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 
-[sub_resource type="TileSet" id="TileSet_yxb5l"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_th8jk"]
+texture = ExtResource("4_nfdhv")
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-2.1583042, -8, 1.2590103, -8, 8, 8, -8, 8)
+0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+0:2/0 = 0
+0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+0:3/0 = 0
+0:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+0:4/0 = 0
+0:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+0:5/0 = 0
+0:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+0:6/0 = 0
+0:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[sub_resource type="TileSet" id="TileSet_gx3n5"]
 physics_layer_0/collision_layer = 1
-sources/0 = SubResource("TileSetAtlasSource_tkm7p")
+sources/0 = SubResource("TileSetAtlasSource_gx3n5")
+sources/1 = SubResource("TileSetAtlasSource_th8jk")
+
+[sub_resource type="Animation" id="Animation_nfdhv"]
+resource_name = "new_animation"
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("..:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.4033333, 0.56666666, 0.8333333),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -70), Vector2(0, -70)]
+}
+
+[sub_resource type="Animation" id="Animation_gx3n5"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("..:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_gx3n5"]
+_data = {
+&"RESET": SubResource("Animation_gx3n5"),
+&"new_animation": SubResource("Animation_nfdhv")
+}
 
 [node name="lvl3" type="Node2D"]
 
@@ -298,6 +354,21 @@ layer_0/tile_data = PackedInt32Array(131069, 0, 0, 196605, 720896, 3, 262141, 52
 position = Vector2(121, 26)
 
 [node name="tilemapspikes" type="TileMap" parent="."]
-position = Vector2(6, 7)
-tile_set = SubResource("TileSet_yxb5l")
+position = Vector2(7, 7)
+tile_set = SubResource("TileSet_gx3n5")
 format = 2
+layer_0/tile_data = PackedInt32Array(131076, 0, 0)
+
+[node name="tilemapspikes3" type="Node2D" parent="."]
+
+[node name="tilemapspikes2" type="TileMap" parent="tilemapspikes3"]
+position = Vector2(7, 7)
+tile_set = SubResource("TileSet_gx3n5")
+format = 2
+layer_0/tile_data = PackedInt32Array(65546, 1, 0, 131082, 1, 1, 196618, 1, 2)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="tilemapspikes3/tilemapspikes2"]
+libraries = {
+&"": SubResource("AnimationLibrary_gx3n5")
+}
+autoplay = "new_animation"

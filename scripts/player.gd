@@ -31,16 +31,17 @@ func _physics_process(delta: float) -> void:
 	enemy_attack()
 	attack()
 	updhp()
+	# different spikes
+
 	# Collision checking (e.g. if touching spikes)
 # Collision checking (e.g. if touching spikes)
 	for i in range(get_slide_collision_count()):
 		var collision = get_slide_collision(i)
+		var collider = collision.get_collider()
 
-		if collision.get_collider().name == "tilemapspikes":
-			HP = HP - HP
-		else:
-			pass
-	
+		if collider and "tilemapspike" in collider.name:
+			HP = 0
+			break  # stop checking further collisions this frame
 
 	if HP <= 0 and player_alive:
 		player_alive = false
