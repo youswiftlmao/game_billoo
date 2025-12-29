@@ -1,9 +1,13 @@
-[gd_scene load_steps=14 format=3 uid="uid://dswm7su8la55o"]
+[gd_scene load_steps=18 format=3 uid="uid://dswm7su8la55o"]
 
 [ext_resource type="Texture2D" uid="uid://c3qaq8pfb10q4" path="res://addons/TILESHEET ALL DONE.png" id="1_dk4lx"]
 [ext_resource type="PackedScene" uid="uid://c36gx83vrkgu0" path="res://scenes/player.tscn" id="2_nfdhv"]
 [ext_resource type="Texture2D" uid="uid://bhbs7khfxop7i" path="res://assests/spike pls work speed.png" id="3_gx3n5"]
 [ext_resource type="Texture2D" uid="uid://bbtt8kuuli5dn" path="res://assests/big spike.png" id="4_nfdhv"]
+[ext_resource type="PackedScene" uid="uid://cv5bvg17p3spp" path="res://scenes/platform.tscn" id="5_gx3n5"]
+[ext_resource type="PackedScene" uid="uid://ti48perjy5ef" path="res://scenes/ghost.tscn" id="6_xsimr"]
+[ext_resource type="PackedScene" uid="uid://cjxsnsy71ua4k" path="res://scenes/spider.tscn" id="7_th8jk"]
+[ext_resource type="PackedScene" uid="uid://bdau7guhjl1t0" path="res://scenes/bat.tscn" id="8_th8jk"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_oet2r"]
 texture = ExtResource("1_dk4lx")
@@ -313,10 +317,10 @@ tracks/0/path = NodePath("..:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0.4033333, 0.56666666, 0.8333333),
+"times": PackedFloat32Array(0.4033333, 0.56666666, 0.9021633),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector2(0, 0), Vector2(0, -70), Vector2(0, -70)]
+"values": [Vector2(0, 0), Vector2(0, -100), Vector2(0, -100)]
 }
 
 [sub_resource type="Animation" id="Animation_gx3n5"]
@@ -343,32 +347,72 @@ _data = {
 [node name="lvl3" type="Node2D"]
 
 [node name="TileMap" type="TileMap" parent="."]
-position = Vector2(150.00002, 39.000004)
+position = Vector2(70.00001, 39)
 scale = Vector2(0.99999994, 0.99999994)
 tile_set = SubResource("TileSet_th8jk")
 rendering_quadrant_size = 32
 format = 2
-layer_0/tile_data = PackedInt32Array(131069, 0, 0, 196605, 720896, 3, 262141, 524288, 2, 327677, 524288, 3, 196603, 720896, 3, 196604, 65536, 3, 131067, 655360, 2, 131068, 196608, 0, 262139, 524288, 2, 327675, 524288, 3, 262140, 589824, 2, 327676, 589824, 3, 393211, 524288, 3, 393212, 589824, 3, 393213, 524288, 3, 131070, 65536, 0, 196606, 65536, 3, 262142, 589824, 2, 327678, 589824, 3, 393214, 589824, 3, 131071, 131072, 0, 196607, 0, 3, 262143, 524288, 2, 327679, 524288, 3, 393215, 524288, 3, 65536, 851968, 2, 131072, 720896, 3, 196608, 589824, 2, 262144, 589824, 3, 327680, 589824, 3)
+layer_0/tile_data = PackedInt32Array(131069, 0, 0, 196605, 720896, 3, 262141, 524288, 2, 327677, 524288, 3, 196603, 720896, 3, 196604, 65536, 3, 131067, 655360, 2, 131068, 196608, 0, 262139, 524288, 2, 327675, 524288, 3, 262140, 589824, 2, 327676, 589824, 3, 393211, 524288, 3, 393212, 589824, 3, 393213, 524288, 3, 131070, 65536, 0, 196606, 65536, 3, 262142, 589824, 2, 327678, 589824, 3, 393214, 589824, 3, 131071, 131072, 0, 196607, 0, 3, 262143, 524288, 2, 327679, 524288, 3, 393215, 524288, 3, 65536, 851968, 2, 131072, 720896, 3, 196608, 589824, 2, 262144, 589824, 3, 327680, 589824, 3, 65600, 786432, 2, 65601, 851968, 2, 131138, 786432, 2, 131139, 851968, 2, 196676, 786432, 2, 196677, 851968, 2, 65599, 655360, 2, 327753, 65536, 0, 327754, 131072, 0, 327755, 196608, 0, 327756, 0, 0, 327757, 65536, 0, 327758, 131072, 0, 327759, 196608, 0, 327760, 0, 0, 327761, 65536, 0, 327762, 131072, 0, 327763, 196608, 0, 327764, 0, 0, 327765, 65536, 0, 327766, 131072, 0, 327767, 196608, 0)
 
 [node name="player" parent="." instance=ExtResource("2_nfdhv")]
-position = Vector2(121, 26)
+position = Vector2(1172, 63)
 
 [node name="tilemapspikes" type="TileMap" parent="."]
 position = Vector2(7, 7)
 tile_set = SubResource("TileSet_gx3n5")
 format = 2
-layer_0/tile_data = PackedInt32Array(131076, 0, 0)
 
 [node name="tilemapspikes3" type="Node2D" parent="."]
 
 [node name="tilemapspikes2" type="TileMap" parent="tilemapspikes3"]
-position = Vector2(7, 7)
+position = Vector2(92, 39)
 tile_set = SubResource("TileSet_gx3n5")
 format = 2
-layer_0/tile_data = PackedInt32Array(65546, 1, 0, 131082, 1, 1, 196618, 1, 2)
+layer_0/tile_data = PackedInt32Array(65546, 1, 0, 131082, 1, 3, 196618, 1, 4, 262154, 1, 3, 327690, 1, 4, 393226, 1, 3, 458762, 1, 4, 131075, 1, 3, 196611, 1, 4, 262147, 1, 3, 327683, 1, 4, 393219, 1, 3, 458755, 1, 4, 65553, 1, 0, 131089, 1, 3, 196625, 1, 4, 262161, 1, 3, 327697, 1, 4, 393233, 1, 3, 458769, 1, 4, 65539, 1, 0, 65560, 1, 0, 131096, 1, 3, 196632, 1, 4, 262168, 1, 3, 327704, 1, 4, 393240, 1, 3, 458776, 1, 4, 65567, 1, 0, 131103, 1, 3, 196639, 1, 4, 262175, 1, 3, 327711, 1, 4, 393247, 1, 3, 458783, 1, 4, 65574, 1, 0, 131110, 1, 3, 196646, 1, 4, 262182, 1, 3, 327718, 1, 4, 393254, 1, 3, 458790, 1, 2, 65581, 1, 0, 131117, 1, 3, 196653, 1, 4, 262189, 1, 3, 327725, 1, 4, 393261, 1, 3, 458797, 1, 4, 65588, 1, 0, 131124, 1, 3, 196660, 1, 4, 262196, 1, 3, 327732, 1, 4, 393268, 1, 3, 458804, 1, 4, 65595, 1, 0, 131131, 1, 1, 196667, 1, 2, 262203, 1, 3, 327739, 1, 4, 393275, 1, 3, 458811, 1, 4, 524291, 1, 2, 589827, 1, 3, 655363, 1, 2, 720899, 1, 3, 786435, 1, 2, 851971, 1, 3, 524298, 1, 2, 589834, 1, 3, 655370, 1, 2, 720906, 1, 3, 786442, 1, 2, 851978, 1, 3, 524305, 1, 2, 589841, 1, 3, 655377, 1, 2, 720913, 1, 3, 786449, 1, 2, 851985, 1, 3, 524312, 1, 2, 589848, 1, 3, 655384, 1, 2, 720920, 1, 3, 786456, 1, 2, 851992, 1, 3, 524319, 1, 2, 589855, 1, 3, 655391, 1, 2, 720927, 1, 3, 786463, 1, 2, 851999, 1, 3, 524326, 1, 3, 589862, 1, 2, 655398, 1, 3, 720934, 1, 2, 786470, 1, 2, 852006, 1, 3, 524333, 1, 2, 589869, 1, 2, 655405, 1, 2, 720941, 1, 2, 786477, 1, 2, 852013, 1, 2, 524340, 1, 2, 852020, 1, 2, 589876, 1, 2, 655412, 1, 2, 720948, 1, 2, 786484, 1, 2, 524347, 1, 2, 589883, 1, 2, 655419, 1, 2, 720955, 1, 2, 786491, 1, 2, 852027, 1, 2)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="tilemapspikes3/tilemapspikes2"]
 libraries = {
 &"": SubResource("AnimationLibrary_gx3n5")
 }
 autoplay = "new_animation"
+
+[node name="plats" type="Node2D" parent="."]
+position = Vector2(998, 56)
+
+[node name="platform" parent="plats" instance=ExtResource("5_gx3n5")]
+position = Vector2(-887, 0)
+
+[node name="platform2" parent="plats" instance=ExtResource("5_gx3n5")]
+position = Vector2(-796, 0)
+
+[node name="platform3" parent="plats" instance=ExtResource("5_gx3n5")]
+position = Vector2(-677, 0)
+
+[node name="platform4" parent="plats" instance=ExtResource("5_gx3n5")]
+position = Vector2(-588, -1)
+
+[node name="platform5" parent="plats" instance=ExtResource("5_gx3n5")]
+position = Vector2(-470, -1)
+
+[node name="platform6" parent="plats" instance=ExtResource("5_gx3n5")]
+position = Vector2(-350, 0)
+
+[node name="platform7" parent="plats" instance=ExtResource("5_gx3n5")]
+position = Vector2(-230, 0)
+
+[node name="platform8" parent="plats" instance=ExtResource("5_gx3n5")]
+position = Vector2(-120, 0)
+
+[node name="platform9" parent="plats" instance=ExtResource("5_gx3n5")]
+
+[node name="ghost" parent="." instance=ExtResource("6_xsimr")]
+position = Vector2(769, 22)
+
+[node name="ghost2" parent="." instance=ExtResource("6_xsimr")]
+position = Vector2(318, 14)
+
+[node name="spider" parent="." instance=ExtResource("7_th8jk")]
+position = Vector2(1286, 101)
+
+[node name="bat" parent="." instance=ExtResource("8_th8jk")]
+position = Vector2(1259, 68)

@@ -109,10 +109,10 @@ func player():
 	pass
 	
 func _on_phitbox_body_entered(body: Node2D) -> void:
-	if body.has_method("enemy"):
-		e_inattack_range =  true
-	else:
-		if body.has_method("ghost"):
+
+		if body.has_method("enemy"):
+			e_inattack_range = true
+		elif body.has_method("ghost"):
 			g_inattack_range = true
 		
 		
@@ -188,3 +188,10 @@ func updhp():
 	hpbar.value = HP
 
 	
+
+
+func _on_hurtbox_body_entered(body: Node2D) -> void:
+	print("Hurtbox touched by: ", body.name)
+	if body.name.begins_with("spider"):
+		HP = 0
+		print("player got 1shotted lmao -spdr")
