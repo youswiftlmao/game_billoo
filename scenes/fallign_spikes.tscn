@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://dnbb6qljtmuph"]
+
+[ext_resource type="Texture2D" uid="uid://dria47uo651ql" path="res://assests/spike movable.png" id="1_alx7k"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wtk1i"]
+size = Vector2(34, 65)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lbeu1"]
+size = Vector2(30, 62)
+
+[node name="fallign spikes" type="AnimatableBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_alx7k")
+
+[node name="hurt" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hurt"]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_wtk1i")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = -3.1343033
+shape = SubResource("RectangleShape2D_lbeu1")
+one_way_collision = true

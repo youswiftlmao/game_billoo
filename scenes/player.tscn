@@ -166,7 +166,7 @@ size = Vector2(17.252539, 10.603696)
 radius = 36.013885
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tuyoq"]
-size = Vector2(30, 58)
+size = Vector2(30, 56)
 
 [node name="player" type="CharacterBody2D"]
 z_index = 2

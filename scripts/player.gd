@@ -195,3 +195,6 @@ func _on_hurtbox_body_entered(body: Node2D) -> void:
 	if body.name.begins_with("spider"):
 		HP = 0
 		print("player got 1shotted lmao -spdr")
+	elif body.name.begins_with("fallign"):
+		HP = 0
+		print("player has been vanquished")
