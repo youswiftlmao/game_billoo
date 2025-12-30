@@ -2,7 +2,7 @@
 
 extends CharacterBody2D
 
-var SPEED := 10.0
+var SPEED := 30.0
 var facing_left := false
 var can_flip := true
 
