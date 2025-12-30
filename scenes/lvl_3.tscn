@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://dswm7su8la55o"]
+[gd_scene load_steps=46 format=3 uid="uid://dswm7su8la55o"]
 
 [ext_resource type="Texture2D" uid="uid://c3qaq8pfb10q4" path="res://addons/TILESHEET ALL DONE.png" id="1_dk4lx"]
 [ext_resource type="PackedScene" uid="uid://c36gx83vrkgu0" path="res://scenes/player.tscn" id="2_nfdhv"]
@@ -442,6 +442,7 @@ tracks/0/keys = {
 }
 
 [sub_resource type="Animation" id="Animation_qgkrp"]
+resource_name = "aaaa"
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -458,8 +459,198 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_vo4vj"]
 _data = {
-&"RESET": SubResource("Animation_qgkrp"),
+&"aaaa": SubResource("Animation_qgkrp"),
 &"new_animation": SubResource("Animation_mr1bn")
+}
+
+[sub_resource type="Animation" id="Animation_vo4vj"]
+resource_name = "new_animation"
+length = 3.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.8, 0.9583334, 1.9500002),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(3126, 39), Vector2(3126, 39), Vector2(3126, 103), Vector2(3126, 39)]
+}
+
+[sub_resource type="Animation" id="Animation_vbsd7"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(3126, 39)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_vbsd7"]
+_data = {
+&"RESET": SubResource("Animation_vbsd7"),
+&"new_animation": SubResource("Animation_vo4vj")
+}
+
+[sub_resource type="Animation" id="Animation_ffys1"]
+resource_name = "OOOOOOOOOOOO"
+length = 3.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.0417, 1.2, 2.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(3158, 39), Vector2(3158, 39), Vector2(3158, 103), Vector2(3158, 39)]
+}
+
+[sub_resource type="Animation" id="Animation_rqi33"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(3158, 39)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_dj1r7"]
+_data = {
+&"OOOOOOOOOOOO": SubResource("Animation_ffys1"),
+&"RESET": SubResource("Animation_rqi33")
+}
+
+[sub_resource type="Animation" id="Animation_dj1r7"]
+resource_name = "GOD"
+length = 3.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.208333, 1.4, 2.3666666),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(3190, 39), Vector2(3190, 39), Vector2(3190, 103), Vector2(3190, 39)]
+}
+
+[sub_resource type="Animation" id="Animation_mg484"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(3190, 39)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_27c8d"]
+_data = {
+&"GOD": SubResource("Animation_dj1r7"),
+&"RESET": SubResource("Animation_mg484")
+}
+
+[sub_resource type="Animation" id="Animation_27c8d"]
+resource_name = "awdad"
+length = 3.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.3666667, 1.5250001, 2.5416667),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(3222, 39), Vector2(3222, 39), Vector2(3222, 103), Vector2(3222, 39)]
+}
+
+[sub_resource type="Animation" id="Animation_m1tv4"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(3222, 39)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_svbv1"]
+_data = {
+&"RESET": SubResource("Animation_m1tv4"),
+&"awdad": SubResource("Animation_27c8d")
+}
+
+[sub_resource type="Animation" id="Animation_svbv1"]
+resource_name = "gdggdgdgd"
+length = 3.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.033333335, 2.525, 2.6833334, 3.7333333),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(3254, 39), Vector2(3254, 39), Vector2(3254, 103), Vector2(3254, 39)]
+}
+
+[sub_resource type="Animation" id="Animation_mifa2"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(3255, 39)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_yqmce"]
+_data = {
+&"RESET": SubResource("Animation_mifa2"),
+&"gdggdgdgd": SubResource("Animation_svbv1")
 }
 
 [node name="lvl3" type="Node2D"]
@@ -643,7 +834,47 @@ libraries = {
 }
 autoplay = "new_animation"
 
-[node name="Node2D" type="Node2D" parent="."]
+[node name="fallign spikes5" parent="." instance=ExtResource("12_7nyt0")]
+position = Vector2(3126, 39)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="fallign spikes5"]
+libraries = {
+&"": SubResource("AnimationLibrary_vbsd7")
+}
+autoplay = "new_animation"
 
 [node name="fallign spikes" parent="." instance=ExtResource("12_7nyt0")]
-position = Vector2(2791, -16)
+position = Vector2(3158, 39)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="fallign spikes"]
+libraries = {
+&"": SubResource("AnimationLibrary_dj1r7")
+}
+autoplay = "OOOOOOOOOOOO"
+
+[node name="fallign spikes6" parent="." instance=ExtResource("12_7nyt0")]
+position = Vector2(3190, 39)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="fallign spikes6"]
+libraries = {
+&"": SubResource("AnimationLibrary_27c8d")
+}
+autoplay = "GOD"
+
+[node name="fallign spikes7" parent="." instance=ExtResource("12_7nyt0")]
+position = Vector2(3222, 39)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="fallign spikes7"]
+libraries = {
+&"": SubResource("AnimationLibrary_svbv1")
+}
+autoplay = "awdad"
+
+[node name="fallign spikes8" parent="." instance=ExtResource("12_7nyt0")]
+position = Vector2(3255, 39)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="fallign spikes8"]
+libraries = {
+&"": SubResource("AnimationLibrary_yqmce")
+}
+autoplay = "gdggdgdgd"
