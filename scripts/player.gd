@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
-
+@onready var glow := $CanvasLayer/ColorRect
 
 const SPEED = 200.0
 const JUMP_VELOCITY = -335.0
@@ -198,3 +198,14 @@ func _on_hurtbox_body_entered(body: Node2D) -> void:
 	elif body.name.begins_with("fallign"):
 		HP = 0
 		print("player has been vanquished")
+
+
+
+func _on_hurtbox_area_entered(area: Area2D) -> void:
+	if area.name.begins_with("heal"):
+		HP = HP + 20
+		glow.flash()
+		print(HP)
+		if HP > 100:
+			HP = 100
+			print(HP)

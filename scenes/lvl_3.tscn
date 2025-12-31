@@ -786,32 +786,32 @@ scale = Vector2(0.73083365, 0.65716875)
 texture = ExtResource("1_qgkrp")
 
 [node name="Sprite2D2" type="Sprite2D" parent="ParallaxLayer/ParallaxLayer"]
-position = Vector2(733.99994, 57.999992)
+position = Vector2(725.99994, 57.99999)
 scale = Vector2(0.73083365, 0.65716875)
 texture = ExtResource("1_qgkrp")
 
 [node name="Sprite2D3" type="Sprite2D" parent="ParallaxLayer/ParallaxLayer"]
-position = Vector2(1487.9998, 58)
+position = Vector2(1437.9998, 58)
 scale = Vector2(0.73083365, 0.65716875)
 texture = ExtResource("1_qgkrp")
 
 [node name="Sprite2D4" type="Sprite2D" parent="ParallaxLayer/ParallaxLayer"]
-position = Vector2(2222, 58)
+position = Vector2(2158, 58)
 scale = Vector2(0.73083365, 0.65716875)
 texture = ExtResource("1_qgkrp")
 
 [node name="Sprite2D5" type="Sprite2D" parent="ParallaxLayer/ParallaxLayer"]
-position = Vector2(2974, 58.000004)
+position = Vector2(2872, 58.000004)
 scale = Vector2(0.73083365, 0.65716875)
 texture = ExtResource("1_qgkrp")
 
 [node name="Sprite2D6" type="Sprite2D" parent="ParallaxLayer/ParallaxLayer"]
-position = Vector2(3708, 58.000004)
+position = Vector2(3599.0005, 58.000004)
 scale = Vector2(0.73083365, 0.65716875)
 texture = ExtResource("1_qgkrp")
 
 [node name="backvlouds" type="ParallaxLayer" parent="ParallaxLayer"]
-position = Vector2(0, 34)
+position = Vector2(-2, 32)
 motion_scale = Vector2(0.15, 0.15)
 script = ExtResource("2_vbsd7")
 
@@ -959,7 +959,7 @@ region_enabled = true
 region_rect = Rect2(-26, 213, 506, 193)
 
 [node name="mid couds" type="ParallaxLayer" parent="ParallaxLayer"]
-position = Vector2(0, 13)
+position = Vector2(-2, 11)
 motion_scale = Vector2(0.3, 0.3)
 script = ExtResource("4_vbsd7")
 
@@ -1190,7 +1190,7 @@ region_enabled = true
 region_rect = Rect2(15, 177, 482, 208)
 
 [node name="front clouds" type="ParallaxLayer" parent="ParallaxLayer"]
-position = Vector2(-76, 11)
+position = Vector2(-78, 9)
 motion_scale = Vector2(0.4, 0.4)
 script = ExtResource("6_ffys1")
 
