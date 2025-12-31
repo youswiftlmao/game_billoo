@@ -129,12 +129,12 @@ func _on_phitbox_body_exited(body: Node2D) -> void:
 func enemy_attack():
 	if HP >= 1:
 		if e_inattack_range and e_attackCD == true:
-			HP = HP - 10
+			HP = HP - 7
 			e_attackCD = false
 			$AttackCD.start()
 			print(HP)
 		elif  g_inattack_range and g_attackCD == true:
-				HP = HP - 20
+				HP = HP - 15
 				g_attackCD = false
 				$AttackCD.start()
 				print(HP)

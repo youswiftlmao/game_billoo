@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://c36gx83vrkgu0"]
+[gd_scene load_steps=31 format=3 uid="uid://c36gx83vrkgu0"]
 
 [ext_resource type="Script" uid="uid://db84nu0oqvdeq" path="res://scripts/player.gd" id="1_onrkg"]
 [ext_resource type="Texture2D" uid="uid://ds8uqskraqnob" path="res://assests/WORKING ATTACK.png" id="2_dqkch"]
@@ -168,6 +168,27 @@ radius = 36.013885
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tuyoq"]
 size = Vector2(30, 56)
 
+[sub_resource type="Gradient" id="Gradient_tuyoq"]
+offsets = PackedFloat32Array(0.45909092, 0.57272726)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_fjrip"]
+gradient = SubResource("Gradient_tuyoq")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_smehm"]
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(340, 1, 1)
+gravity = Vector3(-40, 98, 0)
+damping_min = 1.0
+damping_max = 5.0
+scale_min = 0.0
+scale_max = 2.5
+color_ramp = SubResource("GradientTexture1D_fjrip")
+turbulence_enabled = true
+turbulence_noise_strength = 0.44
+turbulence_noise_scale = 2.194
+
 [node name="player" type="CharacterBody2D"]
 z_index = 2
 position = Vector2(0, -20)
@@ -229,6 +250,13 @@ show_percentage = false
 [node name="CollisionShape2D" type="CollisionShape2D" parent="hurtbox"]
 position = Vector2(1, -8)
 shape = SubResource("RectangleShape2D_tuyoq")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+position = Vector2(-1, -99)
+scale = Vector2(0.9890871, 0.98915565)
+amount = 150
+lifetime = 10.0
+process_material = SubResource("ParticleProcessMaterial_smehm")
 
 [connection signal="body_entered" from="phitbox" to="." method="_on_phitbox_body_entered"]
 [connection signal="body_exited" from="phitbox" to="." method="_on_phitbox_body_exited"]

@@ -63,11 +63,12 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_1byya"]
-size = Vector2(17.27277, 9.363677)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_algeo"]
+radius = 2.8953583
+height = 5.7907166
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_it4vu"]
-size = Vector2(18.181862, 9.545478)
+size = Vector2(13.953508, 8.181837)
 
 [node name="spider" type="CharacterBody2D"]
 scale = Vector2(3.439995, 3.439995)
@@ -83,10 +84,11 @@ frame_progress = 0.48402518
 
 [node name="underhitbox" type="CollisionShape2D" parent="hitbox"]
 position = Vector2(0, 3.4999995)
-shape = SubResource("RectangleShape2D_1byya")
+shape = SubResource("CapsuleShape2D_algeo")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(1.6255852e-07, 3.4090989)
+position = Vector2(0.5813966, 4.0909185)
+scale = Vector2(0.9999999, 0.9999999)
 shape = SubResource("RectangleShape2D_it4vu")
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
