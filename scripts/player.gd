@@ -23,10 +23,12 @@ var took_damage = false
 var can_move = true
 
 
-
-
+var coins = 0
+var total_coins = 5
 	
-	
+func _ready() -> void:
+	$CoinLabel.visible = true
+	update_coin_label()
 func _physics_process(delta: float) -> void:
 	enemy_attack()
 	attack()
@@ -127,7 +129,7 @@ func _on_phitbox_body_exited(body: Node2D) -> void:
 			g_inattack_range = false
 		
 func enemy_attack():
-	if HP >= 1:
+	if HP > 0:
 		if e_inattack_range and e_attackCD == true:
 			HP = HP - 7
 			e_attackCD = false
@@ -146,7 +148,7 @@ func _on_attack_cd_timeout() -> void:
 	e_attackCD = true
 	g_attackCD = true
 func attack():
-	if Input.is_action_just_pressed("attack"):
+	if  HP > 0 and  Input.is_action_just_pressed("attack"):
 		Global.player_current_attack = true
 		attack_ip = true
 		$AnimatedSprite2D.play("attack")
@@ -209,3 +211,12 @@ func _on_hurtbox_area_entered(area: Area2D) -> void:
 		if HP > 100:
 			HP = 100
 			print(HP)
+	elif area.name.begins_with("coin"):
+		coins = coins + 1
+		update_coin_label()
+		print(coins)
+
+func  update_coin_label():
+	$CoinLabel.visible = true
+	$CoinLabel.text = str(coins) + "/" + str(total_coins)
+		
