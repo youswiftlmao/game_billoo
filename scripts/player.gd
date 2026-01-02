@@ -29,6 +29,13 @@ var total_coins = 5
 func _ready() -> void:
 	$CoinLabel.visible = true
 	update_coin_label()
+	var fade = get_node_or_null("Camera2D/CanvasLayer/FadeRect")
+	if fade:
+		
+		fade.modulate.a = 1.0
+		fade.visible = true
+		
+		fade.fade_in(1.0)
 func _physics_process(delta: float) -> void:
 	enemy_attack()
 	attack()

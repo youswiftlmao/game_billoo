@@ -1,4 +1,4 @@
-[gd_scene load_steps=55 format=3 uid="uid://dswm7su8la55o"]
+[gd_scene load_steps=59 format=3 uid="uid://dswm7su8la55o"]
 
 [ext_resource type="Texture2D" uid="uid://c3qaq8pfb10q4" path="res://addons/TILESHEET ALL DONE.png" id="1_dk4lx"]
 [ext_resource type="Texture2D" uid="uid://tbrplouhhcrc" path="res://assests/SKY.png" id="1_qgkrp"]
@@ -20,6 +20,10 @@
 [ext_resource type="PackedScene" uid="uid://jtr7ygwcwul7" path="res://scenes/invis.tscn" id="9_gegca"]
 [ext_resource type="PackedScene" uid="uid://b5lbo8ith05g1" path="res://scenes/bigplat.tscn" id="10_7nyt0"]
 [ext_resource type="PackedScene" uid="uid://dnbb6qljtmuph" path="res://scenes/fallign_spikes.tscn" id="12_7nyt0"]
+[ext_resource type="PackedScene" uid="uid://c17b1cnsjf7oi" path="res://scenes/door.tscn" id="21_27c8d"]
+[ext_resource type="Texture2D" uid="uid://bfm8fovtpppd1" path="res://assests/DOORAAAA.png" id="22_m1tv4"]
+[ext_resource type="PackedScene" uid="uid://c73fs3yroorn7" path="res://scenes/lvl_20_3.tscn" id="23_svbv1"]
+[ext_resource type="Script" uid="uid://21pw0c03mv2j" path="res://SCRIPTS/THREETOFOUR.gd" id="24_mifa2"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_oet2r"]
 texture = ExtResource("1_dk4lx")
@@ -1654,3 +1658,17 @@ libraries = {
 &"": SubResource("AnimationLibrary_yqmce")
 }
 autoplay = "gdggdgdgd"
+
+[node name="door" parent="." instance=ExtResource("21_27c8d")]
+position = Vector2(3337, 87)
+
+[node name="Dooraaaa" type="Sprite2D" parent="door"]
+z_index = 2841
+position = Vector2(16, 0)
+texture = ExtResource("22_m1tv4")
+region_enabled = true
+region_rect = Rect2(222, 0, 34, 96)
+
+[node name="lvl20_3" parent="door" instance=ExtResource("23_svbv1")]
+position = Vector2(166, 4)
+script = ExtResource("24_mifa2")

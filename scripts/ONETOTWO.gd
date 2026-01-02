@@ -1,3 +1,6 @@
+
+
+
 extends AnimatedSprite2D
 
 var triggered := false
@@ -13,4 +16,4 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 			fade.fade_out(1.0)
 
 		await get_tree().create_timer(1.0).timeout
-		get_tree().change_scene_to_file("res://scenes/lvl_5.tscn")
+		get_tree().change_scene_to_file("res://levels/level_two.tscn")

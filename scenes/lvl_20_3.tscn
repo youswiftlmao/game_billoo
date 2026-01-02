@@ -1,17 +1,17 @@
 [gd_scene load_steps=6 format=3 uid="uid://c73fs3yroorn7"]
 
-[ext_resource type="Texture2D" uid="uid://dyooouyoqgvca" path="res://assests/orb.png" id="1_q0wc4"]
+[ext_resource type="Texture2D" uid="uid://yeevv5br2nvn" path="res://assests/Sprite-0001.png" id="1_q0wc4"]
 [ext_resource type="Script" uid="uid://buuy7vul2qju" path="res://scripts/lvl_20_3.gd" id="2_q0wc4"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_d4il3"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_jq380"]
 atlas = ExtResource("1_q0wc4")
-region = Rect2(0, 0, 16, 48)
+region = Rect2(0, 0, 400, 288)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_uhf3l"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_d4il3")
+"texture": SubResource("AtlasTexture_jq380")
 }],
 "loop": true,
 "name": &"default",
@@ -19,7 +19,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_40osy"]
-size = Vector2(17, 43)
+size = Vector2(332, 154)
 
 [node name="lvl20_3" type="AnimatedSprite2D"]
 sprite_frames = SubResource("SpriteFrames_uhf3l")
@@ -28,7 +28,7 @@ script = ExtResource("2_q0wc4")
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(0.5, 2.5)
+position = Vector2(32, -17)
 shape = SubResource("RectangleShape2D_40osy")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

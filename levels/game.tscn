@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://cb2pqgoi3bf3e"]
+[gd_scene load_steps=26 format=3 uid="uid://cb2pqgoi3bf3e"]
 
 [ext_resource type="Texture2D" uid="uid://c3qaq8pfb10q4" path="res://addons/TILESHEET ALL DONE.png" id="1_vpik0"]
 [ext_resource type="PackedScene" uid="uid://cv5bvg17p3spp" path="res://scenes/platform.tscn" id="2_arvxu"]
@@ -6,7 +6,11 @@
 [ext_resource type="Texture2D" uid="uid://bhbs7khfxop7i" path="res://assests/spike pls work speed.png" id="4_y7kp8"]
 [ext_resource type="Texture2D" uid="uid://cvd2nsqbcgqql" path="res://assests/LAVA.png" id="5_ughyh"]
 [ext_resource type="PackedScene" uid="uid://c36gx83vrkgu0" path="res://scenes/player.tscn" id="6_5ycdb"]
-[ext_resource type="PackedScene" uid="uid://ctrs5sgypq0qj" path="res://scenes/nextlevel.tscn" id="7_yyd14"]
+[ext_resource type="PackedScene" uid="uid://c17b1cnsjf7oi" path="res://scenes/door.tscn" id="7_kc1m6"]
+[ext_resource type="Texture2D" uid="uid://bfm8fovtpppd1" path="res://assests/DOORAAAA.png" id="8_ughyh"]
+[ext_resource type="PackedScene" uid="uid://c73fs3yroorn7" path="res://scenes/lvl_20_3.tscn" id="8_y7kp8"]
+[ext_resource type="PackedScene" uid="uid://2mcc4t66tko7" path="res://scenes/coin.tscn" id="9_ughyh"]
+[ext_resource type="Script" uid="uid://di5pd7q2fh373" path="res://SCRIPTS/ONETOTWO.gd" id="10_5ycdb"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_p57ef"]
 texture = ExtResource("1_vpik0")
@@ -474,7 +478,36 @@ position = Vector2(-467, -93)
 texture = ExtResource("5_ughyh")
 
 [node name="player" parent="." instance=ExtResource("6_5ycdb")]
-position = Vector2(-36, 37)
+position = Vector2(-1039, 287)
 
-[node name="nextlevel" parent="." instance=ExtResource("7_yyd14")]
-position = Vector2(-1426, 187)
+[node name="door" parent="." instance=ExtResource("7_kc1m6")]
+position = Vector2(-1300, 163)
+scale = Vector2(-1, 1)
+
+[node name="Dooraaaa" type="Sprite2D" parent="door"]
+z_index = 2841
+position = Vector2(16, 0)
+texture = ExtResource("8_ughyh")
+region_enabled = true
+region_rect = Rect2(222, 0, 34, 96)
+
+[node name="lvl20_3" parent="." instance=ExtResource("8_y7kp8")]
+z_index = 4096
+position = Vector2(-1489.0001, 162)
+scale = Vector2(-1.1599903, 1.0000025)
+script = ExtResource("10_5ycdb")
+
+[node name="coin2" parent="." instance=ExtResource("9_ughyh")]
+position = Vector2(654, -74)
+
+[node name="coin3" parent="." instance=ExtResource("9_ughyh")]
+position = Vector2(385, -187)
+
+[node name="coin4" parent="." instance=ExtResource("9_ughyh")]
+position = Vector2(-411, -205)
+
+[node name="coin5" parent="." instance=ExtResource("9_ughyh")]
+position = Vector2(-748, -2)
+
+[node name="coin6" parent="." instance=ExtResource("9_ughyh")]
+position = Vector2(-511, 149)

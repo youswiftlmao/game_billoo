@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://ccgmb26vrbi3s"]
+[gd_scene load_steps=35 format=3 uid="uid://ccgmb26vrbi3s"]
 
 [ext_resource type="Texture2D" uid="uid://c3qaq8pfb10q4" path="res://addons/TILESHEET ALL DONE.png" id="1_jun80"]
 [ext_resource type="PackedScene" uid="uid://c36gx83vrkgu0" path="res://scenes/player.tscn" id="2_ikojo"]
@@ -16,7 +16,10 @@
 [ext_resource type="Script" uid="uid://cof8j4dyg02xu" path="res://scripts/mid_couds.gd" id="14_5o1ln"]
 [ext_resource type="Texture2D" uid="uid://cixiccgfrcj5j" path="res://assests/mid cloud.png" id="15_xffww"]
 [ext_resource type="Script" uid="uid://cfaipal4sy3ck" path="res://scripts/front_clouds.gd" id="16_bwmxl"]
+[ext_resource type="PackedScene" uid="uid://c17b1cnsjf7oi" path="res://scenes/door.tscn" id="17_5o1ln"]
 [ext_resource type="Texture2D" uid="uid://bhko522q4cnpt" path="res://assests/front cloud.png" id="17_lwysx"]
+[ext_resource type="Texture2D" uid="uid://bfm8fovtpppd1" path="res://assests/DOORAAAA.png" id="18_xffww"]
+[ext_resource type="Script" uid="uid://v3qq1lfexghc" path="res://SCRIPTS/TWOTOTHREE.gd" id="20_bwmxl"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mmtqo"]
 texture = ExtResource("1_jun80")
@@ -715,10 +718,6 @@ position = Vector2(4576, -374)
 
 [node name="ghost2" parent="." instance=ExtResource("9_2wd80")]
 position = Vector2(4943, -553)
-
-[node name="lvl20_3" parent="." instance=ExtResource("10_ffb46")]
-position = Vector2(5196, -502)
-script = null
 
 [node name="bigplat6" parent="." instance=ExtResource("6_e70pa")]
 position = Vector2(2471, 26)
@@ -2064,3 +2063,17 @@ scale = Vector2(0.78806585, 1)
 texture = ExtResource("17_lwysx")
 region_enabled = true
 region_rect = Rect2(-10, 353, 486, 135)
+
+[node name="door" parent="." instance=ExtResource("17_5o1ln")]
+position = Vector2(5031, -525)
+
+[node name="Dooraaaa" type="Sprite2D" parent="door"]
+z_index = 2841
+position = Vector2(16, 0)
+texture = ExtResource("18_xffww")
+region_enabled = true
+region_rect = Rect2(222, 0, 34, 96)
+
+[node name="lvl20_3" parent="door" instance=ExtResource("10_ffb46")]
+position = Vector2(166, 4)
+script = ExtResource("20_bwmxl")
