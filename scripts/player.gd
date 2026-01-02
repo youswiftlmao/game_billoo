@@ -93,14 +93,14 @@ func _physics_process(delta: float) -> void:
 		
 	#play animation
 	if is_on_floor():
-		if direction == 0:
+		if direction == 0 and HP >=1 :
 			if attack_ip == false:
 				animated_sprite.play("default")
-		else:
+		elif direction != 0 and HP >=1:
 			if attack_ip == false:
 				animated_sprite.play("run")
 	else:
-		if attack_ip == false:
+		if attack_ip == false and HP >=1:
 			animated_sprite.play("workingjump")
 	
 	if can_move == false:
