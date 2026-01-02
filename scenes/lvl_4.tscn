@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=3 uid="uid://2gvbtxugtby7"]
+[gd_scene load_steps=38 format=3 uid="uid://2gvbtxugtby7"]
 
 [ext_resource type="PackedScene" uid="uid://c36gx83vrkgu0" path="res://scenes/player.tscn" id="1_83mxe"]
 [ext_resource type="Texture2D" uid="uid://c3qaq8pfb10q4" path="res://addons/TILESHEET ALL DONE.png" id="2_q8qpk"]
@@ -20,6 +20,7 @@
 [ext_resource type="Texture2D" uid="uid://bhko522q4cnpt" path="res://assests/front cloud.png" id="12_324hj"]
 [ext_resource type="Texture2D" uid="uid://bfm8fovtpppd1" path="res://assests/DOORAAAA.png" id="12_icged"]
 [ext_resource type="PackedScene" uid="uid://c73fs3yroorn7" path="res://scenes/lvl_20_3.tscn" id="13_k8jwr"]
+[ext_resource type="PackedScene" uid="uid://dbri0sd5vhhlu" path="res://scenes/heal.tscn" id="13_yg2uy"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_n4qtl"]
 texture = ExtResource("4_y1kb8")
@@ -1124,11 +1125,23 @@ region_enabled = true
 region_rect = Rect2(-10, 353, 486, 135)
 
 [node name="Sprite2D4" type="Sprite2D" parent="TileMap/ParallaxLayer/front clouds"]
-position = Vector2(336, 96)
+position = Vector2(332, 68)
 scale = Vector2(0.78806585, 1)
 texture = ExtResource("12_324hj")
 region_enabled = true
 region_rect = Rect2(-10, 353, 486, 135)
+
+[node name="heal" parent="TileMap/ParallaxLayer/front clouds" instance=ExtResource("13_yg2uy")]
+position = Vector2(556, -49)
+
+[node name="heal2" parent="TileMap/ParallaxLayer/front clouds" instance=ExtResource("13_yg2uy")]
+position = Vector2(1054, -6)
+
+[node name="heal3" parent="TileMap/ParallaxLayer/front clouds" instance=ExtResource("13_yg2uy")]
+position = Vector2(1512, -133)
+
+[node name="heal4" parent="TileMap/ParallaxLayer/front clouds" instance=ExtResource("13_yg2uy")]
+position = Vector2(1599, 82)
 
 [node name="tilemapspikes" type="TileMap" parent="."]
 position = Vector2(7, -20)

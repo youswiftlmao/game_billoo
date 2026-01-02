@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://ccgmb26vrbi3s"]
+[gd_scene load_steps=37 format=3 uid="uid://ccgmb26vrbi3s"]
 
 [ext_resource type="Texture2D" uid="uid://c3qaq8pfb10q4" path="res://addons/TILESHEET ALL DONE.png" id="1_jun80"]
 [ext_resource type="PackedScene" uid="uid://c36gx83vrkgu0" path="res://scenes/player.tscn" id="2_ikojo"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://ti48perjy5ef" path="res://scenes/ghost.tscn" id="9_2wd80"]
 [ext_resource type="PackedScene" uid="uid://c73fs3yroorn7" path="res://scenes/lvl_20_3.tscn" id="10_ffb46"]
 [ext_resource type="Texture2D" uid="uid://tbrplouhhcrc" path="res://assests/SKY.png" id="11_7cwh4"]
+[ext_resource type="PackedScene" uid="uid://dbri0sd5vhhlu" path="res://scenes/heal.tscn" id="11_bwmxl"]
 [ext_resource type="Script" uid="uid://cnfjdeqmd808h" path="res://scripts/backvlouds.gd" id="12_irsfh"]
 [ext_resource type="Texture2D" uid="uid://cky5tcd8lvi1x" path="res://assests/cloud back.png" id="13_mh078"]
 [ext_resource type="Script" uid="uid://cof8j4dyg02xu" path="res://scripts/mid_couds.gd" id="14_5o1ln"]
@@ -19,7 +20,8 @@
 [ext_resource type="PackedScene" uid="uid://c17b1cnsjf7oi" path="res://scenes/door.tscn" id="17_5o1ln"]
 [ext_resource type="Texture2D" uid="uid://bhko522q4cnpt" path="res://assests/front cloud.png" id="17_lwysx"]
 [ext_resource type="Texture2D" uid="uid://bfm8fovtpppd1" path="res://assests/DOORAAAA.png" id="18_xffww"]
-[ext_resource type="Script" uid="uid://v3qq1lfexghc" path="res://SCRIPTS/TWOTOTHREE.gd" id="20_bwmxl"]
+[ext_resource type="Script" uid="uid://v3qq1lfexghc" path="res://scripts/TWOTOTHREE.gd" id="20_bwmxl"]
+[ext_resource type="PackedScene" uid="uid://2mcc4t66tko7" path="res://scenes/coin.tscn" id="22_lwysx"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mmtqo"]
 texture = ExtResource("1_jun80")
@@ -808,6 +810,9 @@ texture = ExtResource("11_7cwh4")
 position = Vector2(4748, -299.00006)
 scale = Vector2(1.6840678, 1.1902525)
 texture = ExtResource("11_7cwh4")
+
+[node name="heal" parent="ParallaxLayer/ParallaxLayer" instance=ExtResource("11_bwmxl")]
+position = Vector2(3256, -25)
 
 [node name="backvlouds" type="ParallaxLayer" parent="ParallaxLayer"]
 position = Vector2(-2, 32)
@@ -2077,3 +2082,30 @@ region_rect = Rect2(222, 0, 34, 96)
 [node name="lvl20_3" parent="door" instance=ExtResource("10_ffb46")]
 position = Vector2(166, 4)
 script = ExtResource("20_bwmxl")
+
+[node name="coin" parent="." instance=ExtResource("22_lwysx")]
+position = Vector2(709, 27)
+
+[node name="coin2" parent="." instance=ExtResource("22_lwysx")]
+position = Vector2(1129, -158)
+
+[node name="coin3" parent="." instance=ExtResource("22_lwysx")]
+position = Vector2(1771, -18)
+
+[node name="coin4" parent="." instance=ExtResource("22_lwysx")]
+position = Vector2(2495, -139)
+
+[node name="coin5" parent="." instance=ExtResource("22_lwysx")]
+position = Vector2(4647, -466)
+
+[node name="heal" parent="." instance=ExtResource("11_bwmxl")]
+position = Vector2(2044, 12)
+
+[node name="heal2" parent="." instance=ExtResource("11_bwmxl")]
+position = Vector2(4017, -36)
+
+[node name="heal3" parent="." instance=ExtResource("11_bwmxl")]
+position = Vector2(4728, -174)
+
+[node name="heal4" parent="." instance=ExtResource("11_bwmxl")]
+position = Vector2(4767, -509)
