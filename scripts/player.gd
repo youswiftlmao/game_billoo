@@ -25,10 +25,26 @@ var can_move = true
 
 var coins = 0
 var total_coins = 5
+
+var collision_nodes := []
+var original_x := {}
+var facing_right := true
 	
 func _ready() -> void:
+
+	
 	$CoinLabel.visible = true
 	update_coin_label()
+	
+	collision_nodes = [
+		$CollisionShape2D,
+		$phitbox/CollisionShape2D,
+		$hurtbox/CollisionShape2D
+	]
+
+	for node in collision_nodes:
+		original_x[node] = node.position.x
+		
 	var fade = get_node_or_null("Camera2D/CanvasLayer/FadeRect")
 	if fade:
 		
@@ -88,8 +104,10 @@ func _physics_process(delta: float) -> void:
 	if HP >=1:
 		if direction > 0:
 			animated_sprite.flip_h = false
+			flip_collisions(true)
 		elif direction < 0:
 			animated_sprite.flip_h = true
+			flip_collisions(false)
 		
 	#play animation
 	if is_on_floor():
@@ -226,4 +244,13 @@ func _on_hurtbox_area_entered(area: Area2D) -> void:
 func  update_coin_label():
 	$CoinLabel.visible = true
 	$CoinLabel.text = str(coins) + "/" + str(total_coins)
+
 		
+func flip_collisions(right: bool) -> void:
+	if facing_right == right:
+		return
+
+	facing_right = right
+
+	for node in collision_nodes:
+		node.position.x = original_x[node] * (1 if right else -1)
