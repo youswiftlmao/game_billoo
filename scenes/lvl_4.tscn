@@ -640,9 +640,6 @@ position = Vector2(1437, -185)
 [node name="bigplat8" parent="." instance=ExtResource("6_q8qpk")]
 position = Vector2(1438, -241)
 
-[node name="bat3" parent="." instance=ExtResource("10_icged")]
-position = Vector2(1716, -21)
-
 [node name="ghost3" parent="." instance=ExtResource("9_lemrm")]
 position = Vector2(1607, -180)
 
@@ -1223,14 +1220,14 @@ texture = ExtResource("12_324hj")
 region_enabled = true
 region_rect = Rect2(-10, 353, 486, 135)
 
-[node name="heal" parent="ParallaxLayer/front clouds" instance=ExtResource("13_yg2uy")]
-position = Vector2(556, -49)
+[node name="heal" parent="." instance=ExtResource("13_yg2uy")]
+position = Vector2(478, -129)
 
-[node name="heal2" parent="ParallaxLayer/front clouds" instance=ExtResource("13_yg2uy")]
-position = Vector2(1054, -6)
+[node name="heal2" parent="." instance=ExtResource("13_yg2uy")]
+position = Vector2(976, -86)
 
-[node name="heal3" parent="ParallaxLayer/front clouds" instance=ExtResource("13_yg2uy")]
-position = Vector2(1512, -133)
+[node name="heal3" parent="." instance=ExtResource("13_yg2uy")]
+position = Vector2(1434, -213)
 
-[node name="heal4" parent="ParallaxLayer/front clouds" instance=ExtResource("13_yg2uy")]
-position = Vector2(1599, 82)
+[node name="heal4" parent="." instance=ExtResource("13_yg2uy")]
+position = Vector2(1521, 2)
