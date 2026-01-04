@@ -1,0 +1,48 @@
+[gd_scene load_steps=6 format=3 uid="uid://b6kmikotf0jy1"]
+
+[ext_resource type="Texture2D" uid="uid://b4xvu5ofa4puf" path="res://assests/dragon.png" id="1_vfigm"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5q8uj"]
+atlas = ExtResource("1_vfigm")
+region = Rect2(480, 0, 160, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lmr38"]
+atlas = ExtResource("1_vfigm")
+region = Rect2(320, 0, 160, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7fr0w"]
+animations = [{
+"frames": [{
+"duration": 5.0,
+"texture": SubResource("AtlasTexture_5q8uj")
+}, {
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_lmr38")
+}],
+"loop": true,
+"name": &"default",
+"speed": 4.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_kcfnc"]
+radius = 36.00297
+height = 134.0
+
+[node name="dragon" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_7fr0w")
+autoplay = "default"
+frame_progress = 0.5064228
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(-84, 1)
+texture = ExtResource("1_vfigm")
+region_enabled = true
+region_rect = Rect2(226, 1, 101, 61)
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(13, 1)
+rotation = 1.5717928
+shape = SubResource("CapsuleShape2D_kcfnc")
