@@ -1,38 +1,110 @@
-[gd_scene load_steps=7 format=3 uid="uid://b6kmikotf0jy1"]
+[gd_scene load_steps=15 format=3 uid="uid://b6kmikotf0jy1"]
 
 [ext_resource type="Texture2D" uid="uid://b4xvu5ofa4puf" path="res://assests/dragon.png" id="1_vfigm"]
 [ext_resource type="Script" uid="uid://cwkbht7tsaq0o" path="res://scripts/area_2d.gd" id="2_5q8uj"]
+[ext_resource type="Script" uid="uid://bdajsoefkhq4l" path="res://scripts/dragon.gd" id="2_7fr0w"]
+[ext_resource type="Texture2D" uid="uid://c5a3qol6id667" path="res://assests/dragon chomp.png" id="4_kcfnc"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_5q8uj"]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_kcfnc"]
+radius = 59.015156
+height = 134.0
+
+[sub_resource type="Animation" id="Animation_y46cm"]
+resource_name = "jaw"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("..:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.03333336, 0.8, 0.9666666),
+"transitions": PackedFloat32Array(0.57434934, 1.3660405, 1),
+"update": 0,
+"values": [0.0, 0.6108652381980153, 0.0]
+}
+
+[sub_resource type="Animation" id="Animation_2yk6i"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("..:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.47996554]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_fe7o6"]
+_data = {
+&"RESET": SubResource("Animation_2yk6i"),
+&"jaw": SubResource("Animation_y46cm")
+}
+
+[sub_resource type="Animation" id="Animation_mn7pc"]
+resource_name = "upper jaw"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("..:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.0666666, 0.06676667, 0.8, 0.95),
+"transitions": PackedFloat32Array(0.57434934, 1, 1.3660405, 1),
+"update": 0,
+"values": [0.0, 0.0, -0.6108652381980153, 0.0]
+}
+
+[sub_resource type="Animation" id="Animation_kr2gv"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("..:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_el11r"]
+_data = {
+&"RESET": SubResource("Animation_kr2gv"),
+&"upper jaw": SubResource("Animation_mn7pc")
+}
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7fr0w"]
 atlas = ExtResource("1_vfigm")
 region = Rect2(480, 0, 160, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_lmr38"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_kcfnc"]
 atlas = ExtResource("1_vfigm")
 region = Rect2(320, 0, 160, 64)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_7fr0w"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_y46cm"]
 animations = [{
 "frames": [{
 "duration": 5.0,
-"texture": SubResource("AtlasTexture_5q8uj")
+"texture": SubResource("AtlasTexture_7fr0w")
 }, {
 "duration": 2.0,
-"texture": SubResource("AtlasTexture_lmr38")
+"texture": SubResource("AtlasTexture_kcfnc")
 }],
 "loop": true,
 "name": &"default",
 "speed": 4.0
 }]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_kcfnc"]
-radius = 26.003973
-height = 134.0
-
-[node name="dragon" type="AnimatedSprite2D"]
-sprite_frames = SubResource("SpriteFrames_7fr0w")
-autoplay = "default"
-frame_progress = 0.5064228
+[node name="head" type="Node2D"]
+script = ExtResource("2_7fr0w")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 z_index = -1
@@ -46,7 +118,42 @@ script = ExtResource("2_5q8uj")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(13, 1)
-rotation = 1.5717928
+rotation = 1.5632741
 shape = SubResource("CapsuleShape2D_kcfnc")
 
-[node name="Sprite2D2" type="Sprite2D" parent="."]
+[node name="lower jaw" type="Node2D" parent="."]
+position = Vector2(-45, 0)
+rotation = 0.47996554
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="Sprite2D2" type="Sprite2D" parent="lower jaw"]
+position = Vector2(45, 14)
+texture = ExtResource("4_kcfnc")
+region_enabled = true
+region_rect = Rect2(0, 112, 160, 40)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="lower jaw/Sprite2D2"]
+libraries = {
+&"": SubResource("AnimationLibrary_fe7o6")
+}
+
+[node name="upper jaw" type="Node2D" parent="."]
+position = Vector2(-45, 0)
+
+[node name="Sprite2D3" type="Sprite2D" parent="upper jaw"]
+position = Vector2(45, -12)
+texture = ExtResource("4_kcfnc")
+region_enabled = true
+region_rect = Rect2(0, 64, 160, 40)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="upper jaw/Sprite2D3"]
+libraries = {
+&"": SubResource("AnimationLibrary_el11r")
+}
+
+[node name="DRAGON" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_y46cm")
+frame_progress = 0.76866525
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

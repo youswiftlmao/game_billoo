@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://bge5ysloonysf"]
+[gd_scene load_steps=33 format=3 uid="uid://bge5ysloonysf"]
 
 [ext_resource type="PackedScene" uid="uid://c36gx83vrkgu0" path="res://scenes/player.tscn" id="1_vm7h0"]
 [ext_resource type="Texture2D" uid="uid://c3qaq8pfb10q4" path="res://addons/TILESHEET ALL DONE.png" id="2_theay"]
@@ -15,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://c17b1cnsjf7oi" path="res://scenes/door.tscn" id="13_nvppn"]
 [ext_resource type="Texture2D" uid="uid://bfm8fovtpppd1" path="res://assests/DOORAAAA.png" id="14_nbnb5"]
 [ext_resource type="PackedScene" uid="uid://c73fs3yroorn7" path="res://scenes/lvl_20_3.tscn" id="15_yi0qh"]
+[ext_resource type="PackedScene" uid="uid://b6kmikotf0jy1" path="res://scenes/dragon.tscn" id="16_nbnb5"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ipawo"]
 texture = ExtResource("2_theay")
@@ -427,6 +428,21 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_8bq5e")
 sources/1 = SubResource("TileSetAtlasSource_i7e1e")
 
+[sub_resource type="Animation" id="Animation_theay"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("..:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
 [sub_resource type="Animation" id="Animation_vm7h0"]
 resource_name = "pokey pokey "
 loop_mode = 2
@@ -441,21 +457,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
 "values": [Vector2(5, 0), Vector2(5, 0), Vector2(-54, 0), Vector2(-54, 0)]
-}
-
-[sub_resource type="Animation" id="Animation_theay"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("..:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_dummj"]
@@ -537,7 +538,7 @@ sources/1 = SubResource("TileSetAtlasSource_lcwyy")
 [node name="LVL5" type="Node2D"]
 
 [node name="player" parent="." instance=ExtResource("1_vm7h0")]
-position = Vector2(154, 2)
+position = Vector2(223, 1)
 
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2(71, 12)
@@ -730,3 +731,6 @@ region_rect = Rect2(222, 0, 34, 96)
 [node name="lvl20_3" parent="door" instance=ExtResource("15_yi0qh")]
 z_index = 335
 position = Vector2(166, 4)
+
+[node name="dragon" parent="." instance=ExtResource("16_nbnb5")]
+position = Vector2(115, -30)
