@@ -2,6 +2,7 @@ extends Node2D
 
 var player_inside := false
 var player: Node = null
+var shake_active := false
 
 func _ready() -> void:
 	$DRAGON.play("default")
@@ -55,6 +56,11 @@ func loop_jaws() -> void:
 
 
 func shake_loop() -> void:
+	if shake_active:
+		return # Prevent multiple shake loops
+
+	shake_active = true
+
 	await get_tree().create_timer(1).timeout
 
 	while player_inside:
@@ -62,6 +68,11 @@ func shake_loop() -> void:
 			player.shake_camera(0.1, 3.0)
 		await get_tree().create_timer(1).timeout
 
+	# Player left, but we still finish ONE last shake cycle
+	if player:
+		player.shake_camera(0.1, 3.0)
+
+	shake_active = false
 
 func reset_dragon() -> void:
 	$DRAGON.show()
