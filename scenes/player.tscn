@@ -237,7 +237,7 @@ wait_time = 0.5
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(0, -6)
-zoom = Vector2(4, 4)
+zoom = Vector2(3.7, 3.7)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="Camera2D"]
 
@@ -257,21 +257,21 @@ script = ExtResource("7_y4r1p")
 wait_time = 10.0
 autostart = true
 
-[node name="Bar" type="Sprite2D" parent="."]
-z_index = 10
-position = Vector2(-86, -74)
-scale = Vector2(0.99999994, 0.99999994)
-texture = ExtResource("6_tuyoq")
-
 [node name="healtbar" type="ProgressBar" parent="."]
 modulate = Color(0.5333924, 0.0014055142, 0.70975846, 1)
 z_index = 10
-offset_left = -131.0
-offset_top = -79.0
-offset_right = 638.99994
-offset_bottom = 28.000061
-scale = Vector2(0.1, 0.1)
+offset_left = -146.60008
+offset_top = -87.28002
+offset_right = 623.39984
+offset_bottom = 19.72004
+scale = Vector2(0.11685489, 0.11685489)
 show_percentage = false
+
+[node name="Bar" type="Sprite2D" parent="."]
+z_index = 10
+position = Vector2(-94.60009, -80.28002)
+scale = Vector2(1.1599988, 1.1599988)
+texture = ExtResource("6_tuyoq")
 
 [node name="hurtbox" type="Area2D" parent="."]
 
@@ -287,18 +287,19 @@ lifetime = 10.0
 process_material = SubResource("ParticleProcessMaterial_smehm")
 
 [node name="CoinLabel" type="Label" parent="."]
-offset_left = 112.00001
-offset_top = -84.0
-offset_right = 279.49948
-offset_bottom = 34.0
-scale = Vector2(0.14999989, 0.11999818)
+offset_left = 115.0
+offset_top = -88.99999
+offset_right = 282.49948
+offset_bottom = 29.000008
+scale = Vector2(0.19722064, 0.15777424)
 theme_override_colors/font_color = Color(0.78431374, 0.6627451, 0, 1)
 theme_override_colors/font_shadow_color = Color(0.5372549, 0.42745098, 0, 1)
 theme_override_fonts/font = ExtResource("8_smehm")
 theme_override_font_sizes/font_size = 109
 
 [node name="Coin" type="Sprite2D" parent="."]
-position = Vector2(102, -77)
+position = Vector2(101.999985, -80)
+scale = Vector2(1.3148067, 1.3148067)
 texture = ExtResource("9_ur7pv")
 
 [connection signal="body_entered" from="phitbox" to="." method="_on_phitbox_body_entered"]
