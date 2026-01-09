@@ -20,7 +20,7 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 		$"lower jaw".show()
 		$"upper jaw".show()
 
-		# RESET animations to frame 0
+
 		var lower_anim = $"lower jaw/Sprite2D2/AnimationPlayer"
 		var upper_anim = $"upper jaw/Sprite2D3/AnimationPlayer"
 
@@ -30,11 +30,10 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 		upper_anim.stop()
 		upper_anim.seek(0, true)
 
-		# Play cleanly from the start
 		lower_anim.play("jaw")
 		upper_anim.play("upper jaw")
 
-		# Start shake + loop
+
 		call_deferred("shake_loop")
 		loop_jaws()
 
@@ -57,7 +56,7 @@ func loop_jaws() -> void:
 
 func shake_loop() -> void:
 	if shake_active:
-		return # Prevent multiple shake loops
+		return
 
 	shake_active = true
 
@@ -68,7 +67,7 @@ func shake_loop() -> void:
 			player.shake_camera(0.1, 3.0)
 		await get_tree().create_timer(1).timeout
 
-	# Player left, but we still finish ONE last shake cycle
+
 	if player:
 		player.shake_camera(0.1, 3.0)
 
