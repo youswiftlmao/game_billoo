@@ -240,7 +240,9 @@ func _on_hurtbox_area_entered(area: Area2D) -> void:
 		coins = coins + 1
 		update_coin_label()
 		print(coins)
-
+	elif  area.name.begins_with("invispike"):
+		HP = 0
+		print("youve been trolled bwah ", HP)
 func  update_coin_label():
 	$CoinLabel.visible = true
 	$CoinLabel.text = str(coins) + "/" + str(total_coins)

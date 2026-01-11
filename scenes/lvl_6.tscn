@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://dcwhl2klt3p36"]
+[gd_scene load_steps=33 format=3 uid="uid://dcwhl2klt3p36"]
 
 [ext_resource type="Texture2D" uid="uid://c3qaq8pfb10q4" path="res://addons/TILESHEET ALL DONE.png" id="1_c5gds"]
 [ext_resource type="Texture2D" uid="uid://dk51516mmd1co" path="res://assests/tiles.png" id="2_6mcdi"]
@@ -8,7 +8,10 @@
 [ext_resource type="Script" uid="uid://daw6bphja3eje" path="res://scripts/spiketrroll.gd" id="6_6mcdi"]
 [ext_resource type="Script" uid="uid://b101svtjfub4u" path="res://scripts/tilemapstroll.gd" id="7_sgsgn"]
 [ext_resource type="PackedScene" uid="uid://dn0gffvgur5hw" path="res://scenes/trollplatform.tscn" id="8_j5fxc"]
+[ext_resource type="Script" uid="uid://b1uh4kr4plycj" path="res://scripts/otherdroptroll.gd" id="8_koabg"]
 [ext_resource type="PackedScene" uid="uid://ti48perjy5ef" path="res://scenes/ghost.tscn" id="9_ggdx0"]
+[ext_resource type="PackedScene" uid="uid://ckffcpyv36w0w" path="res://scenes/tilemapspikes.tscn" id="10_tdgmu"]
+[ext_resource type="Script" uid="uid://bwnrjney7ce2r" path="res://scripts/pusher.gd" id="12_58rkd"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tdgmu"]
 texture = ExtResource("1_c5gds")
@@ -465,6 +468,67 @@ size = Vector2(22.550568, 73.47094)
 
 [sub_resource type="Animation" id="Animation_tdgmu"]
 length = 0.001
+
+[sub_resource type="Animation" id="Animation_6mcdi"]
+resource_name = "droptroll"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.36666667, 0.6666667, 1.2583334, 1.9916667),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(149, 0), Vector2(149, 0), Vector2(38, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_58rkd"]
+resource_name = "otherdroptroll"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.3416667, 0.64166665, 1.2333335, 1.9666667),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1458, -48.3), Vector2(1607, -48.3), Vector2(1607, -48.3), Vector2(1496, -48.3)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_sgsgn"]
+_data = {
+&"RESET": SubResource("Animation_tdgmu"),
+&"droptroll": SubResource("Animation_6mcdi"),
+&"otherdroptroll": SubResource("Animation_58rkd")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_koabg"]
+size = Vector2(21, 2)
+
+[sub_resource type="Animation" id="Animation_lcgj0"]
+resource_name = "PUSHER"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.49, 0.6, 0.7, 0.8666667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, 0), Vector2(0, -48), Vector2(0, -48), Vector2(83, -48)]
+}
+
+[sub_resource type="Animation" id="Animation_lwe7a"]
+length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -478,26 +542,10 @@ tracks/0/keys = {
 "values": [Vector2(0, 0)]
 }
 
-[sub_resource type="Animation" id="Animation_6mcdi"]
-resource_name = "droptroll"
-length = 2.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0.36666667, 0.6666667, 1.2666667, 1.9999999),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [Vector2(0, 0), Vector2(149, 0), Vector2(149, 0), Vector2(38, 0)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_sgsgn"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_o85mm"]
 _data = {
-&"RESET": SubResource("Animation_tdgmu"),
-&"droptroll": SubResource("Animation_6mcdi")
+&"PUSHER": SubResource("Animation_lcgj0"),
+&"RESET": SubResource("Animation_lwe7a")
 }
 
 [node name="lvl 6" type="Node2D"]
@@ -507,22 +555,16 @@ scale = Vector2(1.0358104, 1.007201)
 tile_set = SubResource("TileSet_lcgj0")
 rendering_quadrant_size = 32
 format = 2
-layer_0/tile_data = PackedInt32Array(65532, 0, 0, 131068, 0, 1, 65533, 65536, 0, 131069, 65536, 1, 65534, 131072, 0, 131070, 131072, 1, 65535, 196608, 0, 131071, 196608, 1, 0, 0, 0, 65536, 0, 1, 1, 65536, 0, 65537, 65536, 1, 2, 131072, 0, 65538, 131072, 1, 3, 196608, 0, 65539, 196608, 1, 4, 0, 0, 65540, 0, 1, 5, 65536, 0, 65541, 65536, 1, 6, 131072, 0, 65542, 131072, 1, 7, 196608, 0, 65543, 196608, 1, 8, 0, 0, 9, 65536, 0, 10, 131072, 0, 11, 196608, 0, 12, 0, 0, 13, 65536, 0, 14, 131072, 0, 15, 0, 0, 65544, 0, 1, 65545, 65536, 1, 65546, 131072, 1, 65547, 196608, 1, 65548, 0, 1, 65549, 65536, 1, 65550, 131072, 1, 65551, 0, 1, 16, 65536, 0, 65552, 65536, 1, 17, 131072, 0, 65553, 131072, 1, 18, 196608, 0, 65554, 196608, 1, 19, 0, 0, 65555, 0, 1, 20, 65536, 0, 65556, 65536, 1, 21, 131072, 0, 65557, 131072, 1, 30, 0, 0, 65566, 0, 1, 31, 65536, 0, 65567, 65536, 1, 32, 131072, 0, 65568, 131072, 1, 33, 196608, 0, 65569, 196608, 1, 34, 0, 0, 65570, 0, 1, 35, 65536, 0, 65571, 65536, 1, 36, 851968, 2, 65572, 131072, 1, 65573, 0, 0, 65574, 65536, 0, 65575, 131072, 0, 65576, 196608, 0, 65577, 0, 0, 65578, 65536, 0, 65579, 131072, 0, 65580, 196608, 0, 65581, 0, 0, 131109, 0, 1, 131110, 65536, 1, 131111, 131072, 1, 131112, 196608, 1, 131113, 0, 1, 131114, 65536, 1, 131115, 131072, 1, 65582, 65536, 0, 65583, 851968, 2, 131104, 196608, 1, 131105, 0, 1, 131106, 65536, 1, 131107, 131072, 1, 131101, 0, 1, 131102, 65536, 1, 131103, 131072, 1, 131108, 196608, 1, 131116, 0, 1, 131117, 65536, 1, 131118, 131072, 1, 131119, 851968, 3, 196656, 720896, 2, 262192, 786432, 3, 196655, 262144, 0, 262191, 589824, 0, 327728, 589824, 0, 262193, 589824, 0, 327729, 786432, 3, 262194, 851968, 2, 327730, 851968, 3, 196657, 851968, 2, 393266, 851968, 3, 524340, 786432, 2, 524341, 720896, 2, 524342, 786432, 2, 524343, 720896, 2, 524344, 786432, 2, 524338, 524288, 0, 524339, 720896, 2, 458802, 524288, 0, 393206, 0, 0, 393207, 0, 0, 393208, 0, 0, 393209, 0, 0, 393210, 0, 0, 393211, 0, 0, 393212, 0, 0, 393213, 0, 0, 393214, 0, 0, 524348, 0, 0, 524349, 0, 0, 524350, 720896, 2, 524351, 0, 0, 524352, 65536, 0, 524353, 0, 0, 524354, 720896, 2, 524355, 786432, 2, 524356, 196608, 0, 524357, 786432, 2, 524358, 0, 0, 524359, 720896, 2, 524360, 196608, 0, 458825, 655360, 2, 393290, 786432, 0, 327754, 655360, 2, 262219, 655360, 2, 196684, 655360, 2, 196685, 0, 0, 196686, 65536, 0, 196687, 131072, 0, 196688, 196608, 0, 65618, 0, 0, 65619, 65536, 0, 65620, 131072, 0, 65621, 196608, 0, 65622, 0, 0, 65623, 65536, 0, 65624, 131072, 0, 65625, 196608, 0, -65445, 0, 0, -65444, 65536, 0, -65443, 131072, 0, -65442, 196608, 0, -65441, 0, 0, -65440, 65536, 0, -65439, 131072, 0, -65438, 196608, 0, -65446, 655360, 2, 90, 655360, 3, 65617, 655360, 2, 131153, 655360, 3, -196509, 655360, 2, -130973, 655360, 3, -196508, 0, 0, -196507, 65536, 0, -196506, 131072, 0, -196505, 196608, 0)
+layer_0/tile_data = PackedInt32Array(65532, 0, 0, 131068, 0, 1, 65533, 65536, 0, 131069, 65536, 1, 65534, 131072, 0, 131070, 131072, 1, 65535, 196608, 0, 131071, 196608, 1, 0, 0, 0, 65536, 0, 1, 1, 65536, 0, 65537, 65536, 1, 2, 131072, 0, 65538, 131072, 1, 3, 196608, 0, 65539, 196608, 1, 4, 0, 0, 65540, 0, 1, 5, 65536, 0, 65541, 65536, 1, 6, 131072, 0, 65542, 131072, 1, 7, 196608, 0, 65543, 196608, 1, 8, 0, 0, 9, 65536, 0, 10, 131072, 0, 11, 196608, 0, 12, 0, 0, 13, 65536, 0, 14, 131072, 0, 15, 0, 0, 65544, 0, 1, 65545, 65536, 1, 65546, 131072, 1, 65547, 196608, 1, 65548, 0, 1, 65549, 65536, 1, 65550, 131072, 1, 65551, 0, 1, 16, 65536, 0, 65552, 65536, 1, 17, 131072, 0, 65553, 131072, 1, 18, 196608, 0, 65554, 196608, 1, 19, 0, 0, 65555, 0, 1, 20, 65536, 0, 65556, 65536, 1, 21, 131072, 0, 65557, 131072, 1, 30, 0, 0, 65566, 0, 1, 31, 65536, 0, 65567, 65536, 1, 32, 131072, 0, 65568, 131072, 1, 33, 196608, 0, 65569, 196608, 1, 34, 0, 0, 65570, 0, 1, 35, 65536, 0, 65571, 65536, 1, 36, 851968, 2, 65572, 131072, 1, 65573, 0, 0, 65574, 65536, 0, 65575, 131072, 0, 65576, 196608, 0, 65577, 0, 0, 65578, 65536, 0, 65579, 131072, 0, 65580, 196608, 0, 65581, 0, 0, 131109, 0, 1, 131110, 65536, 1, 131111, 131072, 1, 131112, 196608, 1, 131113, 0, 1, 131114, 65536, 1, 131115, 131072, 1, 65582, 65536, 0, 65583, 851968, 2, 131104, 196608, 1, 131105, 0, 1, 131106, 65536, 1, 131107, 131072, 1, 131101, 0, 1, 131102, 65536, 1, 131103, 131072, 1, 131108, 196608, 1, 131116, 0, 1, 131117, 65536, 1, 131118, 131072, 1, 131119, 851968, 3, 196656, 720896, 2, 262192, 786432, 3, 196655, 262144, 0, 262191, 589824, 0, 327728, 589824, 0, 262193, 589824, 0, 327729, 786432, 3, 262194, 851968, 2, 327730, 851968, 3, 196657, 851968, 2, 393266, 851968, 3, 524340, 786432, 2, 524341, 720896, 2, 524342, 786432, 2, 524343, 720896, 2, 524344, 786432, 2, 524338, 524288, 0, 524339, 720896, 2, 458802, 524288, 0, 393206, 0, 0, 393207, 0, 0, 393208, 0, 0, 393209, 0, 0, 393210, 0, 0, 393211, 0, 0, 393212, 0, 0, 393213, 0, 0, 393214, 0, 0, 524348, 0, 0, 524349, 0, 0, 524350, 720896, 2, 524351, 0, 0, 524352, 65536, 0, 524353, 0, 0, 524354, 720896, 2, 524355, 786432, 2, 524356, 196608, 0, 524357, 786432, 2, 524358, 0, 0, 524359, 720896, 2, 524360, 196608, 0, 458825, 655360, 2, 393290, 786432, 0, 327754, 655360, 2, 262219, 655360, 2, 196684, 655360, 2, 196685, 0, 0, 196686, 65536, 0, 196687, 131072, 0, 196688, 196608, 0, 65618, 0, 0, 65619, 65536, 0, 65620, 131072, 0, 65621, 196608, 0, 65622, 0, 0, 65623, 65536, 0, 65624, 131072, 0, 65625, 196608, 0, -65445, 0, 0, -65444, 65536, 0, -65443, 131072, 0, -65442, 196608, 0, -65441, 0, 0, -65440, 65536, 0, -65439, 131072, 0, -65438, 196608, 0, -65446, 655360, 2, 90, 655360, 3, 65617, 655360, 2, 131153, 655360, 3, -196509, 655360, 2, -130973, 655360, 3, -196508, 0, 0, -196507, 65536, 0, -196506, 131072, 0, -196505, 196608, 0, -196504, 0, 0, -196503, 65536, 0, -196502, 0, 0, -196501, 65536, 0, -196500, 131072, 0, -196499, 196608, 0)
 
 [node name="tilemapspikes" type="TileMap" parent="."]
 position = Vector2(-2.8, 0)
 tile_set = SubResource("TileSet_rc4ko")
 format = 2
-layer_0/tile_data = PackedInt32Array(-6160294, 1, 0, -6225829, 1, 0, -6160293, 1, 1, -6225828, 1, 1, -6160292, 1, 1, -6225827, 1, 0, -6160291, 1, 1, -6160290, 1, 0, -6291364, 1, 0, -65527, 0, 0, -65533, 0, 0, -65514, 0, 0)
-
-[node name="tilemapspikes2" type="TileMap" parent="."]
-position = Vector2(-2.8, 0.35)
-tile_set = SubResource("TileSet_rc4ko")
-format = 2
-layer_0/tile_data = PackedInt32Array(85, 0, 0, 86, 0, 0, 89, 0, 0, 90, 0, 0, -130978, 0, 0, -130977, 0, 0, -130974, 0, 0, -130973, 0, 0)
+layer_0/tile_data = PackedInt32Array(-6160294, 1, 0, -6225829, 1, 0, -6160293, 1, 1, -6225828, 1, 1, -6160292, 1, 1, -6225827, 1, 0, -6160291, 1, 1, -6160290, 1, 0, -6291364, 1, 0, -65527, 0, 0, -65533, 0, 0, -65514, 0, 0, -262040, 0, 0, -262039, 0, 0, -262038, 0, 0, -262037, 0, 0)
 
 [node name="player" parent="." instance=ExtResource("5_ggdx0")]
-position = Vector2(1234, 42)
+position = Vector2(1723, -80)
 
 [node name="tilemapspikes3" type="Node2D" parent="."]
 script = ExtResource("6_6mcdi")
@@ -545,6 +587,7 @@ libraries = {
 }
 
 [node name="tilemapstroll" type="Node2D" parent="."]
+position = Vector2(1496, -48.3)
 script = ExtResource("7_sgsgn")
 
 [node name="TileMap2" type="TileMap" parent="tilemapstroll"]
@@ -552,7 +595,7 @@ scale = Vector2(1.0358104, 1.007201)
 tile_set = SubResource("TileSet_lcgj0")
 rendering_quadrant_size = 32
 format = 2
-layer_0/tile_data = PackedInt32Array(22, 0, 0, 65558, 0, 1, 23, 65536, 0, 65559, 65536, 1, 24, 0, 0, 65560, 0, 1, 25, 65536, 0, 65561, 65536, 1, 26, 0, 0, 65562, 0, 1, 27, 65536, 0, 65563, 65536, 1, 28, 0, 0, 65564, 0, 1, 29, 65536, 0, 65565, 65536, 1)
+layer_0/tile_data = PackedInt32Array(22, 0, 2, 65558, 0, 3, 23, 65536, 2, 65559, 65536, 3, 24, 131072, 2, 65560, 131072, 3, 25, 196608, 2, 65561, 196608, 3, 26, 0, 2, 65562, 0, 3, 27, 65536, 2, 65563, 65536, 3, 28, 131072, 2, 65564, 131072, 3, 29, 196608, 2, 65565, 196608, 3)
 
 [node name="Area2D" type="Area2D" parent="tilemapstroll/TileMap2"]
 
@@ -565,122 +608,219 @@ libraries = {
 &"": SubResource("AnimationLibrary_sgsgn")
 }
 
-[node name="OneWayPlatform" parent="." instance=ExtResource("8_j5fxc")]
-position = Vector2(854, 59)
+[node name="tilemapstroll2" type="Node2D" parent="."]
+position = Vector2(38, 0)
+script = ExtResource("8_koabg")
 
-[node name="OneWayPlatform2" parent="." instance=ExtResource("8_j5fxc")]
-position = Vector2(871, 59)
+[node name="TileMap2" type="TileMap" parent="tilemapstroll2"]
+scale = Vector2(1.0358104, 1.007201)
+tile_set = SubResource("TileSet_lcgj0")
+rendering_quadrant_size = 32
+format = 2
+layer_0/tile_data = PackedInt32Array(22, 0, 2, 65558, 0, 1, 23, 65536, 2, 65559, 65536, 1, 24, 131072, 2, 65560, 0, 1, 25, 196608, 2, 65561, 65536, 1, 26, 0, 2, 65562, 0, 1, 27, 65536, 2, 65563, 65536, 1, 28, 131072, 2, 65564, 0, 1, 29, 196608, 2, 65565, 65536, 1)
 
-[node name="OneWayPlatform3" parent="." instance=ExtResource("8_j5fxc")]
-position = Vector2(888, 59)
+[node name="Area2D" type="Area2D" parent="tilemapstroll2/TileMap2"]
 
-[node name="OneWayPlatform4" parent="." instance=ExtResource("8_j5fxc")]
-position = Vector2(905, 59)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="tilemapstroll2/TileMap2/Area2D"]
+position = Vector2(350.45026, -36.73547)
+shape = SubResource("RectangleShape2D_6mcdi")
 
-[node name="OneWayPlatform5" parent="." instance=ExtResource("8_j5fxc")]
-position = Vector2(922, 59)
-
-[node name="OneWayPlatform6" parent="." instance=ExtResource("8_j5fxc")]
-position = Vector2(939, 59)
-
-[node name="OneWayPlatform7" parent="." instance=ExtResource("8_j5fxc")]
-position = Vector2(956, 59)
-
-[node name="OneWayPlatform8" parent="." instance=ExtResource("8_j5fxc")]
-position = Vector2(973, 59)
-
-[node name="OneWayPlatform9" parent="." instance=ExtResource("8_j5fxc")]
-position = Vector2(990, 59)
+[node name="AnimationPlayer" type="AnimationPlayer" parent="tilemapstroll2"]
+libraries = {
+&"": SubResource("AnimationLibrary_sgsgn")
+}
 
 [node name="ghost" parent="." instance=ExtResource("9_ggdx0")]
 position = Vector2(1175, 59)
 
-[node name="fakeowers" type="Sprite2D" parent="."]
+[node name="fake owies" type="Node2D" parent="."]
 position = Vector2(1317, 40.4)
+
+[node name="fakeowers3" type="Sprite2D" parent="fake owies"]
+position = Vector2(96, -32.300003)
 texture = ExtResource("3_sgsgn")
 region_enabled = true
 region_rect = Rect2(0, 0, 16, 16)
 
-[node name="fakeowers2" type="Sprite2D" parent="."]
-position = Vector2(1301, 40.4)
+[node name="fakeowers4" type="Sprite2D" parent="fake owies"]
+position = Vector2(80, -32.300003)
 texture = ExtResource("3_sgsgn")
 region_enabled = true
 region_rect = Rect2(0, 0, 16, 16)
 
-[node name="ghost2" parent="." instance=ExtResource("9_ggdx0")]
-position = Vector2(1175, 59)
-
-[node name="fakeowers3" type="Sprite2D" parent="."]
-position = Vector2(1413, 8.1)
+[node name="fakeowers5" type="Sprite2D" parent="fake owies"]
+position = Vector2(34, -32.300003)
 texture = ExtResource("3_sgsgn")
 region_enabled = true
 region_rect = Rect2(0, 0, 16, 16)
 
-[node name="fakeowers4" type="Sprite2D" parent="."]
-position = Vector2(1397, 8.1)
+[node name="fakeowers6" type="Sprite2D" parent="fake owies"]
+position = Vector2(167, -32.300003)
 texture = ExtResource("3_sgsgn")
 region_enabled = true
 region_rect = Rect2(0, 0, 16, 16)
 
-[node name="fakeowers5" type="Sprite2D" parent="."]
-position = Vector2(1351, 8.1)
+[node name="fakeowers7" type="Sprite2D" parent="fake owies"]
+position = Vector2(225, -64.4)
 texture = ExtResource("3_sgsgn")
 region_enabled = true
 region_rect = Rect2(0, 0, 16, 16)
 
-[node name="fakeowers6" type="Sprite2D" parent="."]
-position = Vector2(1484, 8.1)
+[node name="fakeowers8" type="Sprite2D" parent="fake owies"]
+position = Vector2(241, -64.4)
 texture = ExtResource("3_sgsgn")
 region_enabled = true
 region_rect = Rect2(0, 0, 16, 16)
 
-[node name="fakeowers7" type="Sprite2D" parent="."]
-position = Vector2(1542, -23.999998)
+[node name="fakeowers9" type="Sprite2D" parent="fake owies"]
+position = Vector2(288, -64.4)
 texture = ExtResource("3_sgsgn")
 region_enabled = true
 region_rect = Rect2(0, 0, 16, 16)
 
-[node name="fakeowers8" type="Sprite2D" parent="."]
-position = Vector2(1558, -24)
+[node name="fakeowers10" type="Sprite2D" parent="fake owies"]
+position = Vector2(304, -64.4)
 texture = ExtResource("3_sgsgn")
 region_enabled = true
 region_rect = Rect2(0, 0, 16, 16)
 
-[node name="fakeowers9" type="Sprite2D" parent="."]
-position = Vector2(1605, -24)
+[node name="fakeowers11" type="Sprite2D" parent="fake owies"]
+position = Vector2(312, -64.4)
 texture = ExtResource("3_sgsgn")
 region_enabled = true
 region_rect = Rect2(0, 0, 16, 16)
 
-[node name="fakeowers10" type="Sprite2D" parent="."]
-position = Vector2(1621, -24)
+[node name="fakeowers12" type="Sprite2D" parent="fake owies"]
+position = Vector2(151, -32.300003)
 texture = ExtResource("3_sgsgn")
 region_enabled = true
 region_rect = Rect2(0, 0, 16, 16)
 
-[node name="fakeowers11" type="Sprite2D" parent="."]
-position = Vector2(1629, -24)
-texture = ExtResource("3_sgsgn")
-region_enabled = true
-region_rect = Rect2(0, 0, 16, 16)
-
-[node name="fakeowers12" type="Sprite2D" parent="."]
-position = Vector2(1468, 8.1)
-texture = ExtResource("3_sgsgn")
-region_enabled = true
-region_rect = Rect2(0, 0, 16, 16)
-
-[node name="fakeowers13" type="Sprite2D" parent="."]
-position = Vector2(1456, 8.1)
+[node name="fakeowers13" type="Sprite2D" parent="fake owies"]
+position = Vector2(139, -32.300003)
 texture = ExtResource("3_sgsgn")
 region_enabled = true
 region_rect = Rect2(0, 0, 8, 16)
 
-[node name="fakeowers14" type="Sprite2D" parent="."]
-position = Vector2(1497, -23.999998)
+[node name="fakeowers14" type="Sprite2D" parent="fake owies"]
+position = Vector2(180, -64.4)
 texture = ExtResource("3_sgsgn")
 region_enabled = true
 region_rect = Rect2(0, 0, 8, 16)
+
+[node name="fakeowers" type="Sprite2D" parent="fake owies"]
+texture = ExtResource("3_sgsgn")
+region_enabled = true
+region_rect = Rect2(0, 0, 16, 16)
+
+[node name="fakeowers2" type="Sprite2D" parent="fake owies"]
+position = Vector2(-16, 0)
+texture = ExtResource("3_sgsgn")
+region_enabled = true
+region_rect = Rect2(0, 0, 16, 16)
+
+[node name="trollplat" type="Node2D" parent="."]
+
+[node name="OneWayPlatform" parent="trollplat" instance=ExtResource("8_j5fxc")]
+position = Vector2(854, 59)
+
+[node name="OneWayPlatform2" parent="trollplat" instance=ExtResource("8_j5fxc")]
+position = Vector2(871, 59)
+
+[node name="OneWayPlatform3" parent="trollplat" instance=ExtResource("8_j5fxc")]
+position = Vector2(888, 59)
+
+[node name="OneWayPlatform4" parent="trollplat" instance=ExtResource("8_j5fxc")]
+position = Vector2(905, 59)
+
+[node name="OneWayPlatform5" parent="trollplat" instance=ExtResource("8_j5fxc")]
+position = Vector2(922, 59)
+
+[node name="OneWayPlatform6" parent="trollplat" instance=ExtResource("8_j5fxc")]
+position = Vector2(939, 59)
+
+[node name="OneWayPlatform7" parent="trollplat" instance=ExtResource("8_j5fxc")]
+position = Vector2(956, 59)
+
+[node name="OneWayPlatform8" parent="trollplat" instance=ExtResource("8_j5fxc")]
+position = Vector2(973, 59)
+
+[node name="OneWayPlatform9" parent="trollplat" instance=ExtResource("8_j5fxc")]
+position = Vector2(990, 59)
+
+[node name="invispikes" type="Node2D" parent="."]
+position = Vector2(1582, -17)
+
+[node name="invispike" parent="invispikes" instance=ExtResource("10_tdgmu")]
+position = Vector2(-307, 58)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="invispikes/invispike"]
+position = Vector2(1.5, 7)
+shape = SubResource("RectangleShape2D_koabg")
+
+[node name="invispike2" parent="invispikes" instance=ExtResource("10_tdgmu")]
+position = Vector2(-243, 59)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="invispikes/invispike2"]
+position = Vector2(3.5, 6)
+shape = SubResource("RectangleShape2D_koabg")
+
+[node name="invispike3" parent="invispikes" instance=ExtResource("10_tdgmu")]
+position = Vector2(-208, 26)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="invispikes/invispike3"]
+position = Vector2(-0.5, 6)
+shape = SubResource("RectangleShape2D_koabg")
+
+[node name="invispike4" parent="invispikes" instance=ExtResource("10_tdgmu")]
+position = Vector2(-148, 26)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="invispikes/invispike4"]
+position = Vector2(1.5, 6)
+shape = SubResource("RectangleShape2D_koabg")
+
+[node name="invispike5" parent="invispikes" instance=ExtResource("10_tdgmu")]
+position = Vector2(-148, 26)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="invispikes/invispike5"]
+position = Vector2(86, -26)
+shape = SubResource("RectangleShape2D_koabg")
+
+[node name="invispike6" parent="invispikes" instance=ExtResource("10_tdgmu")]
+position = Vector2(-148, 26)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="invispikes/invispike6"]
+position = Vector2(86, -26)
+shape = SubResource("RectangleShape2D_koabg")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="invispikes/invispike6"]
+position = Vector2(148, -26)
+shape = SubResource("RectangleShape2D_koabg")
+
+[node name="pusher" type="Node2D" parent="."]
+script = ExtResource("12_58rkd")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="pusher"]
+libraries = {
+&"": SubResource("AnimationLibrary_o85mm")
+}
+
+[node name="Area2D" type="Area2D" parent="pusher"]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="pusher/Area2D"]
+position = Vector2(1821, -85.3)
+scale = Vector2(1.0358104, 1.007201)
+shape = SubResource("RectangleShape2D_6mcdi")
+
+[node name="TileMap2" type="TileMap" parent="pusher"]
+z_index = -2
+scale = Vector2(1.0358104, 1.007201)
+tile_set = SubResource("TileSet_lcgj0")
+rendering_quadrant_size = 32
+format = 2
+layer_0/tile_data = PackedInt32Array(-65433, 720896, 3, -65432, 786432, 3, -196505, 720896, 2, -130969, 720896, 3, -196504, 786432, 2, -130968, 786432, 3)
 
 [connection signal="body_entered" from="tilemapspikes3/tilemapspikes2/Area2D" to="tilemapspikes3" method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="tilemapstroll/TileMap2/Area2D" to="tilemapstroll" method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="tilemapstroll2/TileMap2/Area2D" to="tilemapstroll2" method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="pusher/Area2D" to="pusher" method="_on_area_2d_body_entered"]
