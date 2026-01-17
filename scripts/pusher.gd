@@ -12,4 +12,4 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 		$AnimationPlayer.play("PUSHER")
 
 		# Disable collision safely AFTER physics step
-		$Area2D/CollisionShape2D2.set_deferred("disabled", true)
+		$Area2D/CollisionShape2D2.set_deferred("disabled", true) 
