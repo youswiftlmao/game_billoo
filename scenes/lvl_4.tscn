@@ -708,7 +708,7 @@ scale = Vector2(0.73083365, 0.65716875)
 texture = ExtResource("6_db13x")
 
 [node name="backvlouds" type="ParallaxLayer" parent="ParallaxLayer"]
-position = Vector2(-1, -38)
+position = Vector2(-69, -36)
 motion_scale = Vector2(0.15, 0.15)
 script = ExtResource("7_yg2uy")
 
@@ -844,7 +844,7 @@ region_enabled = true
 region_rect = Rect2(-26, 213, 506, 193)
 
 [node name="mid couds" type="ParallaxLayer" parent="ParallaxLayer"]
-position = Vector2(2, -71)
+position = Vector2(2, -21)
 motion_scale = Vector2(0.3, 0.3)
 script = ExtResource("9_82v73")
 
@@ -1033,7 +1033,7 @@ region_enabled = true
 region_rect = Rect2(15, 177, 482, 208)
 
 [node name="front clouds" type="ParallaxLayer" parent="ParallaxLayer"]
-position = Vector2(-78, -80)
+position = Vector2(-78, -49)
 motion_scale = Vector2(0.4, 0.4)
 script = ExtResource("11_nqytj")
 
