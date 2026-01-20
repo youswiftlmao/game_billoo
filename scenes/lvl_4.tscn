@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://2gvbtxugtby7"]
+[gd_scene load_steps=40 format=3 uid="uid://2gvbtxugtby7"]
 
 [ext_resource type="PackedScene" uid="uid://c36gx83vrkgu0" path="res://scenes/player.tscn" id="1_83mxe"]
 [ext_resource type="Texture2D" uid="uid://c3qaq8pfb10q4" path="res://addons/TILESHEET ALL DONE.png" id="2_q8qpk"]
@@ -21,6 +21,8 @@
 [ext_resource type="Texture2D" uid="uid://bfm8fovtpppd1" path="res://assests/DOORAAAA.png" id="12_icged"]
 [ext_resource type="PackedScene" uid="uid://c73fs3yroorn7" path="res://scenes/lvl_20_3.tscn" id="13_k8jwr"]
 [ext_resource type="PackedScene" uid="uid://dbri0sd5vhhlu" path="res://scenes/heal.tscn" id="13_yg2uy"]
+[ext_resource type="Script" uid="uid://6046no2352xj" path="res://scripts/fadestextstarter.gd" id="22_82v73"]
+[ext_resource type="FontFile" uid="uid://bh6jvsa7eqolq" path="res://fonts/Jersey10-Regular.ttf" id="23_tkk12"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yg2uy"]
 texture = ExtResource("4_y1kb8")
@@ -1231,3 +1233,20 @@ position = Vector2(1434, -213)
 
 [node name="heal4" parent="." instance=ExtResource("13_yg2uy")]
 position = Vector2(1521, 2)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+script = ExtResource("22_82v73")
+
+[node name="Label" type="RichTextLabel" parent="CanvasLayer"]
+layout_direction = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/normal_font = ExtResource("23_tkk12")
+theme_override_font_sizes/normal_font_size = 138
+bbcode_enabled = true
+text = "only up lmao"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true

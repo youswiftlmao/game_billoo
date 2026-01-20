@@ -1,4 +1,4 @@
-[gd_scene load_steps=61 format=3 uid="uid://dswm7su8la55o"]
+[gd_scene load_steps=63 format=3 uid="uid://dswm7su8la55o"]
 
 [ext_resource type="Texture2D" uid="uid://c3qaq8pfb10q4" path="res://addons/TILESHEET ALL DONE.png" id="1_dk4lx"]
 [ext_resource type="Texture2D" uid="uid://tbrplouhhcrc" path="res://assests/SKY.png" id="1_qgkrp"]
@@ -26,6 +26,8 @@
 [ext_resource type="Script" uid="uid://21pw0c03mv2j" path="res://scripts/THREETOFOUR.gd" id="24_mifa2"]
 [ext_resource type="PackedScene" uid="uid://dbri0sd5vhhlu" path="res://scenes/heal.tscn" id="25_svbv1"]
 [ext_resource type="PackedScene" uid="uid://2mcc4t66tko7" path="res://scenes/coin.tscn" id="26_mifa2"]
+[ext_resource type="Script" uid="uid://6046no2352xj" path="res://scripts/fadestextstarter.gd" id="27_yqmce"]
+[ext_resource type="FontFile" uid="uid://bh6jvsa7eqolq" path="res://fonts/Jersey10-Regular.ttf" id="28_4puwv"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_oet2r"]
 texture = ExtResource("1_dk4lx")
@@ -1707,3 +1709,20 @@ position = Vector2(3010, 110)
 
 [node name="coin6" parent="." instance=ExtResource("26_mifa2")]
 position = Vector2(1752, 93)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+script = ExtResource("27_yqmce")
+
+[node name="Label" type="RichTextLabel" parent="CanvasLayer"]
+layout_direction = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/normal_font = ExtResource("28_4puwv")
+theme_override_font_sizes/normal_font_size = 138
+bbcode_enabled = true
+text = "only up lmao"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true

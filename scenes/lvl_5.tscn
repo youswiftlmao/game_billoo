@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://bge5ysloonysf"]
+[gd_scene load_steps=35 format=3 uid="uid://bge5ysloonysf"]
 
 [ext_resource type="PackedScene" uid="uid://c36gx83vrkgu0" path="res://scenes/player.tscn" id="1_vm7h0"]
 [ext_resource type="Texture2D" uid="uid://c3qaq8pfb10q4" path="res://addons/TILESHEET ALL DONE.png" id="2_theay"]
@@ -16,6 +16,8 @@
 [ext_resource type="Texture2D" uid="uid://bfm8fovtpppd1" path="res://assests/DOORAAAA.png" id="14_nbnb5"]
 [ext_resource type="PackedScene" uid="uid://c73fs3yroorn7" path="res://scenes/lvl_20_3.tscn" id="15_yi0qh"]
 [ext_resource type="Texture2D" uid="uid://cvd2nsqbcgqql" path="res://assests/LAVA.png" id="16_nbnb5"]
+[ext_resource type="Script" uid="uid://6046no2352xj" path="res://scripts/fadestextstarter.gd" id="17_8bq5e"]
+[ext_resource type="FontFile" uid="uid://bh6jvsa7eqolq" path="res://fonts/Jersey10-Regular.ttf" id="18_i7e1e"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nvppn"]
 texture = ExtResource("2_theay")
@@ -539,7 +541,7 @@ sources/1 = SubResource("TileSetAtlasSource_pvttr")
 position = Vector2(0, -4)
 
 [node name="player" parent="." instance=ExtResource("1_vm7h0")]
-position = Vector2(162, -8)
+position = Vector2(1345, -1533)
 
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2(71, 12)
@@ -762,3 +764,20 @@ texture = ExtResource("16_nbnb5")
 position = Vector2(880.00006, 302)
 scale = Vector2(1.125, 1)
 texture = ExtResource("16_nbnb5")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+script = ExtResource("17_8bq5e")
+
+[node name="Label" type="RichTextLabel" parent="CanvasLayer"]
+layout_direction = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/normal_font = ExtResource("18_i7e1e")
+theme_override_font_sizes/normal_font_size = 138
+bbcode_enabled = true
+text = "only up lmao"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
