@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://cb2pqgoi3bf3e"]
+[gd_scene load_steps=38 format=3 uid="uid://cb2pqgoi3bf3e"]
 
 [ext_resource type="Texture2D" uid="uid://c3qaq8pfb10q4" path="res://addons/TILESHEET ALL DONE.png" id="1_vpik0"]
 [ext_resource type="PackedScene" uid="uid://cv5bvg17p3spp" path="res://scenes/platform.tscn" id="2_arvxu"]
@@ -21,6 +21,8 @@
 [ext_resource type="Texture2D" uid="uid://cky5tcd8lvi1x" path="res://assests/cloud back.png" id="18_aumgp"]
 [ext_resource type="Script" uid="uid://cof8j4dyg02xu" path="res://scripts/mid_couds.gd" id="18_tkgql"]
 [ext_resource type="Texture2D" uid="uid://cixiccgfrcj5j" path="res://assests/mid cloud.png" id="20_fbo34"]
+[ext_resource type="Script" uid="uid://cfaipal4sy3ck" path="res://scripts/front_clouds.gd" id="20_mgpep"]
+[ext_resource type="Texture2D" uid="uid://bhko522q4cnpt" path="res://assests/front cloud.png" id="21_pb6kn"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_p57ef"]
 texture = ExtResource("1_vpik0")
@@ -596,23 +598,48 @@ metadata/_edit_use_anchors_ = true
 [node name="sky" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_scale = Vector2(0.05, 0.05)
 
-[node name="UppderDarkerSky" type="Sprite2D" parent="ParallaxBackground/sky"]
-z_index = -3811
-position = Vector2(522, 3)
-scale = Vector2(0.78909504, 0.78909504)
-texture = ExtResource("16_jkag2")
-
 [node name="UppderDarkerSky2" type="Sprite2D" parent="ParallaxBackground/sky"]
 z_index = -3811
-position = Vector2(-252, 3)
-scale = Vector2(0.78909504, 0.78909504)
+position = Vector2(-38, 109)
+scale = Vector2(0.39500004, 0.37315667)
 texture = ExtResource("16_jkag2")
 
-[node name="UppderDarkerSky3" type="Sprite2D" parent="ParallaxBackground/sky"]
+[node name="UppderDarkerSky4" type="Sprite2D" parent="ParallaxBackground/sky"]
 z_index = -3811
-position = Vector2(-991, -11)
-scale = Vector2(0.78909504, 0.78909504)
+position = Vector2(316, 109)
+scale = Vector2(0.39500004, 0.37315667)
 texture = ExtResource("16_jkag2")
+
+[node name="UppderDarkerSky5" type="Sprite2D" parent="ParallaxBackground/sky"]
+z_index = -3811
+position = Vector2(702, 107)
+scale = Vector2(0.39500004, 0.37315667)
+texture = ExtResource("16_jkag2")
+
+[node name="UppderDarkerSky6" type="Sprite2D" parent="ParallaxBackground/sky"]
+z_index = -3811
+position = Vector2(-421, 112)
+scale = Vector2(0.39500004, 0.37315667)
+texture = ExtResource("16_jkag2")
+
+[node name="UppderDarkerSky7" type="Sprite2D" parent="ParallaxBackground/sky"]
+z_index = -3811
+position = Vector2(-756, 96)
+scale = Vector2(0.39500004, 0.37315667)
+texture = ExtResource("16_jkag2")
+
+[node name="UppderDarkerSky8" type="Sprite2D" parent="ParallaxBackground/sky"]
+z_index = -3811
+position = Vector2(-756, 96)
+scale = Vector2(0.39500004, 0.37315667)
+texture = ExtResource("16_jkag2")
+
+[node name="moon" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.05, 0.1)
+
+[node name="Moon" type="Sprite2D" parent="ParallaxBackground/moon"]
+position = Vector2(181, 43)
+texture = ExtResource("17_ol2u7")
 
 [node name="blackcloud" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_scale = Vector2(0.2, 0.1)
@@ -733,17 +760,116 @@ region_enabled = true
 region_rect = Rect2(0, 200, 480, 160)
 
 [node name="MidCloud7" type="Sprite2D" parent="ParallaxBackground/midcloud"]
-position = Vector2(-1125, 208)
+position = Vector2(-1100, 250)
 texture = ExtResource("20_fbo34")
 region_enabled = true
 region_rect = Rect2(0, 200, 480, 160)
 
-[node name="moon" type="ParallaxLayer" parent="ParallaxBackground"]
-motion_scale = Vector2(0.1, 0.1)
+[node name="MidCloud10" type="Sprite2D" parent="ParallaxBackground/midcloud"]
+position = Vector2(-530, 255)
+texture = ExtResource("20_fbo34")
+region_enabled = true
+region_rect = Rect2(0, 200, 480, 160)
 
-[node name="Moon" type="Sprite2D" parent="ParallaxBackground/moon"]
-position = Vector2(181, 43)
-texture = ExtResource("17_ol2u7")
+[node name="MidCloud11" type="Sprite2D" parent="ParallaxBackground/midcloud"]
+position = Vector2(-503, 228)
+texture = ExtResource("20_fbo34")
+region_enabled = true
+region_rect = Rect2(0, 200, 480, 160)
+
+[node name="MidCloud12" type="Sprite2D" parent="ParallaxBackground/midcloud"]
+position = Vector2(-262, 216)
+texture = ExtResource("20_fbo34")
+region_enabled = true
+region_rect = Rect2(0, 200, 480, 160)
+
+[node name="MidCloud13" type="Sprite2D" parent="ParallaxBackground/midcloud"]
+position = Vector2(-63, 162)
+texture = ExtResource("20_fbo34")
+region_enabled = true
+region_rect = Rect2(0, 200, 480, 160)
+
+[node name="frontcloud" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.2, 0.1)
+script = ExtResource("20_mgpep")
+
+[node name="FrontCloud" type="Sprite2D" parent="ParallaxBackground/frontcloud"]
+position = Vector2(1414, -15)
+texture = ExtResource("21_pb6kn")
+region_enabled = true
+region_rect = Rect2(0, 192, 480, 160)
+
+[node name="FrontCloud6" type="Sprite2D" parent="ParallaxBackground/frontcloud"]
+position = Vector2(-963, 265)
+texture = ExtResource("21_pb6kn")
+region_enabled = true
+region_rect = Rect2(0, 192, 480, 160)
+
+[node name="FrontCloud7" type="Sprite2D" parent="ParallaxBackground/frontcloud"]
+position = Vector2(-680, 212)
+texture = ExtResource("21_pb6kn")
+region_enabled = true
+region_rect = Rect2(0, 192, 480, 160)
+
+[node name="FrontCloud3" type="Sprite2D" parent="ParallaxBackground/frontcloud"]
+position = Vector2(390, 158)
+texture = ExtResource("21_pb6kn")
+region_enabled = true
+region_rect = Rect2(-8, 344, 496, 160)
+
+[node name="FrontCloud11" type="Sprite2D" parent="ParallaxBackground/frontcloud"]
+position = Vector2(302, 176)
+texture = ExtResource("21_pb6kn")
+region_enabled = true
+region_rect = Rect2(-8, 344, 496, 160)
+
+[node name="FrontCloud12" type="Sprite2D" parent="ParallaxBackground/frontcloud"]
+position = Vector2(196, 192)
+texture = ExtResource("21_pb6kn")
+region_enabled = true
+region_rect = Rect2(-8, 344, 496, 160)
+
+[node name="FrontCloud13" type="Sprite2D" parent="ParallaxBackground/frontcloud"]
+position = Vector2(196, 192)
+texture = ExtResource("21_pb6kn")
+region_enabled = true
+region_rect = Rect2(-8, 344, 496, 160)
+
+[node name="FrontCloud4" type="Sprite2D" parent="ParallaxBackground/frontcloud"]
+position = Vector2(607, 193)
+texture = ExtResource("21_pb6kn")
+region_enabled = true
+region_rect = Rect2(-8, 344, 496, 160)
+
+[node name="FrontCloud5" type="Sprite2D" parent="ParallaxBackground/frontcloud"]
+position = Vector2(2, 197)
+texture = ExtResource("21_pb6kn")
+region_enabled = true
+region_rect = Rect2(-8, 344, 496, 160)
+
+[node name="FrontCloud8" type="Sprite2D" parent="ParallaxBackground/frontcloud"]
+position = Vector2(-684, 259)
+texture = ExtResource("21_pb6kn")
+region_enabled = true
+region_rect = Rect2(-8, 344, 496, 160)
+
+[node name="FrontCloud9" type="Sprite2D" parent="ParallaxBackground/frontcloud"]
+position = Vector2(-166, 197)
+texture = ExtResource("21_pb6kn")
+region_enabled = true
+region_rect = Rect2(-8, 344, 496, 160)
+
+[node name="FrontCloud10" type="Sprite2D" parent="ParallaxBackground/frontcloud"]
+position = Vector2(-290, 225)
+texture = ExtResource("21_pb6kn")
+region_enabled = true
+region_rect = Rect2(-8, 344, 496, 160)
+
+[node name="FrontCloud2" type="Sprite2D" parent="ParallaxBackground/frontcloud"]
+position = Vector2(1176, -362)
+texture = ExtResource("21_pb6kn")
+region_enabled = true
+region_rect = Rect2(0, 0, 488, 152)
 
 [node name="behind architecture" type="ParallaxLayer" parent="ParallaxBackground"]
 position = Vector2(-30, -242)

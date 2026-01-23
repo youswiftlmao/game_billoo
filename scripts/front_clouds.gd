@@ -1,7 +1,7 @@
 extends ParallaxLayer
 
 
-@export var cloud_speed: float = -15.0
+@export var cloud_speed: float = -7.0
 @export var loop_time: float = 300.0
 
 var elapsed_time: float = 0.0
