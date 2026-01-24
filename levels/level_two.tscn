@@ -989,6 +989,7 @@ region_rect = Rect2(8, 208, 536, 248)
 
 [node name="midcloud" type="ParallaxLayer" parent="ParallaxBackground"]
 z_index = -624
+position = Vector2(0, 10)
 motion_scale = Vector2(0.2, 0.1)
 script = ExtResource("23_jjuep")
 
