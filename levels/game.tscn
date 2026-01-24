@@ -635,7 +635,7 @@ scale = Vector2(0.39500004, 0.37315667)
 texture = ExtResource("16_jkag2")
 
 [node name="moon" type="ParallaxLayer" parent="ParallaxBackground"]
-motion_scale = Vector2(0.05, 0.1)
+motion_scale = Vector2(0.05, 0.05)
 
 [node name="Moon" type="Sprite2D" parent="ParallaxBackground/moon"]
 position = Vector2(181, 43)
@@ -647,6 +647,7 @@ script = ExtResource("18_0u5wd")
 
 [node name="CloudBack" type="Sprite2D" parent="ParallaxBackground/blackcloud"]
 position = Vector2(-740, 125)
+rotation = 0.0006832727
 texture = ExtResource("18_aumgp")
 region_enabled = true
 region_rect = Rect2(-8, -48, 600, 248)
