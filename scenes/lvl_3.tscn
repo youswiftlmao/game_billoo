@@ -1,4 +1,4 @@
-[gd_scene load_steps=57 format=3 uid="uid://dswm7su8la55o"]
+[gd_scene load_steps=58 format=3 uid="uid://dswm7su8la55o"]
 
 [ext_resource type="Texture2D" uid="uid://c3qaq8pfb10q4" path="res://addons/TILESHEET ALL DONE.png" id="1_dk4lx"]
 [ext_resource type="Texture2D" uid="uid://dk51516mmd1co" path="res://assests/tiles.png" id="2_3ttfa"]
@@ -16,6 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://c17b1cnsjf7oi" path="res://scenes/door.tscn" id="21_27c8d"]
 [ext_resource type="FontFile" uid="uid://dtnymhkbxnnaa" path="res://fonts/MadouFutoMaruGothic-d9Xo7.ttf" id="22_dj1r7"]
 [ext_resource type="Texture2D" uid="uid://bfm8fovtpppd1" path="res://assests/DOORAAAA.png" id="22_m1tv4"]
+[ext_resource type="Texture2D" uid="uid://cn5oul1l55vyt" path="res://assests/UPPDER DARKER SKY.png" id="23_mg484"]
 [ext_resource type="PackedScene" uid="uid://c73fs3yroorn7" path="res://scenes/lvl_20_3.tscn" id="23_svbv1"]
 [ext_resource type="Script" uid="uid://21pw0c03mv2j" path="res://scripts/THREETOFOUR.gd" id="24_mifa2"]
 [ext_resource type="PackedScene" uid="uid://dbri0sd5vhhlu" path="res://scenes/heal.tscn" id="25_svbv1"]
@@ -1111,3 +1112,18 @@ bbcode_enabled = true
 text = "Level : Three"
 horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="sky" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.05, 0.05)
+
+[node name="UppderDarkerSky" type="Sprite2D" parent="ParallaxBackground/sky"]
+position = Vector2(67.000015, 25.999985)
+scale = Vector2(0.37297398, 0.37297398)
+texture = ExtResource("23_mg484")
+
+[node name="UppderDarkerSky2" type="Sprite2D" parent="ParallaxBackground/sky"]
+position = Vector2(432.99997, 25.999983)
+scale = Vector2(0.37297398, 0.37297398)
+texture = ExtResource("23_mg484")

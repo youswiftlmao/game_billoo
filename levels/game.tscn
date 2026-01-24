@@ -806,6 +806,12 @@ texture = ExtResource("21_pb6kn")
 region_enabled = true
 region_rect = Rect2(0, 192, 480, 160)
 
+[node name="FrontCloud16" type="Sprite2D" parent="ParallaxBackground/frontcloud"]
+position = Vector2(-963, 265)
+texture = ExtResource("21_pb6kn")
+region_enabled = true
+region_rect = Rect2(0, 192, 480, 160)
+
 [node name="FrontCloud7" type="Sprite2D" parent="ParallaxBackground/frontcloud"]
 position = Vector2(-680, 212)
 texture = ExtResource("21_pb6kn")
@@ -855,6 +861,12 @@ region_enabled = true
 region_rect = Rect2(-8, 344, 496, 160)
 
 [node name="FrontCloud9" type="Sprite2D" parent="ParallaxBackground/frontcloud"]
+position = Vector2(-166, 197)
+texture = ExtResource("21_pb6kn")
+region_enabled = true
+region_rect = Rect2(-8, 344, 496, 160)
+
+[node name="FrontCloud17" type="Sprite2D" parent="ParallaxBackground/frontcloud"]
 position = Vector2(-166, 197)
 texture = ExtResource("21_pb6kn")
 region_enabled = true
