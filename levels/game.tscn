@@ -652,6 +652,13 @@ texture = ExtResource("18_aumgp")
 region_enabled = true
 region_rect = Rect2(-8, -48, 600, 248)
 
+[node name="CloudBack12" type="Sprite2D" parent="ParallaxBackground/blackcloud"]
+position = Vector2(-740, 125)
+rotation = 0.0006832727
+texture = ExtResource("18_aumgp")
+region_enabled = true
+region_rect = Rect2(-8, -48, 600, 248)
+
 [node name="CloudBack2" type="Sprite2D" parent="ParallaxBackground/blackcloud"]
 position = Vector2(-499, 179)
 texture = ExtResource("18_aumgp")
@@ -855,7 +862,7 @@ region_enabled = true
 region_rect = Rect2(-8, 344, 496, 160)
 
 [node name="FrontCloud8" type="Sprite2D" parent="ParallaxBackground/frontcloud"]
-position = Vector2(-684, 259)
+position = Vector2(-684, 284)
 texture = ExtResource("21_pb6kn")
 region_enabled = true
 region_rect = Rect2(-8, 344, 496, 160)
@@ -1155,6 +1162,13 @@ region_enabled = true
 region_rect = Rect2(80, 96, 80, 64)
 
 [node name="door42" type="Sprite2D" parent="ParallaxBackground/behind architecture"]
+position = Vector2(-602.34375, 449)
+scale = Vector2(1.6164063, 1.5052329)
+texture = ExtResource("15_p0d6h")
+region_enabled = true
+region_rect = Rect2(80, 96, 80, 64)
+
+[node name="door76" type="Sprite2D" parent="ParallaxBackground/behind architecture"]
 position = Vector2(-602.34375, 449)
 scale = Vector2(1.6164063, 1.5052329)
 texture = ExtResource("15_p0d6h")
