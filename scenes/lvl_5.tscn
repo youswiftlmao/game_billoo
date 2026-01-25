@@ -542,7 +542,7 @@ sources/1 = SubResource("TileSetAtlasSource_pvttr")
 position = Vector2(0, -4)
 
 [node name="player" parent="." instance=ExtResource("1_vm7h0")]
-position = Vector2(1345, -1533)
+position = Vector2(155, -34)
 
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2(71, 12)
@@ -691,6 +691,9 @@ position = Vector2(1251, -1420)
 [node name="ghost" parent="." instance=ExtResource("11_lcwyy")]
 position = Vector2(1227, -662)
 
+[node name="ghost2" parent="." instance=ExtResource("11_lcwyy")]
+position = Vector2(1252, -284)
+
 [node name="ghost3" parent="." instance=ExtResource("11_lcwyy")]
 position = Vector2(1103, -1522)
 
@@ -765,9 +768,6 @@ texture = ExtResource("16_nbnb5")
 position = Vector2(880.00006, 302)
 scale = Vector2(1.125, 1)
 texture = ExtResource("16_nbnb5")
-
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-script = ExtResource("17_8bq5e")
 
 [node name="CanvasLayer2" type="CanvasLayer" parent="."]
 script = ExtResource("17_8bq5e")
