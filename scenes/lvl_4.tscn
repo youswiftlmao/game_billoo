@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://2gvbtxugtby7"]
+[gd_scene load_steps=35 format=3 uid="uid://2gvbtxugtby7"]
 
 [ext_resource type="PackedScene" uid="uid://c36gx83vrkgu0" path="res://scenes/player.tscn" id="1_83mxe"]
 [ext_resource type="Texture2D" uid="uid://c3qaq8pfb10q4" path="res://addons/TILESHEET ALL DONE.png" id="2_q8qpk"]
@@ -15,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://c73fs3yroorn7" path="res://scenes/lvl_20_3.tscn" id="13_k8jwr"]
 [ext_resource type="PackedScene" uid="uid://dbri0sd5vhhlu" path="res://scenes/heal.tscn" id="13_yg2uy"]
 [ext_resource type="FontFile" uid="uid://dtnymhkbxnnaa" path="res://fonts/MadouFutoMaruGothic-d9Xo7.ttf" id="17_my5f2"]
+[ext_resource type="Texture2D" uid="uid://cn5oul1l55vyt" path="res://assests/UPPDER DARKER SKY.png" id="18_vns8p"]
 [ext_resource type="Script" uid="uid://6046no2352xj" path="res://scripts/fadestextstarter.gd" id="22_82v73"]
 [ext_resource type="FontFile" uid="uid://bh6jvsa7eqolq" path="res://fonts/Jersey10-Regular.ttf" id="23_tkk12"]
 
@@ -753,3 +754,19 @@ bbcode_enabled = true
 text = "Level : One"
 horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="sky" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2(10, -44)
+motion_scale = Vector2(0.05, 0.05)
+
+[node name="UppderDarkerSky" type="Sprite2D" parent="ParallaxBackground/sky"]
+position = Vector2(119, 75)
+scale = Vector2(0.29137832, 0.29137832)
+texture = ExtResource("18_vns8p")
+
+[node name="UppderDarkerSky2" type="Sprite2D" parent="ParallaxBackground/sky"]
+position = Vector2(385, 75)
+scale = Vector2(0.29137832, 0.29137832)
+texture = ExtResource("18_vns8p")

@@ -2,7 +2,7 @@ extends CharacterBody2D
 var speed = 35
 var playerchase = false
 var player = null
-var  health = 50
+var  health = 40
 var player_inattack_zone = false
 var can_take_damage = true
 
@@ -81,14 +81,14 @@ func deal_with_damage():
 				can_take_damage = false
 				$AnimatedSprite2D.play("death")
 
-				# Freeze briefly for death animation
+				# die thing wait
 				await get_tree().create_timer(0.5).timeout
 
-				# Fall smoothly
+				#falling
 				var fall_speed = 150
-				while position.y < 1000:  # arbitrary off-screen value
+				while position.y < 10000: 
 					position.y += fall_speed * get_process_delta_time()
-					
+					await Engine.get_main_loop().process_frame
 				queue_free()
 
 func _on_takedamagecd_timeout() -> void:

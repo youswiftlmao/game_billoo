@@ -1,4 +1,4 @@
-[gd_scene load_steps=66 format=3 uid="uid://dswm7su8la55o"]
+[gd_scene load_steps=67 format=3 uid="uid://dswm7su8la55o"]
 
 [ext_resource type="Texture2D" uid="uid://c3qaq8pfb10q4" path="res://addons/TILESHEET ALL DONE.png" id="1_dk4lx"]
 [ext_resource type="Texture2D" uid="uid://dk51516mmd1co" path="res://assests/tiles.png" id="2_3ttfa"]
@@ -20,6 +20,7 @@
 [ext_resource type="PackedScene" uid="uid://c73fs3yroorn7" path="res://scenes/lvl_20_3.tscn" id="23_svbv1"]
 [ext_resource type="Texture2D" uid="uid://cxtb2m2h5e52y" path="res://assests/tilealso.png" id="24_27c8d"]
 [ext_resource type="Script" uid="uid://21pw0c03mv2j" path="res://scripts/THREETOFOUR.gd" id="24_mifa2"]
+[ext_resource type="Texture2D" uid="uid://d2q74uovlq3ac" path="res://assests/moon.png" id="24_o23si"]
 [ext_resource type="Script" uid="uid://cnfjdeqmd808h" path="res://scripts/backvlouds.gd" id="24_yqmce"]
 [ext_resource type="Texture2D" uid="uid://cky5tcd8lvi1x" path="res://assests/cloud back.png" id="25_4puwv"]
 [ext_resource type="Texture2D" uid="uid://cvd2nsqbcgqql" path="res://assests/LAVA.png" id="25_m1tv4"]
@@ -1142,7 +1143,17 @@ position = Vector2(432.99997, 25.999983)
 scale = Vector2(0.37297398, 0.37297398)
 texture = ExtResource("23_mg484")
 
+[node name="moon" type="ParallaxLayer" parent="ParallaxBackground"]
+z_index = -3
+position = Vector2(269, -5)
+motion_scale = Vector2(0.05, 0.05)
+
+[node name="Moon" type="Sprite2D" parent="ParallaxBackground/moon"]
+position = Vector2(181, 43)
+texture = ExtResource("24_o23si")
+
 [node name="backclouds" type="ParallaxLayer" parent="ParallaxBackground"]
+z_index = -6
 position = Vector2(4, -39)
 motion_scale = Vector2(0.2, 0.1)
 script = ExtResource("24_yqmce")
