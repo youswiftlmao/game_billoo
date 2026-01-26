@@ -11,7 +11,6 @@
 [ext_resource type="PackedScene" uid="uid://c73fs3yroorn7" path="res://scenes/lvl_20_3.tscn" id="8_y7kp8"]
 [ext_resource type="PackedScene" uid="uid://2mcc4t66tko7" path="res://scenes/coin.tscn" id="9_ughyh"]
 [ext_resource type="Script" uid="uid://di5pd7q2fh373" path="res://scripts/ONETOTWO.gd" id="10_5ycdb"]
-[ext_resource type="Script" uid="uid://6046no2352xj" path="res://scripts/fadestextstarter.gd" id="12_yyd14"]
 [ext_resource type="FontFile" uid="uid://bh6jvsa7eqolq" path="res://fonts/Jersey10-Regular.ttf" id="13_6f163"]
 [ext_resource type="FontFile" uid="uid://dtnymhkbxnnaa" path="res://fonts/MadouFutoMaruGothic-d9Xo7.ttf" id="14_6f163"]
 [ext_resource type="Texture2D" uid="uid://cxtb2m2h5e52y" path="res://assests/tilealso.png" id="15_p0d6h"]
@@ -23,6 +22,7 @@
 [ext_resource type="Texture2D" uid="uid://cixiccgfrcj5j" path="res://assests/mid cloud.png" id="20_fbo34"]
 [ext_resource type="Script" uid="uid://cfaipal4sy3ck" path="res://scripts/front_clouds.gd" id="20_mgpep"]
 [ext_resource type="Texture2D" uid="uid://bhko522q4cnpt" path="res://assests/front cloud.png" id="21_pb6kn"]
+[ext_resource type="Script" uid="uid://1yq20v488miu" path="res://scripts/textthingniemagigie.gd" id="21_tkgql"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_p57ef"]
 texture = ExtResource("1_vpik0")
@@ -524,75 +524,6 @@ position = Vector2(-748, -2)
 [node name="coin6" parent="." instance=ExtResource("9_ughyh")]
 position = Vector2(-511, 149)
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-script = ExtResource("12_yyd14")
-
-[node name="Label" type="RichTextLabel" parent="CanvasLayer"]
-layout_direction = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 69.00002
-offset_top = 0.99999994
-offset_right = 69.0
-offset_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(0.8852974, 0.8852974)
-theme_override_colors/default_color = Color(0.27450982, 0.24313726, 0.5176471, 1)
-theme_override_colors/font_outline_color = Color(0.13333334, 0.1254902, 0.21176471, 1)
-theme_override_constants/shadow_outline_size = 1
-theme_override_constants/outline_size = 16
-theme_override_fonts/normal_font = ExtResource("13_6f163")
-theme_override_font_sizes/normal_font_size = 138
-bbcode_enabled = true
-text = "The Beginning..
-"
-horizontal_alignment = 1
-metadata/_edit_use_anchors_ = true
-
-[node name="Label2" type="RichTextLabel" parent="CanvasLayer/Label"]
-layout_direction = 1
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.009805221
-anchor_top = 0.2213806
-anchor_right = 2.2705529
-anchor_bottom = 1.2213806
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(0.44041172, 0.44041172)
-theme_override_colors/default_color = Color(0.27450982, 0.24313726, 0.5176471, 1)
-theme_override_colors/font_outline_color = Color(0.13333334, 0.1254902, 0.21176471, 1)
-theme_override_constants/outline_size = 34
-theme_override_fonts/normal_font = ExtResource("14_6f163")
-theme_override_font_sizes/normal_font_size = 138
-bbcode_enabled = true
-text = "---------始まり---------"
-horizontal_alignment = 1
-metadata/_edit_use_anchors_ = true
-
-[node name="Label2" type="RichTextLabel" parent="CanvasLayer/Label/Label2"]
-layout_direction = 1
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.35047957
-anchor_top = 0.23476909
-anchor_right = 0.6830444
-anchor_bottom = 0.5585865
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(0.7829546, 0.7829546)
-theme_override_colors/default_color = Color(0.27450982, 0.24313726, 0.5176471, 1)
-theme_override_colors/font_outline_color = Color(0.13333334, 0.1254902, 0.21176471, 1)
-theme_override_constants/outline_size = 34
-theme_override_fonts/normal_font = ExtResource("14_6f163")
-theme_override_font_sizes/normal_font_size = 138
-bbcode_enabled = true
-text = "Level : One"
-horizontal_alignment = 1
-metadata/_edit_use_anchors_ = true
-
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
 [node name="sky" type="ParallaxLayer" parent="ParallaxBackground"]
@@ -635,6 +566,7 @@ scale = Vector2(0.39500004, 0.37315667)
 texture = ExtResource("16_jkag2")
 
 [node name="moon" type="ParallaxLayer" parent="ParallaxBackground"]
+z_index = -6
 motion_scale = Vector2(0.05, 0.05)
 
 [node name="Moon" type="Sprite2D" parent="ParallaxBackground/moon"]
@@ -3678,3 +3610,74 @@ scale = Vector2(0.41874996, 1.0781238)
 texture = ExtResource("15_p0d6h")
 region_enabled = true
 region_rect = Rect2(80, 0, 80, 32)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer"]
+layout_direction = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 69.00002
+offset_top = 0.99999994
+offset_right = 69.0
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.8852974, 0.8852974)
+theme_override_colors/default_color = Color(0.27450982, 0.24313726, 0.5176471, 1)
+theme_override_colors/font_outline_color = Color(0.13333334, 0.1254902, 0.21176471, 1)
+theme_override_constants/shadow_outline_size = 1
+theme_override_constants/outline_size = 16
+theme_override_fonts/normal_font = ExtResource("13_6f163")
+theme_override_font_sizes/normal_font_size = 138
+bbcode_enabled = true
+text = "The Beginning..
+
+"
+horizontal_alignment = 1
+script = ExtResource("21_tkgql")
+hold = 1.5
+metadata/_edit_use_anchors_ = true
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/RichTextLabel"]
+layout_direction = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.009805221
+anchor_top = 0.2213806
+anchor_right = 2.2705529
+anchor_bottom = 1.2213806
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.44041172, 0.44041172)
+theme_override_colors/default_color = Color(0.27450982, 0.24313726, 0.5176471, 1)
+theme_override_colors/font_outline_color = Color(0.13333334, 0.1254902, 0.21176471, 1)
+theme_override_constants/outline_size = 34
+theme_override_fonts/normal_font = ExtResource("14_6f163")
+theme_override_font_sizes/normal_font_size = 138
+bbcode_enabled = true
+text = "---------始まり---------"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/RichTextLabel/RichTextLabel"]
+layout_direction = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.35047957
+anchor_top = 0.23476909
+anchor_right = 0.6830444
+anchor_bottom = 0.5585865
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.7829546, 0.7829546)
+theme_override_colors/default_color = Color(0.27450982, 0.24313726, 0.5176471, 1)
+theme_override_colors/font_outline_color = Color(0.13333334, 0.1254902, 0.21176471, 1)
+theme_override_constants/outline_size = 34
+theme_override_fonts/normal_font = ExtResource("14_6f163")
+theme_override_font_sizes/normal_font_size = 138
+bbcode_enabled = true
+text = "Level : One"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true

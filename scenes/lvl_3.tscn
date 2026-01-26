@@ -28,10 +28,10 @@
 [ext_resource type="Script" uid="uid://cof8j4dyg02xu" path="res://scripts/mid_couds.gd" id="26_4puwv"]
 [ext_resource type="PackedScene" uid="uid://2mcc4t66tko7" path="res://scenes/coin.tscn" id="26_mifa2"]
 [ext_resource type="Texture2D" uid="uid://cixiccgfrcj5j" path="res://assests/mid cloud.png" id="27_xypcs"]
-[ext_resource type="Script" uid="uid://6046no2352xj" path="res://scripts/fadestextstarter.gd" id="27_yqmce"]
 [ext_resource type="FontFile" uid="uid://bh6jvsa7eqolq" path="res://fonts/Jersey10-Regular.ttf" id="28_4puwv"]
 [ext_resource type="Script" uid="uid://cfaipal4sy3ck" path="res://scripts/front_clouds.gd" id="28_efoyx"]
 [ext_resource type="Texture2D" uid="uid://bhko522q4cnpt" path="res://assests/front cloud.png" id="29_o23si"]
+[ext_resource type="Script" uid="uid://1yq20v488miu" path="res://scripts/textthingniemagigie.gd" id="31_o23si"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_oet2r"]
 texture = ExtResource("1_dk4lx")
@@ -1053,74 +1053,6 @@ position = Vector2(2791, 80)
 
 [node name="bigplat7" parent="." instance=ExtResource("10_7nyt0")]
 position = Vector2(2861, 136)
-
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-script = ExtResource("27_yqmce")
-
-[node name="Label" type="RichTextLabel" parent="CanvasLayer"]
-layout_direction = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 69.00002
-offset_top = 0.99999994
-offset_right = 69.0
-offset_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(0.8852974, 0.8852974)
-theme_override_colors/default_color = Color(0.27450982, 0.24313726, 0.5176471, 1)
-theme_override_colors/font_outline_color = Color(0.13333334, 0.1254902, 0.21176471, 1)
-theme_override_constants/shadow_outline_size = 1
-theme_override_constants/outline_size = 16
-theme_override_fonts/normal_font = ExtResource("28_4puwv")
-theme_override_font_sizes/normal_font_size = 138
-bbcode_enabled = true
-text = "The Choice"
-horizontal_alignment = 1
-metadata/_edit_use_anchors_ = true
-
-[node name="Label2" type="RichTextLabel" parent="CanvasLayer/Label"]
-layout_direction = 1
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.0052083335
-anchor_top = 0.22530864
-anchor_right = 2.265956
-anchor_bottom = 1.2253087
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(0.44041172, 0.44041172)
-theme_override_colors/default_color = Color(0.27450982, 0.24313726, 0.5176471, 1)
-theme_override_colors/font_outline_color = Color(0.13333334, 0.1254902, 0.21176471, 1)
-theme_override_constants/outline_size = 34
-theme_override_fonts/normal_font = ExtResource("22_dj1r7")
-theme_override_font_sizes/normal_font_size = 138
-bbcode_enabled = true
-text = "---------選択---------"
-horizontal_alignment = 1
-metadata/_edit_use_anchors_ = true
-
-[node name="Label2" type="RichTextLabel" parent="CanvasLayer/Label/Label2"]
-layout_direction = 1
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.34161624
-anchor_top = 0.23476909
-anchor_right = 0.7476316
-anchor_bottom = 0.5585865
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(0.7829546, 0.7829546)
-theme_override_colors/default_color = Color(0.27450982, 0.24313726, 0.5176471, 1)
-theme_override_colors/font_outline_color = Color(0.13333334, 0.1254902, 0.21176471, 1)
-theme_override_constants/outline_size = 34
-theme_override_fonts/normal_font = ExtResource("22_dj1r7")
-theme_override_font_sizes/normal_font_size = 138
-bbcode_enabled = true
-text = "Level : Three"
-horizontal_alignment = 1
-metadata/_edit_use_anchors_ = true
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
@@ -6200,3 +6132,71 @@ texture = ExtResource("25_m1tv4")
 z_index = -3
 position = Vector2(3623, 474)
 texture = ExtResource("25_m1tv4")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer"]
+layout_direction = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 69.00002
+offset_top = 0.99999994
+offset_right = 69.0
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.8852974, 0.8852974)
+theme_override_colors/default_color = Color(0.27450982, 0.24313726, 0.5176471, 1)
+theme_override_colors/font_outline_color = Color(0.13333334, 0.1254902, 0.21176471, 1)
+theme_override_constants/shadow_outline_size = 1
+theme_override_constants/outline_size = 16
+theme_override_fonts/normal_font = ExtResource("28_4puwv")
+theme_override_font_sizes/normal_font_size = 138
+bbcode_enabled = true
+text = "The Choice"
+horizontal_alignment = 1
+script = ExtResource("31_o23si")
+metadata/_edit_use_anchors_ = true
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/RichTextLabel"]
+layout_direction = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0052083335
+anchor_top = 0.22530864
+anchor_right = 2.265956
+anchor_bottom = 1.2253087
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.44041172, 0.44041172)
+theme_override_colors/default_color = Color(0.27450982, 0.24313726, 0.5176471, 1)
+theme_override_colors/font_outline_color = Color(0.13333334, 0.1254902, 0.21176471, 1)
+theme_override_constants/outline_size = 34
+theme_override_fonts/normal_font = ExtResource("22_dj1r7")
+theme_override_font_sizes/normal_font_size = 138
+bbcode_enabled = true
+text = "---------選択---------"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/RichTextLabel/RichTextLabel"]
+layout_direction = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.34161624
+anchor_top = 0.23476909
+anchor_right = 0.7476316
+anchor_bottom = 0.5585865
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.7829546, 0.7829546)
+theme_override_colors/default_color = Color(0.27450982, 0.24313726, 0.5176471, 1)
+theme_override_colors/font_outline_color = Color(0.13333334, 0.1254902, 0.21176471, 1)
+theme_override_constants/outline_size = 34
+theme_override_fonts/normal_font = ExtResource("22_dj1r7")
+theme_override_font_sizes/normal_font_size = 138
+bbcode_enabled = true
+text = "Level : Three"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true

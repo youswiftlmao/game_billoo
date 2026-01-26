@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://bge5ysloonysf"]
+[gd_scene load_steps=37 format=3 uid="uid://bge5ysloonysf"]
 
 [ext_resource type="PackedScene" uid="uid://c36gx83vrkgu0" path="res://scenes/player.tscn" id="1_vm7h0"]
 [ext_resource type="Texture2D" uid="uid://c3qaq8pfb10q4" path="res://addons/TILESHEET ALL DONE.png" id="2_theay"]
@@ -9,16 +9,17 @@
 [ext_resource type="PackedScene" uid="uid://b5lbo8ith05g1" path="res://scenes/bigplat.tscn" id="7_66ldu"]
 [ext_resource type="Script" uid="uid://cag3vg50w1xbv" path="res://scripts/theypoker.gd" id="8_theay"]
 [ext_resource type="PackedScene" uid="uid://dbri0sd5vhhlu" path="res://scenes/heal.tscn" id="9_dummj"]
-[ext_resource type="PackedScene" uid="uid://bdau7guhjl1t0" path="res://scenes/bat.tscn" id="10_qnu8e"]
 [ext_resource type="PackedScene" uid="uid://ti48perjy5ef" path="res://scenes/ghost.tscn" id="11_lcwyy"]
 [ext_resource type="PackedScene" uid="uid://2mcc4t66tko7" path="res://scenes/coin.tscn" id="12_lcwyy"]
 [ext_resource type="PackedScene" uid="uid://c17b1cnsjf7oi" path="res://scenes/door.tscn" id="13_nvppn"]
 [ext_resource type="Texture2D" uid="uid://bfm8fovtpppd1" path="res://assests/DOORAAAA.png" id="14_nbnb5"]
 [ext_resource type="PackedScene" uid="uid://c73fs3yroorn7" path="res://scenes/lvl_20_3.tscn" id="15_yi0qh"]
 [ext_resource type="Texture2D" uid="uid://cvd2nsqbcgqql" path="res://assests/LAVA.png" id="16_nbnb5"]
-[ext_resource type="Script" uid="uid://6046no2352xj" path="res://scripts/fadestextstarter.gd" id="17_8bq5e"]
+[ext_resource type="Script" uid="uid://1yq20v488miu" path="res://scripts/textthingniemagigie.gd" id="18_70q4v"]
 [ext_resource type="FontFile" uid="uid://bh6jvsa7eqolq" path="res://fonts/Jersey10-Regular.ttf" id="18_i7e1e"]
+[ext_resource type="Texture2D" uid="uid://cn5oul1l55vyt" path="res://assests/UPPDER DARKER SKY.png" id="19_70q4v"]
 [ext_resource type="FontFile" uid="uid://dtnymhkbxnnaa" path="res://fonts/MadouFutoMaruGothic-d9Xo7.ttf" id="19_i7e1e"]
+[ext_resource type="Texture2D" uid="uid://d2q74uovlq3ac" path="res://assests/moon.png" id="20_70q4v"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nvppn"]
 texture = ExtResource("2_theay")
@@ -539,10 +540,10 @@ sources/0 = SubResource("TileSetAtlasSource_70q4v")
 sources/1 = SubResource("TileSetAtlasSource_pvttr")
 
 [node name="LVL5" type="Node2D"]
-position = Vector2(0, -4)
 
 [node name="player" parent="." instance=ExtResource("1_vm7h0")]
-position = Vector2(155, -34)
+position = Vector2(178.00006, -30)
+rotation = -0.010902596
 
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2(71, 12)
@@ -573,73 +574,73 @@ position = Vector2(827, -19)
 position = Vector2(1248, -94)
 
 [node name="bigplat5" parent="." instance=ExtResource("7_66ldu")]
-position = Vector2(1164, -154)
+position = Vector2(1164, -143)
 
 [node name="bigplat6" parent="." instance=ExtResource("7_66ldu")]
-position = Vector2(1248, -212)
+position = Vector2(1248, -202)
 
 [node name="bigplat7" parent="." instance=ExtResource("7_66ldu")]
-position = Vector2(1164, -272)
+position = Vector2(1164, -262)
 
 [node name="bigplat10" parent="." instance=ExtResource("7_66ldu")]
-position = Vector2(1248, -330)
+position = Vector2(1248, -322)
 
 [node name="bigplat11" parent="." instance=ExtResource("7_66ldu")]
-position = Vector2(1165, -390)
+position = Vector2(1165, -383)
 
 [node name="bigplat8" parent="." instance=ExtResource("7_66ldu")]
-position = Vector2(1248, -446)
+position = Vector2(1248, -439)
 
 [node name="bigplat9" parent="." instance=ExtResource("7_66ldu")]
-position = Vector2(1164, -506)
+position = Vector2(1164, -499)
 
 [node name="bigplat12" parent="." instance=ExtResource("7_66ldu")]
-position = Vector2(1248, -564)
+position = Vector2(1248, -556)
 
 [node name="bigplat13" parent="." instance=ExtResource("7_66ldu")]
-position = Vector2(1164, -624)
+position = Vector2(1164, -617)
 
 [node name="bigplat14" parent="." instance=ExtResource("7_66ldu")]
-position = Vector2(1248, -682)
+position = Vector2(1248, -674)
 
 [node name="bigplat15" parent="." instance=ExtResource("7_66ldu")]
-position = Vector2(1164, -742)
+position = Vector2(1164, -735)
 
 [node name="bigplat16" parent="." instance=ExtResource("7_66ldu")]
-position = Vector2(1248, -801)
+position = Vector2(1248, -794)
 
 [node name="bigplat17" parent="." instance=ExtResource("7_66ldu")]
-position = Vector2(1164, -861)
+position = Vector2(1164, -854)
 
 [node name="bigplat18" parent="." instance=ExtResource("7_66ldu")]
-position = Vector2(1248, -919)
+position = Vector2(1248, -912)
 
 [node name="bigplat19" parent="." instance=ExtResource("7_66ldu")]
-position = Vector2(1164, -979)
+position = Vector2(1164, -972)
 
 [node name="bigplat20" parent="." instance=ExtResource("7_66ldu")]
-position = Vector2(1248, -1037)
+position = Vector2(1248, -1030)
 
 [node name="bigplat21" parent="." instance=ExtResource("7_66ldu")]
-position = Vector2(1164, -1097)
+position = Vector2(1164, -1089)
 
 [node name="bigplat22" parent="." instance=ExtResource("7_66ldu")]
-position = Vector2(1248, -1153)
+position = Vector2(1248, -1146)
 
 [node name="bigplat23" parent="." instance=ExtResource("7_66ldu")]
-position = Vector2(1164, -1213)
+position = Vector2(1164, -1207)
 
 [node name="bigplat24" parent="." instance=ExtResource("7_66ldu")]
-position = Vector2(1248, -1271)
+position = Vector2(1248, -1264)
 
 [node name="bigplat25" parent="." instance=ExtResource("7_66ldu")]
-position = Vector2(1164, -1331)
+position = Vector2(1164, -1324)
 
 [node name="bigplat26" parent="." instance=ExtResource("7_66ldu")]
-position = Vector2(1248, -1389)
+position = Vector2(1248, -1382)
 
 [node name="bigplat27" parent="." instance=ExtResource("7_66ldu")]
-position = Vector2(1164, -1449)
+position = Vector2(1164, -1442)
 
 [node name="Node2D" type="Node2D" parent="."]
 
@@ -689,20 +690,10 @@ position = Vector2(1249, -1064)
 position = Vector2(1251, -1420)
 
 [node name="ghost" parent="." instance=ExtResource("11_lcwyy")]
-position = Vector2(1227, -662)
-
-[node name="ghost2" parent="." instance=ExtResource("11_lcwyy")]
-position = Vector2(1252, -284)
+position = Vector2(1319, -696)
 
 [node name="ghost3" parent="." instance=ExtResource("11_lcwyy")]
 position = Vector2(1103, -1522)
-
-[node name="ghost4" parent="." instance=ExtResource("11_lcwyy")]
-position = Vector2(1150, -1151)
-
-[node name="bat2" parent="." instance=ExtResource("10_qnu8e")]
-position = Vector2(1107.0001, -938)
-rotation = 0.48443237
 
 [node name="tilemapspikes" type="TileMap" parent="."]
 position = Vector2(40.999996, -8.000005)
@@ -769,10 +760,9 @@ position = Vector2(880.00006, 302)
 scale = Vector2(1.125, 1)
 texture = ExtResource("16_nbnb5")
 
-[node name="CanvasLayer2" type="CanvasLayer" parent="."]
-script = ExtResource("17_8bq5e")
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="Label" type="RichTextLabel" parent="CanvasLayer2"]
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer"]
 layout_direction = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -792,9 +782,10 @@ theme_override_font_sizes/normal_font_size = 138
 bbcode_enabled = true
 text = "The Climb"
 horizontal_alignment = 1
+script = ExtResource("18_70q4v")
 metadata/_edit_use_anchors_ = true
 
-[node name="Label2" type="RichTextLabel" parent="CanvasLayer2/Label"]
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/RichTextLabel"]
 layout_direction = 1
 layout_mode = 1
 anchors_preset = -1
@@ -815,7 +806,7 @@ text = "---------登る---------"
 horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="Label2" type="RichTextLabel" parent="CanvasLayer2/Label/Label2"]
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/RichTextLabel/RichTextLabel"]
 layout_direction = 1
 layout_mode = 1
 anchors_preset = -1
@@ -835,3 +826,48 @@ bbcode_enabled = true
 text = "Level : five"
 horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="sky" type="ParallaxLayer" parent="ParallaxBackground"]
+z_index = -3025
+motion_scale = Vector2(0.05, 0.05)
+
+[node name="UppderDarkerSky" type="Sprite2D" parent="ParallaxBackground/sky"]
+position = Vector2(270.00006, 84.999985)
+scale = Vector2(0.49499825, 0.49499825)
+texture = ExtResource("19_70q4v")
+
+[node name="UppderDarkerSky2" type="Sprite2D" parent="ParallaxBackground/sky"]
+position = Vector2(262, -309.99994)
+scale = Vector2(0.49499825, 0.49499825)
+texture = ExtResource("19_70q4v")
+
+[node name="UppderDarkerSky5" type="Sprite2D" parent="ParallaxBackground/sky"]
+position = Vector2(-4.5007935, 61.499084)
+scale = Vector2(0.49499825, 0.49499825)
+texture = ExtResource("19_70q4v")
+
+[node name="UppderDarkerSky6" type="Sprite2D" parent="ParallaxBackground/sky"]
+position = Vector2(-12.5008545, -333.50085)
+scale = Vector2(0.49499825, 0.49499825)
+texture = ExtResource("19_70q4v")
+
+[node name="UppderDarkerSky3" type="Sprite2D" parent="ParallaxBackground/sky"]
+position = Vector2(262, -755.0002)
+scale = Vector2(0.49499825, 0.49499825)
+texture = ExtResource("19_70q4v")
+
+[node name="UppderDarkerSky4" type="Sprite2D" parent="ParallaxBackground/sky"]
+position = Vector2(253.00003, -1206)
+scale = Vector2(0.49499825, 0.49499825)
+texture = ExtResource("19_70q4v")
+
+[node name="moon" type="ParallaxLayer" parent="ParallaxBackground"]
+z_index = -51
+position = Vector2(68, 39)
+motion_scale = Vector2(0.05, 0.05)
+
+[node name="Moon" type="Sprite2D" parent="ParallaxBackground/moon"]
+position = Vector2(159, -232)
+texture = ExtResource("20_70q4v")

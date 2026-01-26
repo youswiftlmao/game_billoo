@@ -86,7 +86,6 @@ wait_time = 0.5
 z_index = -2
 y_sort_enabled = true
 position = Vector2(0, -0.612821)
-rotation = -3.1391146
 shape = SubResource("RectangleShape2D_48wkk")
 one_way_collision = true
 

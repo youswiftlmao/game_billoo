@@ -1,2 +1,2 @@
 extends Node
-var intro_played := {}
+var shown_levels := {}

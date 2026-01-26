@@ -20,7 +20,7 @@
 [ext_resource type="PackedScene" uid="uid://c17b1cnsjf7oi" path="res://scenes/door.tscn" id="19_m2gqb"]
 [ext_resource type="Texture2D" uid="uid://bfm8fovtpppd1" path="res://assests/DOORAAAA.png" id="20_etvwk"]
 [ext_resource type="PackedScene" uid="uid://c73fs3yroorn7" path="res://scenes/lvl_20_3.tscn" id="21_q0mch"]
-[ext_resource type="Script" uid="uid://6046no2352xj" path="res://scripts/fadestextstarter.gd" id="22_etvwk"]
+[ext_resource type="Script" uid="uid://1yq20v488miu" path="res://scripts/textthingniemagigie.gd" id="22_etvwk"]
 [ext_resource type="FontFile" uid="uid://bh6jvsa7eqolq" path="res://fonts/Jersey10-Regular.ttf" id="23_q0mch"]
 [ext_resource type="FontFile" uid="uid://dtnymhkbxnnaa" path="res://fonts/MadouFutoMaruGothic-d9Xo7.ttf" id="24_q0mch"]
 
@@ -896,12 +896,8 @@ region_rect = Rect2(222, 0, 34, 96)
 position = Vector2(166, 4)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
-script = ExtResource("22_etvwk")
 
-[node name="CanvasLayer2" type="CanvasLayer" parent="."]
-script = ExtResource("22_etvwk")
-
-[node name="Label" type="RichTextLabel" parent="CanvasLayer2"]
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer"]
 layout_direction = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -923,9 +919,10 @@ bbcode_enabled = true
 text = "The End..?
 "
 horizontal_alignment = 1
+script = ExtResource("22_etvwk")
 metadata/_edit_use_anchors_ = true
 
-[node name="Label2" type="RichTextLabel" parent="CanvasLayer2/Label"]
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/RichTextLabel"]
 layout_direction = 1
 layout_mode = 1
 anchors_preset = -1
@@ -946,7 +943,7 @@ text = "---------終わり？---------"
 horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="Label2" type="RichTextLabel" parent="CanvasLayer2/Label/Label2"]
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/RichTextLabel/RichTextLabel"]
 layout_direction = 1
 layout_mode = 1
 anchors_preset = -1
