@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://2gvbtxugtby7"]
+[gd_scene load_steps=40 format=3 uid="uid://2gvbtxugtby7"]
 
 [ext_resource type="PackedScene" uid="uid://c36gx83vrkgu0" path="res://scenes/player.tscn" id="1_83mxe"]
 [ext_resource type="Texture2D" uid="uid://c3qaq8pfb10q4" path="res://addons/TILESHEET ALL DONE.png" id="2_q8qpk"]
@@ -19,7 +19,9 @@
 [ext_resource type="Texture2D" uid="uid://cxtb2m2h5e52y" path="res://assests/tilealso.png" id="19_kalwu"]
 [ext_resource type="Script" uid="uid://cnfjdeqmd808h" path="res://scripts/backvlouds.gd" id="19_yg2uy"]
 [ext_resource type="Texture2D" uid="uid://cky5tcd8lvi1x" path="res://assests/cloud back.png" id="20_i726m"]
+[ext_resource type="Script" uid="uid://cof8j4dyg02xu" path="res://scripts/mid_couds.gd" id="21_82v73"]
 [ext_resource type="Script" uid="uid://6046no2352xj" path="res://scripts/fadestextstarter.gd" id="22_82v73"]
+[ext_resource type="Texture2D" uid="uid://cixiccgfrcj5j" path="res://assests/mid cloud.png" id="22_tkk12"]
 [ext_resource type="FontFile" uid="uid://bh6jvsa7eqolq" path="res://fonts/Jersey10-Regular.ttf" id="23_tkk12"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yg2uy"]
@@ -580,9 +582,6 @@ autoplay = "poopoo"
 [node name="player" parent="." instance=ExtResource("1_83mxe")]
 position = Vector2(136, -2)
 
-[node name="player2" parent="." instance=ExtResource("1_83mxe")]
-position = Vector2(1282, 16)
-
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2(71, 12)
 scale = Vector2(0.99999994, 0.99999994)
@@ -835,6 +834,61 @@ position = Vector2(1997, 7.2049866)
 texture = ExtResource("20_i726m")
 region_enabled = true
 region_rect = Rect2(8, 208, 536, 248)
+
+[node name="midcloud" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2(-9, 38)
+motion_scale = Vector2(0.2, 0.1)
+script = ExtResource("21_82v73")
+
+[node name="MidCloud50" type="Sprite2D" parent="ParallaxBackground/midcloud"]
+position = Vector2(-500, 87)
+texture = ExtResource("22_tkk12")
+region_enabled = true
+region_rect = Rect2(0, 8, 480, 112)
+
+[node name="MidCloud51" type="Sprite2D" parent="ParallaxBackground/midcloud"]
+position = Vector2(-139, 62)
+texture = ExtResource("22_tkk12")
+region_enabled = true
+region_rect = Rect2(0, 200, 480, 160)
+
+[node name="MidCloud52" type="Sprite2D" parent="ParallaxBackground/midcloud"]
+position = Vector2(290, 59.5)
+scale = Vector2(1, 1.4910715)
+texture = ExtResource("22_tkk12")
+region_enabled = true
+region_rect = Rect2(0, 8, 480, 112)
+
+[node name="MidCloud53" type="Sprite2D" parent="ParallaxBackground/midcloud"]
+position = Vector2(689, 62)
+texture = ExtResource("22_tkk12")
+region_enabled = true
+region_rect = Rect2(0, 200, 480, 160)
+
+[node name="MidCloud54" type="Sprite2D" parent="ParallaxBackground/midcloud"]
+position = Vector2(304, 87)
+texture = ExtResource("22_tkk12")
+region_enabled = true
+region_rect = Rect2(0, 8, 480, 112)
+
+[node name="MidCloud55" type="Sprite2D" parent="ParallaxBackground/midcloud"]
+position = Vector2(665, 62)
+texture = ExtResource("22_tkk12")
+region_enabled = true
+region_rect = Rect2(0, 200, 480, 160)
+
+[node name="MidCloud56" type="Sprite2D" parent="ParallaxBackground/midcloud"]
+position = Vector2(1094, 59.5)
+scale = Vector2(1, 1.4910715)
+texture = ExtResource("22_tkk12")
+region_enabled = true
+region_rect = Rect2(0, 8, 480, 112)
+
+[node name="MidCloud57" type="Sprite2D" parent="ParallaxBackground/midcloud"]
+position = Vector2(1493, 62)
+texture = ExtResource("22_tkk12")
+region_enabled = true
+region_rect = Rect2(0, 200, 480, 160)
 
 [node name="architecture" type="ParallaxLayer" parent="ParallaxBackground"]
 position = Vector2(0, -1)

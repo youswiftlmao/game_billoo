@@ -10,7 +10,7 @@ var dead = false
 
 
 
-func _physics_process(delta: float) -> void:
+func _physics_process(delta: float) -> void:	
 	updhp()
 	deal_with_damage() 
 	
@@ -55,8 +55,7 @@ func _on_ghitbox_body_exited(body: Node2D) -> void:
 		player_in_attack_zone = false
 		
 func deal_with_damage():
-	if health <= 0:
-		cantakedmg = false
+
 	if player_in_attack_zone and Global.player_current_attack == true :
 		if cantakedmg == true:
 			health = health - 20
@@ -64,7 +63,8 @@ func deal_with_damage():
 			cantakedmg = false
 			print("ghost owie,", health)
 				
-			player.shake_camera(0.1, 5.0)  # duration = 0.1s, intensity = 5px
+			if is_instance_valid(player):
+				player.shake_camera(0.1, 5.0)  # duration = 0.1s, intensity = 5px
 
 			# Brief freeze + smooth knockback
 			var original_chase = playerchase

@@ -57,7 +57,7 @@ func _physics_process(delta: float) -> void:
 	attack()
 	updhp()
 	# different spikes
-
+	
 	# Collision checking (e.g. if touching spikes)
 # Collision checking (e.g. if touching spikes)
 	for i in range(get_slide_collision_count()):
@@ -66,7 +66,7 @@ func _physics_process(delta: float) -> void:
 
 		if collider and "tilemapspike" in collider.name:
 			HP = 0
-			break  # stop checking further collisions this frame
+
 
 	if HP <= 0 and player_alive:
 		player_alive = false
@@ -139,7 +139,7 @@ func _on_phitbox_body_entered(body: Node2D) -> void:
 
 		if body.has_method("enemy"):
 			e_inattack_range = true
-		elif body.has_method("ghost"):
+		if body.has_method("ghost"):
 			g_inattack_range = true
 		
 		
@@ -156,24 +156,23 @@ func _on_phitbox_body_exited(body: Node2D) -> void:
 func enemy_attack():
 	if HP > 0:
 		if e_inattack_range and e_attackCD == true:
-			HP = HP - 7
+			print("DAMAGING FROM ENEMY, HP BEFORE:", HP)
+			HP -= 7
 			e_attackCD = false
 			$AttackCD.start()
-			print(HP)
-		elif  g_inattack_range and g_attackCD == true:
-				HP = HP - 15
-				g_attackCD = false
-				$AttackCD.start()
-				print(HP)
-	else:
-		return
+
+		elif g_inattack_range and g_attackCD == true:
+			print("DAMAGING FROM GHOST, HP BEFORE:", HP)
+			HP -= 15
+			g_attackCD = false
+			$AttackCD.start()
 
 
 func _on_attack_cd_timeout() -> void:
 	e_attackCD = true
 	g_attackCD = true
 func attack():
-	if  HP > 0 and  Input.is_action_just_pressed("attack"):
+	if  player_alive and  Input.is_action_just_pressed("attack"):
 		Global.player_current_attack = true
 		attack_ip = true
 		$AnimatedSprite2D.play("attack")
@@ -189,6 +188,10 @@ func _on_deal_attack_timer_timeout() -> void:
 	Global.player_current_attack =  false
 	attack_ip = false
 func shake_camera(duration: float = 0.1, intensity: float = .0) -> void:
+	if player_alive == false:
+		return
+	if get_tree() == null:
+		return
 	var elapsed = 0.0
 	while elapsed < duration:
 		var offset = Vector2(randf_range(-intensity, intensity), randf_range(-intensity, intensity))
@@ -204,6 +207,7 @@ func shake_camera(duration: float = 0.1, intensity: float = .0) -> void:
 func _on_regen_timeout() -> void:
 	if HP < 100:
 		HP = HP  + 20
+		print("regen fired, HP =", HP)
 	if HP > 100:
 		HP = 100
 	if HP <= 0:
