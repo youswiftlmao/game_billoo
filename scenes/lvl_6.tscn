@@ -976,7 +976,6 @@ horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
-visible = false
 
 [node name="sky" type="ParallaxLayer" parent="ParallaxBackground"]
 z_index = -645

@@ -1,13 +1,12 @@
-[gd_scene load_steps=15 format=3 uid="uid://b6kmikotf0jy1"]
+[gd_scene load_steps=17 format=3 uid="uid://b6kmikotf0jy1"]
 
 [ext_resource type="Texture2D" uid="uid://b4xvu5ofa4puf" path="res://assests/dragon.png" id="1_vfigm"]
 [ext_resource type="Script" uid="uid://cwkbht7tsaq0o" path="res://scripts/area_2d.gd" id="2_5q8uj"]
 [ext_resource type="Script" uid="uid://bdajsoefkhq4l" path="res://scripts/dragon.gd" id="2_7fr0w"]
 [ext_resource type="Texture2D" uid="uid://c5a3qol6id667" path="res://assests/dragon chomp.png" id="4_kcfnc"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_kcfnc"]
-radius = 59.015156
-height = 134.0
+[sub_resource type="CircleShape2D" id="CircleShape2D_7fr0w"]
+radius = 60.827633
 
 [sub_resource type="Animation" id="Animation_2yk6i"]
 length = 0.001
@@ -22,6 +21,18 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [0.47996554]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../DEADZONE2/CollisionShape2D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
 }
 
 [sub_resource type="Animation" id="Animation_y46cm"]
@@ -38,12 +49,27 @@ tracks/0/keys = {
 "update": 0,
 "values": [0.0, 0.6108652381980153, 0.0]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../DEADZONE2/CollisionShape2D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.8, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, false, true]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_fe7o6"]
 _data = {
 &"RESET": SubResource("Animation_2yk6i"),
 &"jaw": SubResource("Animation_y46cm")
 }
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7fr0w"]
+size = Vector2(122.000015, 7.000002)
 
 [sub_resource type="Animation" id="Animation_kr2gv"]
 length = 0.001
@@ -58,6 +84,18 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../DEADZONE1/CollisionShape2D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
 }
 
 [sub_resource type="Animation" id="Animation_mn7pc"]
@@ -74,12 +112,27 @@ tracks/0/keys = {
 "update": 0,
 "values": [0.0, 0.0, -0.6108652381980153, 0.0]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../DEADZONE1/CollisionShape2D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.81, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, false, true]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_el11r"]
 _data = {
 &"RESET": SubResource("Animation_kr2gv"),
 &"upper jaw": SubResource("Animation_mn7pc")
 }
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kcfnc"]
+size = Vector2(122.000046, 8.500008)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7fr0w"]
 atlas = ExtResource("1_vfigm")
@@ -117,9 +170,9 @@ region_rect = Rect2(226, 1, 101, 61)
 script = ExtResource("2_5q8uj")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(13, 1)
+position = Vector2(29.000002, -4.000001)
 rotation = 1.5632741
-shape = SubResource("CapsuleShape2D_kcfnc")
+shape = SubResource("CircleShape2D_7fr0w")
 
 [node name="lower jaw" type="Node2D" parent="."]
 position = Vector2(-45, 0)
@@ -132,10 +185,19 @@ texture = ExtResource("4_kcfnc")
 region_enabled = true
 region_rect = Rect2(0, 112, 160, 40)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="lower jaw/Sprite2D2"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="lower jaw"]
+root_node = NodePath("../Sprite2D2")
 libraries = {
 &"": SubResource("AnimationLibrary_fe7o6")
 }
+
+[node name="DEADZONE2" type="Area2D" parent="lower jaw"]
+position = Vector2(81.99999, 10.999999)
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="lower jaw/DEADZONE2"]
+position = Vector2(-20.999987, -6.499995)
+shape = SubResource("RectangleShape2D_7fr0w")
 
 [node name="upper jaw" type="Node2D" parent="."]
 position = Vector2(-45, 0)
@@ -146,10 +208,21 @@ texture = ExtResource("4_kcfnc")
 region_enabled = true
 region_rect = Rect2(0, 64, 160, 40)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="upper jaw/Sprite2D3"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="upper jaw"]
+root_node = NodePath("../Sprite2D3")
 libraries = {
 &"": SubResource("AnimationLibrary_el11r")
 }
+
+[node name="DEADZONE1" type="Area2D" parent="upper jaw"]
+position = Vector2(81.99999, -7.9999995)
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="upper jaw/DEADZONE1"]
+position = Vector2(-20.999987, 7.749997)
+scale = Vector2(0.9999995, 0.9999995)
+shape = SubResource("RectangleShape2D_kcfnc")
+disabled = true
 
 [node name="DRAGON" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_y46cm")

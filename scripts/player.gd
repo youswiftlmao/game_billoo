@@ -247,6 +247,9 @@ func _on_hurtbox_area_entered(area: Area2D) -> void:
 	elif  area.name.begins_with("invispike"):
 		HP = 0
 		print("youve been trolled bwah ", HP)
+	elif area.name.begins_with("DEADZONE"):
+		HP = 0
+		print("bitten by dragon", HP)
 func  update_coin_label():
 	$CoinLabel.visible = true
 	$CoinLabel.text = str(coins) + "/" + str(total_coins)

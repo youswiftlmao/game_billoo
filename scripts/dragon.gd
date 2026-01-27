@@ -17,12 +17,13 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 		player_inside = true
 
 		$DRAGON.hide()
+
 		$"lower jaw".show()
 		$"upper jaw".show()
 
 
-		var lower_anim = $"lower jaw/Sprite2D2/AnimationPlayer"
-		var upper_anim = $"upper jaw/Sprite2D3/AnimationPlayer"
+		var lower_anim = $"lower jaw/AnimationPlayer"
+		var upper_anim = $"upper jaw/AnimationPlayer"
 
 		lower_anim.stop()
 		lower_anim.seek(0, true)
@@ -45,12 +46,12 @@ func _on_area_2d_body_exited(body: Node2D) -> void:
 
 func loop_jaws() -> void:
 	while player_inside:
-		await $"lower jaw/Sprite2D2/AnimationPlayer".animation_finished
-		await $"upper jaw/Sprite2D3/AnimationPlayer".animation_finished
+		await $"lower jaw/AnimationPlayer".animation_finished
+		await $"upper jaw/AnimationPlayer".animation_finished
 
-		$"lower jaw/Sprite2D2/AnimationPlayer".play("jaw")
-		$"upper jaw/Sprite2D3/AnimationPlayer".play("upper jaw")
-
+		$"lower jaw/AnimationPlayer".play("jaw")
+		$"upper jaw/AnimationPlayer".play("upper jaw")
+	
 	reset_dragon()
 
 
@@ -78,3 +79,4 @@ func reset_dragon() -> void:
 	$"lower jaw".hide()
 	$"upper jaw".hide()
 	$DRAGON.play("default")
+	
