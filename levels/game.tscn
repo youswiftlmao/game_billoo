@@ -733,12 +733,6 @@ region_rect = Rect2(0, 200, 480, 160)
 motion_scale = Vector2(0.2, 0.1)
 script = ExtResource("20_mgpep")
 
-[node name="FrontCloud" type="Sprite2D" parent="ParallaxBackground/frontcloud"]
-position = Vector2(1414, -15)
-texture = ExtResource("21_pb6kn")
-region_enabled = true
-region_rect = Rect2(0, 192, 480, 160)
-
 [node name="FrontCloud6" type="Sprite2D" parent="ParallaxBackground/frontcloud"]
 position = Vector2(-963, 265)
 texture = ExtResource("21_pb6kn")
@@ -816,12 +810,6 @@ position = Vector2(-290, 225)
 texture = ExtResource("21_pb6kn")
 region_enabled = true
 region_rect = Rect2(-8, 344, 496, 160)
-
-[node name="FrontCloud2" type="Sprite2D" parent="ParallaxBackground/frontcloud"]
-position = Vector2(1176, -362)
-texture = ExtResource("21_pb6kn")
-region_enabled = true
-region_rect = Rect2(0, 0, 488, 152)
 
 [node name="behind architecture" type="ParallaxLayer" parent="ParallaxBackground"]
 position = Vector2(-30, -242)

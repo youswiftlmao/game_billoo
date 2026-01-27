@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=3 uid="uid://bge5ysloonysf"]
+[gd_scene load_steps=43 format=3 uid="uid://bge5ysloonysf"]
 
 [ext_resource type="PackedScene" uid="uid://c36gx83vrkgu0" path="res://scenes/player.tscn" id="1_vm7h0"]
 [ext_resource type="Texture2D" uid="uid://c3qaq8pfb10q4" path="res://addons/TILESHEET ALL DONE.png" id="2_theay"]
@@ -20,6 +20,12 @@
 [ext_resource type="Texture2D" uid="uid://cn5oul1l55vyt" path="res://assests/UPPDER DARKER SKY.png" id="19_70q4v"]
 [ext_resource type="FontFile" uid="uid://dtnymhkbxnnaa" path="res://fonts/MadouFutoMaruGothic-d9Xo7.ttf" id="19_i7e1e"]
 [ext_resource type="Texture2D" uid="uid://d2q74uovlq3ac" path="res://assests/moon.png" id="20_70q4v"]
+[ext_resource type="Script" uid="uid://cnfjdeqmd808h" path="res://scripts/backvlouds.gd" id="21_mweoq"]
+[ext_resource type="Texture2D" uid="uid://cky5tcd8lvi1x" path="res://assests/cloud back.png" id="22_ue4aq"]
+[ext_resource type="Script" uid="uid://cof8j4dyg02xu" path="res://scripts/mid_couds.gd" id="23_x6wrt"]
+[ext_resource type="Texture2D" uid="uid://cixiccgfrcj5j" path="res://assests/mid cloud.png" id="24_xknrl"]
+[ext_resource type="Script" uid="uid://cfaipal4sy3ck" path="res://scripts/front_clouds.gd" id="25_p6iuc"]
+[ext_resource type="Texture2D" uid="uid://bhko522q4cnpt" path="res://assests/front cloud.png" id="26_ug7tc"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nvppn"]
 texture = ExtResource("2_theay")
@@ -871,3 +877,2106 @@ motion_scale = Vector2(0.05, 0.05)
 [node name="Moon" type="Sprite2D" parent="ParallaxBackground/moon"]
 position = Vector2(159, -232)
 texture = ExtResource("20_70q4v")
+
+[node name="bckcloud" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2(-1623, 86)
+motion_scale = Vector2(0.08, 0.06)
+script = ExtResource("21_mweoq")
+
+[node name="CloudBack16" type="Sprite2D" parent="ParallaxBackground/bckcloud"]
+position = Vector2(1736, -79)
+texture = ExtResource("22_ue4aq")
+region_enabled = true
+region_rect = Rect2(-8, -48, 600, 248)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/bckcloud"]
+position = Vector2(1967, -24)
+texture = ExtResource("22_ue4aq")
+region_enabled = true
+region_rect = Rect2(8, 208, 536, 248)
+
+[node name="CloudBack17" type="Sprite2D" parent="ParallaxBackground/bckcloud"]
+position = Vector2(2441, -108)
+texture = ExtResource("22_ue4aq")
+region_enabled = true
+region_rect = Rect2(-8, -48, 600, 248)
+
+[node name="Sprite2D2" type="Sprite2D" parent="ParallaxBackground/bckcloud"]
+position = Vector2(2672, -53)
+texture = ExtResource("22_ue4aq")
+region_enabled = true
+region_rect = Rect2(8, 208, 536, 248)
+
+[node name="CloudBack18" type="Sprite2D" parent="ParallaxBackground/bckcloud"]
+position = Vector2(2445, -74)
+texture = ExtResource("22_ue4aq")
+region_enabled = true
+region_rect = Rect2(-8, -48, 600, 248)
+
+[node name="Sprite2D3" type="Sprite2D" parent="ParallaxBackground/bckcloud"]
+position = Vector2(2676, -19)
+texture = ExtResource("22_ue4aq")
+region_enabled = true
+region_rect = Rect2(8, 208, 536, 248)
+
+[node name="CloudBack19" type="Sprite2D" parent="ParallaxBackground/bckcloud"]
+position = Vector2(3081, -72)
+texture = ExtResource("22_ue4aq")
+region_enabled = true
+region_rect = Rect2(-8, -48, 600, 248)
+
+[node name="Sprite2D4" type="Sprite2D" parent="ParallaxBackground/bckcloud"]
+position = Vector2(3312, -17)
+texture = ExtResource("22_ue4aq")
+region_enabled = true
+region_rect = Rect2(8, 208, 536, 248)
+
+[node name="CloudBack20" type="Sprite2D" parent="ParallaxBackground/bckcloud"]
+position = Vector2(3786, -101)
+texture = ExtResource("22_ue4aq")
+region_enabled = true
+region_rect = Rect2(-8, -48, 600, 248)
+
+[node name="Sprite2D5" type="Sprite2D" parent="ParallaxBackground/bckcloud"]
+position = Vector2(4017, -46)
+texture = ExtResource("22_ue4aq")
+region_enabled = true
+region_rect = Rect2(8, 208, 536, 248)
+
+[node name="CloudBack21" type="Sprite2D" parent="ParallaxBackground/bckcloud"]
+position = Vector2(3790, -67)
+texture = ExtResource("22_ue4aq")
+region_enabled = true
+region_rect = Rect2(-8, -48, 600, 248)
+
+[node name="Sprite2D6" type="Sprite2D" parent="ParallaxBackground/bckcloud"]
+position = Vector2(4021, -12)
+texture = ExtResource("22_ue4aq")
+region_enabled = true
+region_rect = Rect2(8, 208, 536, 248)
+
+[node name="CloudBack22" type="Sprite2D" parent="ParallaxBackground/bckcloud"]
+position = Vector2(4445, -73)
+texture = ExtResource("22_ue4aq")
+region_enabled = true
+region_rect = Rect2(-8, -48, 600, 248)
+
+[node name="Sprite2D7" type="Sprite2D" parent="ParallaxBackground/bckcloud"]
+position = Vector2(4676, -18)
+texture = ExtResource("22_ue4aq")
+region_enabled = true
+region_rect = Rect2(8, 208, 536, 248)
+
+[node name="CloudBack23" type="Sprite2D" parent="ParallaxBackground/bckcloud"]
+position = Vector2(5150, -102)
+texture = ExtResource("22_ue4aq")
+region_enabled = true
+region_rect = Rect2(-8, -48, 600, 248)
+
+[node name="Sprite2D8" type="Sprite2D" parent="ParallaxBackground/bckcloud"]
+position = Vector2(5381, -47)
+texture = ExtResource("22_ue4aq")
+region_enabled = true
+region_rect = Rect2(8, 208, 536, 248)
+
+[node name="CloudBack24" type="Sprite2D" parent="ParallaxBackground/bckcloud"]
+position = Vector2(5154, -68)
+texture = ExtResource("22_ue4aq")
+region_enabled = true
+region_rect = Rect2(-8, -48, 600, 248)
+
+[node name="Sprite2D9" type="Sprite2D" parent="ParallaxBackground/bckcloud"]
+position = Vector2(5385, -13)
+texture = ExtResource("22_ue4aq")
+region_enabled = true
+region_rect = Rect2(8, 208, 536, 248)
+
+[node name="CloudBack25" type="Sprite2D" parent="ParallaxBackground/bckcloud"]
+position = Vector2(5790, -66)
+texture = ExtResource("22_ue4aq")
+region_enabled = true
+region_rect = Rect2(-8, -48, 600, 248)
+
+[node name="Sprite2D10" type="Sprite2D" parent="ParallaxBackground/bckcloud"]
+position = Vector2(6021, -11)
+texture = ExtResource("22_ue4aq")
+region_enabled = true
+region_rect = Rect2(8, 208, 536, 248)
+
+[node name="CloudBack26" type="Sprite2D" parent="ParallaxBackground/bckcloud"]
+position = Vector2(6495, -95)
+texture = ExtResource("22_ue4aq")
+region_enabled = true
+region_rect = Rect2(-8, -48, 600, 248)
+
+[node name="Sprite2D11" type="Sprite2D" parent="ParallaxBackground/bckcloud"]
+position = Vector2(6726, -40)
+texture = ExtResource("22_ue4aq")
+region_enabled = true
+region_rect = Rect2(8, 208, 536, 248)
+
+[node name="CloudBack27" type="Sprite2D" parent="ParallaxBackground/bckcloud"]
+position = Vector2(6499, -61)
+texture = ExtResource("22_ue4aq")
+region_enabled = true
+region_rect = Rect2(-8, -48, 600, 248)
+
+[node name="Sprite2D12" type="Sprite2D" parent="ParallaxBackground/bckcloud"]
+position = Vector2(6730, -6)
+texture = ExtResource("22_ue4aq")
+region_enabled = true
+region_rect = Rect2(8, 208, 536, 248)
+
+[node name="midcloud" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2(-1577, -5)
+scale = Vector2(0.7664397, 0.7664397)
+motion_scale = Vector2(0.08, 0.06)
+script = ExtResource("23_x6wrt")
+
+[node name="MidCloud35" type="Sprite2D" parent="ParallaxBackground/midcloud"]
+position = Vector2(1685, 134)
+texture = ExtResource("24_xknrl")
+region_enabled = true
+region_rect = Rect2(0, 200, 480, 160)
+
+[node name="MidCloud33" type="Sprite2D" parent="ParallaxBackground/midcloud"]
+position = Vector2(2256.0002, 105.99999)
+scale = Vector2(1.4553571, 1.4553572)
+texture = ExtResource("24_xknrl")
+region_enabled = true
+region_rect = Rect2(0, 8, 480, 112)
+
+[node name="MidCloud34" type="Sprite2D" parent="ParallaxBackground/midcloud"]
+position = Vector2(2730, 158)
+texture = ExtResource("24_xknrl")
+region_enabled = true
+region_rect = Rect2(0, 8, 480, 112)
+
+[node name="MidCloud36" type="Sprite2D" parent="ParallaxBackground/midcloud"]
+position = Vector2(2985, 131.5)
+texture = ExtResource("24_xknrl")
+region_enabled = true
+region_rect = Rect2(0, 200, 480, 160)
+
+[node name="MidCloud45" type="Sprite2D" parent="ParallaxBackground/midcloud"]
+position = Vector2(2938, 113.25)
+scale = Vector2(1, 0.740625)
+texture = ExtResource("24_xknrl")
+region_enabled = true
+region_rect = Rect2(0, 200, 480, 160)
+
+[node name="MidCloud37" type="Sprite2D" parent="ParallaxBackground/midcloud"]
+position = Vector2(3556, 103.5)
+scale = Vector2(1.4553571, 1.4553572)
+texture = ExtResource("24_xknrl")
+region_enabled = true
+region_rect = Rect2(0, 8, 480, 112)
+
+[node name="MidCloud38" type="Sprite2D" parent="ParallaxBackground/midcloud"]
+position = Vector2(4030, 155.5)
+texture = ExtResource("24_xknrl")
+region_enabled = true
+region_rect = Rect2(0, 8, 480, 112)
+
+[node name="MidCloud39" type="Sprite2D" parent="ParallaxBackground/midcloud"]
+position = Vector2(4048, 113.5)
+texture = ExtResource("24_xknrl")
+region_enabled = true
+region_rect = Rect2(0, 200, 480, 160)
+
+[node name="MidCloud40" type="Sprite2D" parent="ParallaxBackground/midcloud"]
+position = Vector2(4619, 85.5)
+scale = Vector2(1.4553571, 1.4553572)
+texture = ExtResource("24_xknrl")
+region_enabled = true
+region_rect = Rect2(0, 8, 480, 112)
+
+[node name="MidCloud41" type="Sprite2D" parent="ParallaxBackground/midcloud"]
+position = Vector2(5093, 137.5)
+texture = ExtResource("24_xknrl")
+region_enabled = true
+region_rect = Rect2(0, 8, 480, 112)
+
+[node name="MidCloud42" type="Sprite2D" parent="ParallaxBackground/midcloud"]
+position = Vector2(4760, 112.5)
+texture = ExtResource("24_xknrl")
+region_enabled = true
+region_rect = Rect2(0, 200, 480, 160)
+
+[node name="MidCloud43" type="Sprite2D" parent="ParallaxBackground/midcloud"]
+position = Vector2(5331, 84.5)
+scale = Vector2(1.4553571, 1.4553572)
+texture = ExtResource("24_xknrl")
+region_enabled = true
+region_rect = Rect2(0, 8, 480, 112)
+
+[node name="MidCloud44" type="Sprite2D" parent="ParallaxBackground/midcloud"]
+position = Vector2(5805, 136.5)
+texture = ExtResource("24_xknrl")
+region_enabled = true
+region_rect = Rect2(0, 8, 480, 112)
+
+[node name="MidCloud46" type="Sprite2D" parent="ParallaxBackground/midcloud"]
+position = Vector2(5765.549, 188.9231)
+texture = ExtResource("24_xknrl")
+region_enabled = true
+region_rect = Rect2(0, 8, 480, 112)
+
+[node name="MidCloud47" type="Sprite2D" parent="ParallaxBackground/midcloud"]
+position = Vector2(6020.549, 162.4231)
+texture = ExtResource("24_xknrl")
+region_enabled = true
+region_rect = Rect2(0, 200, 480, 160)
+
+[node name="MidCloud48" type="Sprite2D" parent="ParallaxBackground/midcloud"]
+position = Vector2(5973.549, 144.1731)
+scale = Vector2(1, 0.740625)
+texture = ExtResource("24_xknrl")
+region_enabled = true
+region_rect = Rect2(0, 200, 480, 160)
+
+[node name="MidCloud49" type="Sprite2D" parent="ParallaxBackground/midcloud"]
+position = Vector2(6591.5493, 134.4231)
+scale = Vector2(1.4553571, 1.4553572)
+texture = ExtResource("24_xknrl")
+region_enabled = true
+region_rect = Rect2(0, 8, 480, 112)
+
+[node name="MidCloud50" type="Sprite2D" parent="ParallaxBackground/midcloud"]
+position = Vector2(7065.549, 186.4231)
+texture = ExtResource("24_xknrl")
+region_enabled = true
+region_rect = Rect2(0, 8, 480, 112)
+
+[node name="MidCloud51" type="Sprite2D" parent="ParallaxBackground/midcloud"]
+position = Vector2(7083.549, 144.4231)
+texture = ExtResource("24_xknrl")
+region_enabled = true
+region_rect = Rect2(0, 200, 480, 160)
+
+[node name="MidCloud52" type="Sprite2D" parent="ParallaxBackground/midcloud"]
+position = Vector2(7654.5493, 116.423096)
+scale = Vector2(1.4553571, 1.4553572)
+texture = ExtResource("24_xknrl")
+region_enabled = true
+region_rect = Rect2(0, 8, 480, 112)
+
+[node name="MidCloud53" type="Sprite2D" parent="ParallaxBackground/midcloud"]
+position = Vector2(8128.549, 168.4231)
+texture = ExtResource("24_xknrl")
+region_enabled = true
+region_rect = Rect2(0, 8, 480, 112)
+
+[node name="MidCloud54" type="Sprite2D" parent="ParallaxBackground/midcloud"]
+position = Vector2(7795.549, 143.4231)
+texture = ExtResource("24_xknrl")
+region_enabled = true
+region_rect = Rect2(0, 200, 480, 160)
+
+[node name="MidCloud55" type="Sprite2D" parent="ParallaxBackground/midcloud"]
+position = Vector2(8366.549, 115.423096)
+scale = Vector2(1.4553571, 1.4553572)
+texture = ExtResource("24_xknrl")
+region_enabled = true
+region_rect = Rect2(0, 8, 480, 112)
+
+[node name="MidCloud56" type="Sprite2D" parent="ParallaxBackground/midcloud"]
+position = Vector2(8840.549, 167.4231)
+texture = ExtResource("24_xknrl")
+region_enabled = true
+region_rect = Rect2(0, 8, 480, 112)
+
+[node name="MidCloud57" type="Sprite2D" parent="ParallaxBackground/midcloud"]
+position = Vector2(5747.2827, 242.41718)
+texture = ExtResource("24_xknrl")
+region_enabled = true
+region_rect = Rect2(0, 8, 480, 112)
+
+[node name="MidCloud58" type="Sprite2D" parent="ParallaxBackground/midcloud"]
+position = Vector2(6002.2827, 215.91718)
+texture = ExtResource("24_xknrl")
+region_enabled = true
+region_rect = Rect2(0, 200, 480, 160)
+
+[node name="MidCloud59" type="Sprite2D" parent="ParallaxBackground/midcloud"]
+position = Vector2(5955.2827, 197.66718)
+scale = Vector2(1, 0.740625)
+texture = ExtResource("24_xknrl")
+region_enabled = true
+region_rect = Rect2(0, 200, 480, 160)
+
+[node name="MidCloud60" type="Sprite2D" parent="ParallaxBackground/midcloud"]
+position = Vector2(6573.283, 187.91719)
+scale = Vector2(1.4553571, 1.4553572)
+texture = ExtResource("24_xknrl")
+region_enabled = true
+region_rect = Rect2(0, 8, 480, 112)
+
+[node name="MidCloud61" type="Sprite2D" parent="ParallaxBackground/midcloud"]
+position = Vector2(7047.2827, 239.91718)
+texture = ExtResource("24_xknrl")
+region_enabled = true
+region_rect = Rect2(0, 8, 480, 112)
+
+[node name="MidCloud62" type="Sprite2D" parent="ParallaxBackground/midcloud"]
+position = Vector2(7065.2827, 197.91718)
+texture = ExtResource("24_xknrl")
+region_enabled = true
+region_rect = Rect2(0, 200, 480, 160)
+
+[node name="MidCloud63" type="Sprite2D" parent="ParallaxBackground/midcloud"]
+position = Vector2(7636.283, 169.91719)
+scale = Vector2(1.4553571, 1.4553572)
+texture = ExtResource("24_xknrl")
+region_enabled = true
+region_rect = Rect2(0, 8, 480, 112)
+
+[node name="MidCloud64" type="Sprite2D" parent="ParallaxBackground/midcloud"]
+position = Vector2(8110.2827, 221.91718)
+texture = ExtResource("24_xknrl")
+region_enabled = true
+region_rect = Rect2(0, 8, 480, 112)
+
+[node name="MidCloud65" type="Sprite2D" parent="ParallaxBackground/midcloud"]
+position = Vector2(7777.2827, 196.91718)
+texture = ExtResource("24_xknrl")
+region_enabled = true
+region_rect = Rect2(0, 200, 480, 160)
+
+[node name="MidCloud66" type="Sprite2D" parent="ParallaxBackground/midcloud"]
+position = Vector2(8348.283, 168.91719)
+scale = Vector2(1.4553571, 1.4553572)
+texture = ExtResource("24_xknrl")
+region_enabled = true
+region_rect = Rect2(0, 8, 480, 112)
+
+[node name="MidCloud67" type="Sprite2D" parent="ParallaxBackground/midcloud"]
+position = Vector2(8822.283, 220.91718)
+texture = ExtResource("24_xknrl")
+region_enabled = true
+region_rect = Rect2(0, 8, 480, 112)
+
+[node name="MidCloud68" type="Sprite2D" parent="ParallaxBackground/midcloud"]
+position = Vector2(5774.6826, 260.68344)
+texture = ExtResource("24_xknrl")
+region_enabled = true
+region_rect = Rect2(0, 8, 480, 112)
+
+[node name="MidCloud69" type="Sprite2D" parent="ParallaxBackground/midcloud"]
+position = Vector2(6029.6826, 234.18344)
+texture = ExtResource("24_xknrl")
+region_enabled = true
+region_rect = Rect2(0, 200, 480, 160)
+
+[node name="MidCloud70" type="Sprite2D" parent="ParallaxBackground/midcloud"]
+position = Vector2(5982.6826, 215.93344)
+scale = Vector2(1, 0.740625)
+texture = ExtResource("24_xknrl")
+region_enabled = true
+region_rect = Rect2(0, 200, 480, 160)
+
+[node name="MidCloud71" type="Sprite2D" parent="ParallaxBackground/midcloud"]
+position = Vector2(6600.683, 206.18346)
+scale = Vector2(1.4553571, 1.4553572)
+texture = ExtResource("24_xknrl")
+region_enabled = true
+region_rect = Rect2(0, 8, 480, 112)
+
+[node name="MidCloud72" type="Sprite2D" parent="ParallaxBackground/midcloud"]
+position = Vector2(7074.6826, 258.18344)
+texture = ExtResource("24_xknrl")
+region_enabled = true
+region_rect = Rect2(0, 8, 480, 112)
+
+[node name="MidCloud73" type="Sprite2D" parent="ParallaxBackground/midcloud"]
+position = Vector2(7092.6826, 216.18344)
+texture = ExtResource("24_xknrl")
+region_enabled = true
+region_rect = Rect2(0, 200, 480, 160)
+
+[node name="MidCloud74" type="Sprite2D" parent="ParallaxBackground/midcloud"]
+position = Vector2(7663.683, 188.18346)
+scale = Vector2(1.4553571, 1.4553572)
+texture = ExtResource("24_xknrl")
+region_enabled = true
+region_rect = Rect2(0, 8, 480, 112)
+
+[node name="MidCloud75" type="Sprite2D" parent="ParallaxBackground/midcloud"]
+position = Vector2(8137.6826, 240.18344)
+texture = ExtResource("24_xknrl")
+region_enabled = true
+region_rect = Rect2(0, 8, 480, 112)
+
+[node name="MidCloud76" type="Sprite2D" parent="ParallaxBackground/midcloud"]
+position = Vector2(7804.6826, 215.18344)
+texture = ExtResource("24_xknrl")
+region_enabled = true
+region_rect = Rect2(0, 200, 480, 160)
+
+[node name="MidCloud77" type="Sprite2D" parent="ParallaxBackground/midcloud"]
+position = Vector2(8375.683, 187.18346)
+scale = Vector2(1.4553571, 1.4553572)
+texture = ExtResource("24_xknrl")
+region_enabled = true
+region_rect = Rect2(0, 8, 480, 112)
+
+[node name="MidCloud78" type="Sprite2D" parent="ParallaxBackground/midcloud"]
+position = Vector2(8849.683, 239.18344)
+texture = ExtResource("24_xknrl")
+region_enabled = true
+region_rect = Rect2(0, 8, 480, 112)
+
+[node name="MidCloud79" type="Sprite2D" parent="ParallaxBackground/midcloud"]
+position = Vector2(1686.3049, 173.14203)
+texture = ExtResource("24_xknrl")
+region_enabled = true
+region_rect = Rect2(0, 200, 480, 160)
+
+[node name="MidCloud80" type="Sprite2D" parent="ParallaxBackground/midcloud"]
+position = Vector2(2257.3052, 145.14203)
+scale = Vector2(1.4553571, 1.4553572)
+texture = ExtResource("24_xknrl")
+region_enabled = true
+region_rect = Rect2(0, 8, 480, 112)
+
+[node name="MidCloud81" type="Sprite2D" parent="ParallaxBackground/midcloud"]
+position = Vector2(2731.3047, 197.142)
+texture = ExtResource("24_xknrl")
+region_enabled = true
+region_rect = Rect2(0, 8, 480, 112)
+
+[node name="MidCloud82" type="Sprite2D" parent="ParallaxBackground/midcloud"]
+position = Vector2(2986.3047, 170.64203)
+texture = ExtResource("24_xknrl")
+region_enabled = true
+region_rect = Rect2(0, 200, 480, 160)
+
+[node name="MidCloud83" type="Sprite2D" parent="ParallaxBackground/midcloud"]
+position = Vector2(2939.3047, 152.39203)
+scale = Vector2(1, 0.740625)
+texture = ExtResource("24_xknrl")
+region_enabled = true
+region_rect = Rect2(0, 200, 480, 160)
+
+[node name="MidCloud84" type="Sprite2D" parent="ParallaxBackground/midcloud"]
+position = Vector2(3557.305, 142.64203)
+scale = Vector2(1.4553571, 1.4553572)
+texture = ExtResource("24_xknrl")
+region_enabled = true
+region_rect = Rect2(0, 8, 480, 112)
+
+[node name="MidCloud85" type="Sprite2D" parent="ParallaxBackground/midcloud"]
+position = Vector2(4031.305, 194.642)
+texture = ExtResource("24_xknrl")
+region_enabled = true
+region_rect = Rect2(0, 8, 480, 112)
+
+[node name="MidCloud86" type="Sprite2D" parent="ParallaxBackground/midcloud"]
+position = Vector2(4049.305, 152.64206)
+texture = ExtResource("24_xknrl")
+region_enabled = true
+region_rect = Rect2(0, 200, 480, 160)
+
+[node name="MidCloud87" type="Sprite2D" parent="ParallaxBackground/midcloud"]
+position = Vector2(4620.3047, 124.64203)
+scale = Vector2(1.4553571, 1.4553572)
+texture = ExtResource("24_xknrl")
+region_enabled = true
+region_rect = Rect2(0, 8, 480, 112)
+
+[node name="MidCloud88" type="Sprite2D" parent="ParallaxBackground/midcloud"]
+position = Vector2(5094.3047, 176.64203)
+texture = ExtResource("24_xknrl")
+region_enabled = true
+region_rect = Rect2(0, 8, 480, 112)
+
+[node name="MidCloud89" type="Sprite2D" parent="ParallaxBackground/midcloud"]
+position = Vector2(4761.3047, 151.642)
+texture = ExtResource("24_xknrl")
+region_enabled = true
+region_rect = Rect2(0, 200, 480, 160)
+
+[node name="MidCloud90" type="Sprite2D" parent="ParallaxBackground/midcloud"]
+position = Vector2(5332.3047, 123.64203)
+scale = Vector2(1.4553571, 1.4553572)
+texture = ExtResource("24_xknrl")
+region_enabled = true
+region_rect = Rect2(0, 8, 480, 112)
+
+[node name="MidCloud91" type="Sprite2D" parent="ParallaxBackground/midcloud"]
+position = Vector2(5806.3057, 175.64203)
+texture = ExtResource("24_xknrl")
+region_enabled = true
+region_rect = Rect2(0, 8, 480, 112)
+
+[node name="MidCloud92" type="Sprite2D" parent="ParallaxBackground/midcloud"]
+position = Vector2(5766.8525, 228.06512)
+texture = ExtResource("24_xknrl")
+region_enabled = true
+region_rect = Rect2(0, 8, 480, 112)
+
+[node name="MidCloud93" type="Sprite2D" parent="ParallaxBackground/midcloud"]
+position = Vector2(6021.854, 201.56512)
+texture = ExtResource("24_xknrl")
+region_enabled = true
+region_rect = Rect2(0, 200, 480, 160)
+
+[node name="MidCloud94" type="Sprite2D" parent="ParallaxBackground/midcloud"]
+position = Vector2(5974.8535, 183.31512)
+scale = Vector2(1, 0.740625)
+texture = ExtResource("24_xknrl")
+region_enabled = true
+region_rect = Rect2(0, 200, 480, 160)
+
+[node name="MidCloud95" type="Sprite2D" parent="ParallaxBackground/midcloud"]
+position = Vector2(6592.8545, 173.56512)
+scale = Vector2(1.4553571, 1.4553572)
+texture = ExtResource("24_xknrl")
+region_enabled = true
+region_rect = Rect2(0, 8, 480, 112)
+
+[node name="MidCloud96" type="Sprite2D" parent="ParallaxBackground/midcloud"]
+position = Vector2(7066.853, 225.56516)
+texture = ExtResource("24_xknrl")
+region_enabled = true
+region_rect = Rect2(0, 8, 480, 112)
+
+[node name="MidCloud97" type="Sprite2D" parent="ParallaxBackground/midcloud"]
+position = Vector2(7084.8545, 183.56512)
+texture = ExtResource("24_xknrl")
+region_enabled = true
+region_rect = Rect2(0, 200, 480, 160)
+
+[node name="MidCloud98" type="Sprite2D" parent="ParallaxBackground/midcloud"]
+position = Vector2(7655.8545, 155.56512)
+scale = Vector2(1.4553571, 1.4553572)
+texture = ExtResource("24_xknrl")
+region_enabled = true
+region_rect = Rect2(0, 8, 480, 112)
+
+[node name="MidCloud99" type="Sprite2D" parent="ParallaxBackground/midcloud"]
+position = Vector2(8129.8535, 207.5651)
+texture = ExtResource("24_xknrl")
+region_enabled = true
+region_rect = Rect2(0, 8, 480, 112)
+
+[node name="MidCloud100" type="Sprite2D" parent="ParallaxBackground/midcloud"]
+position = Vector2(7796.8545, 182.56516)
+texture = ExtResource("24_xknrl")
+region_enabled = true
+region_rect = Rect2(0, 200, 480, 160)
+
+[node name="MidCloud101" type="Sprite2D" parent="ParallaxBackground/midcloud"]
+position = Vector2(8367.854, 154.56512)
+scale = Vector2(1.4553571, 1.4553572)
+texture = ExtResource("24_xknrl")
+region_enabled = true
+region_rect = Rect2(0, 8, 480, 112)
+
+[node name="MidCloud102" type="Sprite2D" parent="ParallaxBackground/midcloud"]
+position = Vector2(8841.854, 206.5651)
+texture = ExtResource("24_xknrl")
+region_enabled = true
+region_rect = Rect2(0, 8, 480, 112)
+
+[node name="MidCloud103" type="Sprite2D" parent="ParallaxBackground/midcloud"]
+position = Vector2(5748.5864, 281.5592)
+texture = ExtResource("24_xknrl")
+region_enabled = true
+region_rect = Rect2(0, 8, 480, 112)
+
+[node name="MidCloud104" type="Sprite2D" parent="ParallaxBackground/midcloud"]
+position = Vector2(6003.588, 255.05923)
+texture = ExtResource("24_xknrl")
+region_enabled = true
+region_rect = Rect2(0, 200, 480, 160)
+
+[node name="MidCloud105" type="Sprite2D" parent="ParallaxBackground/midcloud"]
+position = Vector2(5956.5864, 236.8092)
+scale = Vector2(1, 0.740625)
+texture = ExtResource("24_xknrl")
+region_enabled = true
+region_rect = Rect2(0, 200, 480, 160)
+
+[node name="MidCloud106" type="Sprite2D" parent="ParallaxBackground/midcloud"]
+position = Vector2(6574.588, 227.0592)
+scale = Vector2(1.4553571, 1.4553572)
+texture = ExtResource("24_xknrl")
+region_enabled = true
+region_rect = Rect2(0, 8, 480, 112)
+
+[node name="MidCloud107" type="Sprite2D" parent="ParallaxBackground/midcloud"]
+position = Vector2(7048.587, 279.0592)
+texture = ExtResource("24_xknrl")
+region_enabled = true
+region_rect = Rect2(0, 8, 480, 112)
+
+[node name="MidCloud108" type="Sprite2D" parent="ParallaxBackground/midcloud"]
+position = Vector2(7066.5884, 237.0592)
+texture = ExtResource("24_xknrl")
+region_enabled = true
+region_rect = Rect2(0, 200, 480, 160)
+
+[node name="MidCloud109" type="Sprite2D" parent="ParallaxBackground/midcloud"]
+position = Vector2(7637.588, 209.0592)
+scale = Vector2(1.4553571, 1.4553572)
+texture = ExtResource("24_xknrl")
+region_enabled = true
+region_rect = Rect2(0, 8, 480, 112)
+
+[node name="MidCloud110" type="Sprite2D" parent="ParallaxBackground/midcloud"]
+position = Vector2(8111.588, 261.0592)
+texture = ExtResource("24_xknrl")
+region_enabled = true
+region_rect = Rect2(0, 8, 480, 112)
+
+[node name="MidCloud111" type="Sprite2D" parent="ParallaxBackground/midcloud"]
+position = Vector2(7778.5884, 236.05917)
+texture = ExtResource("24_xknrl")
+region_enabled = true
+region_rect = Rect2(0, 200, 480, 160)
+
+[node name="MidCloud112" type="Sprite2D" parent="ParallaxBackground/midcloud"]
+position = Vector2(8349.588, 208.05922)
+scale = Vector2(1.4553571, 1.4553572)
+texture = ExtResource("24_xknrl")
+region_enabled = true
+region_rect = Rect2(0, 8, 480, 112)
+
+[node name="MidCloud113" type="Sprite2D" parent="ParallaxBackground/midcloud"]
+position = Vector2(8823.588, 260.05923)
+texture = ExtResource("24_xknrl")
+region_enabled = true
+region_rect = Rect2(0, 8, 480, 112)
+
+[node name="MidCloud114" type="Sprite2D" parent="ParallaxBackground/midcloud"]
+position = Vector2(5775.9873, 299.8255)
+texture = ExtResource("24_xknrl")
+region_enabled = true
+region_rect = Rect2(0, 8, 480, 112)
+
+[node name="MidCloud115" type="Sprite2D" parent="ParallaxBackground/midcloud"]
+position = Vector2(6030.988, 273.32544)
+texture = ExtResource("24_xknrl")
+region_enabled = true
+region_rect = Rect2(0, 200, 480, 160)
+
+[node name="MidCloud116" type="Sprite2D" parent="ParallaxBackground/midcloud"]
+position = Vector2(5983.9883, 255.0755)
+scale = Vector2(1, 0.740625)
+texture = ExtResource("24_xknrl")
+region_enabled = true
+region_rect = Rect2(0, 200, 480, 160)
+
+[node name="MidCloud117" type="Sprite2D" parent="ParallaxBackground/midcloud"]
+position = Vector2(6601.9873, 245.32547)
+scale = Vector2(1.4553571, 1.4553572)
+texture = ExtResource("24_xknrl")
+region_enabled = true
+region_rect = Rect2(0, 8, 480, 112)
+
+[node name="MidCloud118" type="Sprite2D" parent="ParallaxBackground/midcloud"]
+position = Vector2(7075.988, 297.3255)
+texture = ExtResource("24_xknrl")
+region_enabled = true
+region_rect = Rect2(0, 8, 480, 112)
+
+[node name="MidCloud119" type="Sprite2D" parent="ParallaxBackground/midcloud"]
+position = Vector2(7093.9883, 255.3255)
+texture = ExtResource("24_xknrl")
+region_enabled = true
+region_rect = Rect2(0, 200, 480, 160)
+
+[node name="MidCloud120" type="Sprite2D" parent="ParallaxBackground/midcloud"]
+position = Vector2(7664.9873, 227.32545)
+scale = Vector2(1.4553571, 1.4553572)
+texture = ExtResource("24_xknrl")
+region_enabled = true
+region_rect = Rect2(0, 8, 480, 112)
+
+[node name="MidCloud121" type="Sprite2D" parent="ParallaxBackground/midcloud"]
+position = Vector2(8138.989, 279.3255)
+texture = ExtResource("24_xknrl")
+region_enabled = true
+region_rect = Rect2(0, 8, 480, 112)
+
+[node name="MidCloud122" type="Sprite2D" parent="ParallaxBackground/midcloud"]
+position = Vector2(7805.987, 254.3255)
+texture = ExtResource("24_xknrl")
+region_enabled = true
+region_rect = Rect2(0, 200, 480, 160)
+
+[node name="MidCloud123" type="Sprite2D" parent="ParallaxBackground/midcloud"]
+position = Vector2(8376.987, 226.32545)
+scale = Vector2(1.4553571, 1.4553572)
+texture = ExtResource("24_xknrl")
+region_enabled = true
+region_rect = Rect2(0, 8, 480, 112)
+
+[node name="MidCloud124" type="Sprite2D" parent="ParallaxBackground/midcloud"]
+position = Vector2(8850.988, 278.32547)
+texture = ExtResource("24_xknrl")
+region_enabled = true
+region_rect = Rect2(0, 8, 480, 112)
+
+[node name="MidCloud125" type="Sprite2D" parent="ParallaxBackground/midcloud"]
+position = Vector2(1686.3049, 197.93199)
+texture = ExtResource("24_xknrl")
+region_enabled = true
+region_rect = Rect2(0, 200, 480, 160)
+
+[node name="MidCloud126" type="Sprite2D" parent="ParallaxBackground/midcloud"]
+position = Vector2(2257.3052, 169.93198)
+scale = Vector2(1.4553571, 1.4553572)
+texture = ExtResource("24_xknrl")
+region_enabled = true
+region_rect = Rect2(0, 8, 480, 112)
+
+[node name="MidCloud127" type="Sprite2D" parent="ParallaxBackground/midcloud"]
+position = Vector2(2731.305, 221.93196)
+texture = ExtResource("24_xknrl")
+region_enabled = true
+region_rect = Rect2(0, 8, 480, 112)
+
+[node name="MidCloud128" type="Sprite2D" parent="ParallaxBackground/midcloud"]
+position = Vector2(2986.3047, 195.43198)
+texture = ExtResource("24_xknrl")
+region_enabled = true
+region_rect = Rect2(0, 200, 480, 160)
+
+[node name="MidCloud129" type="Sprite2D" parent="ParallaxBackground/midcloud"]
+position = Vector2(2939.3047, 177.18199)
+scale = Vector2(1, 0.740625)
+texture = ExtResource("24_xknrl")
+region_enabled = true
+region_rect = Rect2(0, 200, 480, 160)
+
+[node name="MidCloud130" type="Sprite2D" parent="ParallaxBackground/midcloud"]
+position = Vector2(3557.305, 167.43198)
+scale = Vector2(1.4553571, 1.4553572)
+texture = ExtResource("24_xknrl")
+region_enabled = true
+region_rect = Rect2(0, 8, 480, 112)
+
+[node name="MidCloud131" type="Sprite2D" parent="ParallaxBackground/midcloud"]
+position = Vector2(4031.305, 219.43195)
+texture = ExtResource("24_xknrl")
+region_enabled = true
+region_rect = Rect2(0, 8, 480, 112)
+
+[node name="MidCloud132" type="Sprite2D" parent="ParallaxBackground/midcloud"]
+position = Vector2(4049.305, 177.432)
+texture = ExtResource("24_xknrl")
+region_enabled = true
+region_rect = Rect2(0, 200, 480, 160)
+
+[node name="MidCloud133" type="Sprite2D" parent="ParallaxBackground/midcloud"]
+position = Vector2(4620.3047, 149.43198)
+scale = Vector2(1.4553571, 1.4553572)
+texture = ExtResource("24_xknrl")
+region_enabled = true
+region_rect = Rect2(0, 8, 480, 112)
+
+[node name="MidCloud134" type="Sprite2D" parent="ParallaxBackground/midcloud"]
+position = Vector2(5094.3047, 201.43199)
+texture = ExtResource("24_xknrl")
+region_enabled = true
+region_rect = Rect2(0, 8, 480, 112)
+
+[node name="MidCloud135" type="Sprite2D" parent="ParallaxBackground/midcloud"]
+position = Vector2(4761.3047, 176.43195)
+texture = ExtResource("24_xknrl")
+region_enabled = true
+region_rect = Rect2(0, 200, 480, 160)
+
+[node name="MidCloud136" type="Sprite2D" parent="ParallaxBackground/midcloud"]
+position = Vector2(5332.3047, 148.43198)
+scale = Vector2(1.4553571, 1.4553572)
+texture = ExtResource("24_xknrl")
+region_enabled = true
+region_rect = Rect2(0, 8, 480, 112)
+
+[node name="MidCloud137" type="Sprite2D" parent="ParallaxBackground/midcloud"]
+position = Vector2(5806.3057, 200.43199)
+texture = ExtResource("24_xknrl")
+region_enabled = true
+region_rect = Rect2(0, 8, 480, 112)
+
+[node name="MidCloud138" type="Sprite2D" parent="ParallaxBackground/midcloud"]
+position = Vector2(5766.8525, 252.85506)
+texture = ExtResource("24_xknrl")
+region_enabled = true
+region_rect = Rect2(0, 8, 480, 112)
+
+[node name="MidCloud139" type="Sprite2D" parent="ParallaxBackground/midcloud"]
+position = Vector2(6021.854, 226.35509)
+texture = ExtResource("24_xknrl")
+region_enabled = true
+region_rect = Rect2(0, 200, 480, 160)
+
+[node name="MidCloud140" type="Sprite2D" parent="ParallaxBackground/midcloud"]
+position = Vector2(5974.8535, 208.10507)
+scale = Vector2(1, 0.740625)
+texture = ExtResource("24_xknrl")
+region_enabled = true
+region_rect = Rect2(0, 200, 480, 160)
+
+[node name="MidCloud141" type="Sprite2D" parent="ParallaxBackground/midcloud"]
+position = Vector2(6592.8545, 198.35507)
+scale = Vector2(1.4553571, 1.4553572)
+texture = ExtResource("24_xknrl")
+region_enabled = true
+region_rect = Rect2(0, 8, 480, 112)
+
+[node name="MidCloud142" type="Sprite2D" parent="ParallaxBackground/midcloud"]
+position = Vector2(7066.8535, 250.35512)
+texture = ExtResource("24_xknrl")
+region_enabled = true
+region_rect = Rect2(0, 8, 480, 112)
+
+[node name="MidCloud143" type="Sprite2D" parent="ParallaxBackground/midcloud"]
+position = Vector2(7084.8545, 208.35507)
+texture = ExtResource("24_xknrl")
+region_enabled = true
+region_rect = Rect2(0, 200, 480, 160)
+
+[node name="MidCloud144" type="Sprite2D" parent="ParallaxBackground/midcloud"]
+position = Vector2(7655.8545, 180.35507)
+scale = Vector2(1.4553571, 1.4553572)
+texture = ExtResource("24_xknrl")
+region_enabled = true
+region_rect = Rect2(0, 8, 480, 112)
+
+[node name="MidCloud145" type="Sprite2D" parent="ParallaxBackground/midcloud"]
+position = Vector2(8129.8535, 232.35506)
+texture = ExtResource("24_xknrl")
+region_enabled = true
+region_rect = Rect2(0, 8, 480, 112)
+
+[node name="MidCloud146" type="Sprite2D" parent="ParallaxBackground/midcloud"]
+position = Vector2(7796.8545, 207.3551)
+texture = ExtResource("24_xknrl")
+region_enabled = true
+region_rect = Rect2(0, 200, 480, 160)
+
+[node name="MidCloud147" type="Sprite2D" parent="ParallaxBackground/midcloud"]
+position = Vector2(8367.854, 179.35507)
+scale = Vector2(1.4553571, 1.4553572)
+texture = ExtResource("24_xknrl")
+region_enabled = true
+region_rect = Rect2(0, 8, 480, 112)
+
+[node name="MidCloud148" type="Sprite2D" parent="ParallaxBackground/midcloud"]
+position = Vector2(8841.854, 231.35504)
+texture = ExtResource("24_xknrl")
+region_enabled = true
+region_rect = Rect2(0, 8, 480, 112)
+
+[node name="MidCloud149" type="Sprite2D" parent="ParallaxBackground/midcloud"]
+position = Vector2(5748.586, 306.34912)
+texture = ExtResource("24_xknrl")
+region_enabled = true
+region_rect = Rect2(0, 8, 480, 112)
+
+[node name="MidCloud150" type="Sprite2D" parent="ParallaxBackground/midcloud"]
+position = Vector2(6003.588, 279.84918)
+texture = ExtResource("24_xknrl")
+region_enabled = true
+region_rect = Rect2(0, 200, 480, 160)
+
+[node name="MidCloud151" type="Sprite2D" parent="ParallaxBackground/midcloud"]
+position = Vector2(5956.586, 261.59918)
+scale = Vector2(1, 0.740625)
+texture = ExtResource("24_xknrl")
+region_enabled = true
+region_rect = Rect2(0, 200, 480, 160)
+
+[node name="MidCloud152" type="Sprite2D" parent="ParallaxBackground/midcloud"]
+position = Vector2(6574.588, 251.84914)
+scale = Vector2(1.4553571, 1.4553572)
+texture = ExtResource("24_xknrl")
+region_enabled = true
+region_rect = Rect2(0, 8, 480, 112)
+
+[node name="MidCloud153" type="Sprite2D" parent="ParallaxBackground/midcloud"]
+position = Vector2(7048.587, 303.84912)
+texture = ExtResource("24_xknrl")
+region_enabled = true
+region_rect = Rect2(0, 8, 480, 112)
+
+[node name="MidCloud154" type="Sprite2D" parent="ParallaxBackground/midcloud"]
+position = Vector2(7066.589, 261.84912)
+texture = ExtResource("24_xknrl")
+region_enabled = true
+region_rect = Rect2(0, 200, 480, 160)
+
+[node name="MidCloud155" type="Sprite2D" parent="ParallaxBackground/midcloud"]
+position = Vector2(7637.588, 233.84915)
+scale = Vector2(1.4553571, 1.4553572)
+texture = ExtResource("24_xknrl")
+region_enabled = true
+region_rect = Rect2(0, 8, 480, 112)
+
+[node name="MidCloud156" type="Sprite2D" parent="ParallaxBackground/midcloud"]
+position = Vector2(8111.588, 285.84915)
+texture = ExtResource("24_xknrl")
+region_enabled = true
+region_rect = Rect2(0, 8, 480, 112)
+
+[node name="MidCloud157" type="Sprite2D" parent="ParallaxBackground/midcloud"]
+position = Vector2(7778.5884, 260.84912)
+texture = ExtResource("24_xknrl")
+region_enabled = true
+region_rect = Rect2(0, 200, 480, 160)
+
+[node name="MidCloud158" type="Sprite2D" parent="ParallaxBackground/midcloud"]
+position = Vector2(8349.588, 232.84918)
+scale = Vector2(1.4553571, 1.4553572)
+texture = ExtResource("24_xknrl")
+region_enabled = true
+region_rect = Rect2(0, 8, 480, 112)
+
+[node name="MidCloud159" type="Sprite2D" parent="ParallaxBackground/midcloud"]
+position = Vector2(8823.588, 284.84918)
+texture = ExtResource("24_xknrl")
+region_enabled = true
+region_rect = Rect2(0, 8, 480, 112)
+
+[node name="MidCloud160" type="Sprite2D" parent="ParallaxBackground/midcloud"]
+position = Vector2(5775.9873, 324.61548)
+texture = ExtResource("24_xknrl")
+region_enabled = true
+region_rect = Rect2(0, 8, 480, 112)
+
+[node name="MidCloud161" type="Sprite2D" parent="ParallaxBackground/midcloud"]
+position = Vector2(6030.988, 298.11536)
+texture = ExtResource("24_xknrl")
+region_enabled = true
+region_rect = Rect2(0, 200, 480, 160)
+
+[node name="MidCloud162" type="Sprite2D" parent="ParallaxBackground/midcloud"]
+position = Vector2(5983.9883, 279.86548)
+scale = Vector2(1, 0.740625)
+texture = ExtResource("24_xknrl")
+region_enabled = true
+region_rect = Rect2(0, 200, 480, 160)
+
+[node name="MidCloud163" type="Sprite2D" parent="ParallaxBackground/midcloud"]
+position = Vector2(6601.9873, 270.11542)
+scale = Vector2(1.4553571, 1.4553572)
+texture = ExtResource("24_xknrl")
+region_enabled = true
+region_rect = Rect2(0, 8, 480, 112)
+
+[node name="MidCloud164" type="Sprite2D" parent="ParallaxBackground/midcloud"]
+position = Vector2(7075.988, 322.11548)
+texture = ExtResource("24_xknrl")
+region_enabled = true
+region_rect = Rect2(0, 8, 480, 112)
+
+[node name="MidCloud165" type="Sprite2D" parent="ParallaxBackground/midcloud"]
+position = Vector2(7093.9883, 280.11548)
+texture = ExtResource("24_xknrl")
+region_enabled = true
+region_rect = Rect2(0, 200, 480, 160)
+
+[node name="MidCloud166" type="Sprite2D" parent="ParallaxBackground/midcloud"]
+position = Vector2(7664.9873, 252.11542)
+scale = Vector2(1.4553571, 1.4553572)
+texture = ExtResource("24_xknrl")
+region_enabled = true
+region_rect = Rect2(0, 8, 480, 112)
+
+[node name="MidCloud167" type="Sprite2D" parent="ParallaxBackground/midcloud"]
+position = Vector2(8138.9893, 304.11548)
+texture = ExtResource("24_xknrl")
+region_enabled = true
+region_rect = Rect2(0, 8, 480, 112)
+
+[node name="MidCloud168" type="Sprite2D" parent="ParallaxBackground/midcloud"]
+position = Vector2(7805.9873, 279.11545)
+texture = ExtResource("24_xknrl")
+region_enabled = true
+region_rect = Rect2(0, 200, 480, 160)
+
+[node name="MidCloud169" type="Sprite2D" parent="ParallaxBackground/midcloud"]
+position = Vector2(8376.987, 251.11539)
+scale = Vector2(1.4553571, 1.4553572)
+texture = ExtResource("24_xknrl")
+region_enabled = true
+region_rect = Rect2(0, 8, 480, 112)
+
+[node name="MidCloud170" type="Sprite2D" parent="ParallaxBackground/midcloud"]
+position = Vector2(8850.988, 303.11542)
+texture = ExtResource("24_xknrl")
+region_enabled = true
+region_rect = Rect2(0, 8, 480, 112)
+
+[node name="MidCloud171" type="Sprite2D" parent="ParallaxBackground/midcloud"]
+position = Vector2(1686.3049, 212.28407)
+texture = ExtResource("24_xknrl")
+region_enabled = true
+region_rect = Rect2(0, 200, 480, 160)
+
+[node name="MidCloud172" type="Sprite2D" parent="ParallaxBackground/midcloud"]
+position = Vector2(2257.3052, 184.28406)
+scale = Vector2(1.4553571, 1.4553572)
+texture = ExtResource("24_xknrl")
+region_enabled = true
+region_rect = Rect2(0, 8, 480, 112)
+
+[node name="MidCloud173" type="Sprite2D" parent="ParallaxBackground/midcloud"]
+position = Vector2(2731.3047, 236.28404)
+texture = ExtResource("24_xknrl")
+region_enabled = true
+region_rect = Rect2(0, 8, 480, 112)
+
+[node name="MidCloud174" type="Sprite2D" parent="ParallaxBackground/midcloud"]
+position = Vector2(2986.3047, 209.78404)
+texture = ExtResource("24_xknrl")
+region_enabled = true
+region_rect = Rect2(0, 200, 480, 160)
+
+[node name="MidCloud175" type="Sprite2D" parent="ParallaxBackground/midcloud"]
+position = Vector2(2939.3047, 191.53407)
+scale = Vector2(1, 0.740625)
+texture = ExtResource("24_xknrl")
+region_enabled = true
+region_rect = Rect2(0, 200, 480, 160)
+
+[node name="MidCloud176" type="Sprite2D" parent="ParallaxBackground/midcloud"]
+position = Vector2(3557.305, 181.78404)
+scale = Vector2(1.4553571, 1.4553572)
+texture = ExtResource("24_xknrl")
+region_enabled = true
+region_rect = Rect2(0, 8, 480, 112)
+
+[node name="MidCloud177" type="Sprite2D" parent="ParallaxBackground/midcloud"]
+position = Vector2(4031.305, 233.78404)
+texture = ExtResource("24_xknrl")
+region_enabled = true
+region_rect = Rect2(0, 8, 480, 112)
+
+[node name="MidCloud178" type="Sprite2D" parent="ParallaxBackground/midcloud"]
+position = Vector2(4049.305, 191.7841)
+texture = ExtResource("24_xknrl")
+region_enabled = true
+region_rect = Rect2(0, 200, 480, 160)
+
+[node name="MidCloud179" type="Sprite2D" parent="ParallaxBackground/midcloud"]
+position = Vector2(4620.3047, 163.78404)
+scale = Vector2(1.4553571, 1.4553572)
+texture = ExtResource("24_xknrl")
+region_enabled = true
+region_rect = Rect2(0, 8, 480, 112)
+
+[node name="MidCloud180" type="Sprite2D" parent="ParallaxBackground/midcloud"]
+position = Vector2(5094.3047, 215.78407)
+texture = ExtResource("24_xknrl")
+region_enabled = true
+region_rect = Rect2(0, 8, 480, 112)
+
+[node name="MidCloud181" type="Sprite2D" parent="ParallaxBackground/midcloud"]
+position = Vector2(4761.3047, 190.78403)
+texture = ExtResource("24_xknrl")
+region_enabled = true
+region_rect = Rect2(0, 200, 480, 160)
+
+[node name="MidCloud182" type="Sprite2D" parent="ParallaxBackground/midcloud"]
+position = Vector2(5332.3047, 162.78404)
+scale = Vector2(1.4553571, 1.4553572)
+texture = ExtResource("24_xknrl")
+region_enabled = true
+region_rect = Rect2(0, 8, 480, 112)
+
+[node name="MidCloud183" type="Sprite2D" parent="ParallaxBackground/midcloud"]
+position = Vector2(5806.3057, 214.78406)
+texture = ExtResource("24_xknrl")
+region_enabled = true
+region_rect = Rect2(0, 8, 480, 112)
+
+[node name="MidCloud184" type="Sprite2D" parent="ParallaxBackground/midcloud"]
+position = Vector2(5766.8525, 267.20715)
+texture = ExtResource("24_xknrl")
+region_enabled = true
+region_rect = Rect2(0, 8, 480, 112)
+
+[node name="MidCloud185" type="Sprite2D" parent="ParallaxBackground/midcloud"]
+position = Vector2(6021.854, 240.70717)
+texture = ExtResource("24_xknrl")
+region_enabled = true
+region_rect = Rect2(0, 200, 480, 160)
+
+[node name="MidCloud186" type="Sprite2D" parent="ParallaxBackground/midcloud"]
+position = Vector2(5974.8535, 222.45715)
+scale = Vector2(1, 0.740625)
+texture = ExtResource("24_xknrl")
+region_enabled = true
+region_rect = Rect2(0, 200, 480, 160)
+
+[node name="MidCloud187" type="Sprite2D" parent="ParallaxBackground/midcloud"]
+position = Vector2(6592.8545, 212.70712)
+scale = Vector2(1.4553571, 1.4553572)
+texture = ExtResource("24_xknrl")
+region_enabled = true
+region_rect = Rect2(0, 8, 480, 112)
+
+[node name="MidCloud188" type="Sprite2D" parent="ParallaxBackground/midcloud"]
+position = Vector2(7066.853, 264.7072)
+texture = ExtResource("24_xknrl")
+region_enabled = true
+region_rect = Rect2(0, 8, 480, 112)
+
+[node name="MidCloud189" type="Sprite2D" parent="ParallaxBackground/midcloud"]
+position = Vector2(7084.8545, 222.70715)
+texture = ExtResource("24_xknrl")
+region_enabled = true
+region_rect = Rect2(0, 200, 480, 160)
+
+[node name="MidCloud190" type="Sprite2D" parent="ParallaxBackground/midcloud"]
+position = Vector2(7655.8545, 194.70715)
+scale = Vector2(1.4553571, 1.4553572)
+texture = ExtResource("24_xknrl")
+region_enabled = true
+region_rect = Rect2(0, 8, 480, 112)
+
+[node name="MidCloud191" type="Sprite2D" parent="ParallaxBackground/midcloud"]
+position = Vector2(8129.8535, 246.70715)
+texture = ExtResource("24_xknrl")
+region_enabled = true
+region_rect = Rect2(0, 8, 480, 112)
+
+[node name="MidCloud192" type="Sprite2D" parent="ParallaxBackground/midcloud"]
+position = Vector2(7796.8545, 221.70718)
+texture = ExtResource("24_xknrl")
+region_enabled = true
+region_rect = Rect2(0, 200, 480, 160)
+
+[node name="MidCloud193" type="Sprite2D" parent="ParallaxBackground/midcloud"]
+position = Vector2(8367.854, 193.70715)
+scale = Vector2(1.4553571, 1.4553572)
+texture = ExtResource("24_xknrl")
+region_enabled = true
+region_rect = Rect2(0, 8, 480, 112)
+
+[node name="MidCloud194" type="Sprite2D" parent="ParallaxBackground/midcloud"]
+position = Vector2(8841.854, 245.70714)
+texture = ExtResource("24_xknrl")
+region_enabled = true
+region_rect = Rect2(0, 8, 480, 112)
+
+[node name="MidCloud195" type="Sprite2D" parent="ParallaxBackground/midcloud"]
+position = Vector2(5748.586, 320.7012)
+texture = ExtResource("24_xknrl")
+region_enabled = true
+region_rect = Rect2(0, 8, 480, 112)
+
+[node name="MidCloud196" type="Sprite2D" parent="ParallaxBackground/midcloud"]
+position = Vector2(6003.588, 294.20126)
+texture = ExtResource("24_xknrl")
+region_enabled = true
+region_rect = Rect2(0, 200, 480, 160)
+
+[node name="MidCloud197" type="Sprite2D" parent="ParallaxBackground/midcloud"]
+position = Vector2(5956.586, 275.95126)
+scale = Vector2(1, 0.740625)
+texture = ExtResource("24_xknrl")
+region_enabled = true
+region_rect = Rect2(0, 200, 480, 160)
+
+[node name="MidCloud198" type="Sprite2D" parent="ParallaxBackground/midcloud"]
+position = Vector2(6574.588, 266.2012)
+scale = Vector2(1.4553571, 1.4553572)
+texture = ExtResource("24_xknrl")
+region_enabled = true
+region_rect = Rect2(0, 8, 480, 112)
+
+[node name="MidCloud199" type="Sprite2D" parent="ParallaxBackground/midcloud"]
+position = Vector2(7048.587, 318.2012)
+texture = ExtResource("24_xknrl")
+region_enabled = true
+region_rect = Rect2(0, 8, 480, 112)
+
+[node name="MidCloud200" type="Sprite2D" parent="ParallaxBackground/midcloud"]
+position = Vector2(7066.589, 276.20123)
+texture = ExtResource("24_xknrl")
+region_enabled = true
+region_rect = Rect2(0, 200, 480, 160)
+
+[node name="MidCloud201" type="Sprite2D" parent="ParallaxBackground/midcloud"]
+position = Vector2(7637.588, 248.20123)
+scale = Vector2(1.4553571, 1.4553572)
+texture = ExtResource("24_xknrl")
+region_enabled = true
+region_rect = Rect2(0, 8, 480, 112)
+
+[node name="MidCloud202" type="Sprite2D" parent="ParallaxBackground/midcloud"]
+position = Vector2(8111.588, 300.20123)
+texture = ExtResource("24_xknrl")
+region_enabled = true
+region_rect = Rect2(0, 8, 480, 112)
+
+[node name="MidCloud203" type="Sprite2D" parent="ParallaxBackground/midcloud"]
+position = Vector2(7778.5884, 275.2012)
+texture = ExtResource("24_xknrl")
+region_enabled = true
+region_rect = Rect2(0, 200, 480, 160)
+
+[node name="MidCloud204" type="Sprite2D" parent="ParallaxBackground/midcloud"]
+position = Vector2(8349.588, 247.20126)
+scale = Vector2(1.4553571, 1.4553572)
+texture = ExtResource("24_xknrl")
+region_enabled = true
+region_rect = Rect2(0, 8, 480, 112)
+
+[node name="MidCloud205" type="Sprite2D" parent="ParallaxBackground/midcloud"]
+position = Vector2(8823.588, 299.20126)
+texture = ExtResource("24_xknrl")
+region_enabled = true
+region_rect = Rect2(0, 8, 480, 112)
+
+[node name="MidCloud206" type="Sprite2D" parent="ParallaxBackground/midcloud"]
+position = Vector2(5775.9873, 338.96756)
+texture = ExtResource("24_xknrl")
+region_enabled = true
+region_rect = Rect2(0, 8, 480, 112)
+
+[node name="MidCloud207" type="Sprite2D" parent="ParallaxBackground/midcloud"]
+position = Vector2(6030.988, 312.46744)
+texture = ExtResource("24_xknrl")
+region_enabled = true
+region_rect = Rect2(0, 200, 480, 160)
+
+[node name="MidCloud208" type="Sprite2D" parent="ParallaxBackground/midcloud"]
+position = Vector2(5983.9883, 294.21756)
+scale = Vector2(1, 0.740625)
+texture = ExtResource("24_xknrl")
+region_enabled = true
+region_rect = Rect2(0, 200, 480, 160)
+
+[node name="MidCloud209" type="Sprite2D" parent="ParallaxBackground/midcloud"]
+position = Vector2(6601.9873, 284.4675)
+scale = Vector2(1.4553571, 1.4553572)
+texture = ExtResource("24_xknrl")
+region_enabled = true
+region_rect = Rect2(0, 8, 480, 112)
+
+[node name="MidCloud210" type="Sprite2D" parent="ParallaxBackground/midcloud"]
+position = Vector2(7075.988, 336.46756)
+texture = ExtResource("24_xknrl")
+region_enabled = true
+region_rect = Rect2(0, 8, 480, 112)
+
+[node name="MidCloud211" type="Sprite2D" parent="ParallaxBackground/midcloud"]
+position = Vector2(7093.9883, 294.46756)
+texture = ExtResource("24_xknrl")
+region_enabled = true
+region_rect = Rect2(0, 200, 480, 160)
+
+[node name="MidCloud212" type="Sprite2D" parent="ParallaxBackground/midcloud"]
+position = Vector2(7664.9873, 266.4675)
+scale = Vector2(1.4553571, 1.4553572)
+texture = ExtResource("24_xknrl")
+region_enabled = true
+region_rect = Rect2(0, 8, 480, 112)
+
+[node name="MidCloud213" type="Sprite2D" parent="ParallaxBackground/midcloud"]
+position = Vector2(8138.9893, 318.46756)
+texture = ExtResource("24_xknrl")
+region_enabled = true
+region_rect = Rect2(0, 8, 480, 112)
+
+[node name="MidCloud214" type="Sprite2D" parent="ParallaxBackground/midcloud"]
+position = Vector2(7805.987, 293.46753)
+texture = ExtResource("24_xknrl")
+region_enabled = true
+region_rect = Rect2(0, 200, 480, 160)
+
+[node name="MidCloud215" type="Sprite2D" parent="ParallaxBackground/midcloud"]
+position = Vector2(8376.987, 265.46744)
+scale = Vector2(1.4553571, 1.4553572)
+texture = ExtResource("24_xknrl")
+region_enabled = true
+region_rect = Rect2(0, 8, 480, 112)
+
+[node name="MidCloud216" type="Sprite2D" parent="ParallaxBackground/midcloud"]
+position = Vector2(8850.988, 317.4675)
+texture = ExtResource("24_xknrl")
+region_enabled = true
+region_rect = Rect2(0, 8, 480, 112)
+
+[node name="front clopud" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2(-1082, 502)
+rotation = -0.024279619
+motion_scale = Vector2(0.08, 0.06)
+script = ExtResource("25_p6iuc")
+
+[node name="FrontCloud" type="Sprite2D" parent="ParallaxBackground/front clopud"]
+position = Vector2(1323, -363)
+rotation = 0.0071840957
+texture = ExtResource("26_ug7tc")
+region_enabled = true
+region_rect = Rect2(0, 192, 480, 160)
+
+[node name="FrontCloud14" type="Sprite2D" parent="ParallaxBackground/front clopud"]
+position = Vector2(1021, -364)
+rotation = 0.0071840957
+texture = ExtResource("26_ug7tc")
+region_enabled = true
+region_rect = Rect2(-8, 344, 496, 160)
+
+[node name="FrontCloud15" type="Sprite2D" parent="ParallaxBackground/front clopud"]
+position = Vector2(1979, -334)
+rotation = 0.0071840957
+texture = ExtResource("26_ug7tc")
+region_enabled = true
+region_rect = Rect2(0, 192, 480, 160)
+
+[node name="FrontCloud18" type="Sprite2D" parent="ParallaxBackground/front clopud"]
+position = Vector2(1677, -335)
+rotation = 0.0071840957
+texture = ExtResource("26_ug7tc")
+region_enabled = true
+region_rect = Rect2(-8, 344, 496, 160)
+
+[node name="FrontCloud19" type="Sprite2D" parent="ParallaxBackground/front clopud"]
+position = Vector2(2286, -330)
+rotation = 0.0071840957
+texture = ExtResource("26_ug7tc")
+region_enabled = true
+region_rect = Rect2(0, 0, 488, 152)
+
+[node name="FrontCloud20" type="Sprite2D" parent="ParallaxBackground/front clopud"]
+position = Vector2(2661, -303)
+rotation = 0.0071840957
+texture = ExtResource("26_ug7tc")
+region_enabled = true
+region_rect = Rect2(0, 192, 480, 160)
+
+[node name="FrontCloud21" type="Sprite2D" parent="ParallaxBackground/front clopud"]
+position = Vector2(2359, -304)
+rotation = 0.0071840957
+texture = ExtResource("26_ug7tc")
+region_enabled = true
+region_rect = Rect2(-8, 344, 496, 160)
+
+[node name="FrontCloud23" type="Sprite2D" parent="ParallaxBackground/front clopud"]
+position = Vector2(3330, -282)
+rotation = 0.0071840957
+texture = ExtResource("26_ug7tc")
+region_enabled = true
+region_rect = Rect2(0, 192, 480, 160)
+
+[node name="FrontCloud24" type="Sprite2D" parent="ParallaxBackground/front clopud"]
+position = Vector2(3028, -283)
+rotation = 0.0071840957
+texture = ExtResource("26_ug7tc")
+region_enabled = true
+region_rect = Rect2(-8, 344, 496, 160)
+
+[node name="FrontCloud25" type="Sprite2D" parent="ParallaxBackground/front clopud"]
+position = Vector2(3637, -278)
+rotation = 0.0071840957
+texture = ExtResource("26_ug7tc")
+region_enabled = true
+region_rect = Rect2(0, 0, 488, 152)
+
+[node name="FrontCloud26" type="Sprite2D" parent="ParallaxBackground/front clopud"]
+position = Vector2(3989, -261)
+rotation = 0.0071840957
+texture = ExtResource("26_ug7tc")
+region_enabled = true
+region_rect = Rect2(0, 192, 480, 160)
+
+[node name="FrontCloud27" type="Sprite2D" parent="ParallaxBackground/front clopud"]
+position = Vector2(3687, -262)
+rotation = 0.0071840957
+texture = ExtResource("26_ug7tc")
+region_enabled = true
+region_rect = Rect2(-8, 344, 496, 160)
+
+[node name="FrontCloud28" type="Sprite2D" parent="ParallaxBackground/front clopud"]
+position = Vector2(4296, -257)
+rotation = 0.0071840957
+texture = ExtResource("26_ug7tc")
+region_enabled = true
+region_rect = Rect2(0, 0, 488, 152)
+
+[node name="FrontCloud2" type="Sprite2D" parent="ParallaxBackground/front clopud"]
+position = Vector2(1322.126, -327.0106)
+rotation = 0.0071840957
+texture = ExtResource("26_ug7tc")
+region_enabled = true
+region_rect = Rect2(0, 192, 480, 160)
+
+[node name="FrontCloud16" type="Sprite2D" parent="ParallaxBackground/front clopud"]
+position = Vector2(1020.12604, -328.01056)
+rotation = 0.0071840957
+texture = ExtResource("26_ug7tc")
+region_enabled = true
+region_rect = Rect2(-8, 344, 496, 160)
+
+[node name="FrontCloud17" type="Sprite2D" parent="ParallaxBackground/front clopud"]
+position = Vector2(1978.1262, -298.01062)
+rotation = 0.0071840957
+texture = ExtResource("26_ug7tc")
+region_enabled = true
+region_rect = Rect2(0, 192, 480, 160)
+
+[node name="FrontCloud22" type="Sprite2D" parent="ParallaxBackground/front clopud"]
+position = Vector2(1676.1262, -299.01062)
+rotation = 0.0071840957
+texture = ExtResource("26_ug7tc")
+region_enabled = true
+region_rect = Rect2(-8, 344, 496, 160)
+
+[node name="FrontCloud29" type="Sprite2D" parent="ParallaxBackground/front clopud"]
+position = Vector2(2285.126, -294.01056)
+rotation = 0.0071840957
+texture = ExtResource("26_ug7tc")
+region_enabled = true
+region_rect = Rect2(0, 0, 488, 152)
+
+[node name="FrontCloud30" type="Sprite2D" parent="ParallaxBackground/front clopud"]
+position = Vector2(2660.126, -267.01056)
+rotation = 0.0071840957
+texture = ExtResource("26_ug7tc")
+region_enabled = true
+region_rect = Rect2(0, 192, 480, 160)
+
+[node name="FrontCloud31" type="Sprite2D" parent="ParallaxBackground/front clopud"]
+position = Vector2(2358.126, -268.01056)
+rotation = 0.0071840957
+texture = ExtResource("26_ug7tc")
+region_enabled = true
+region_rect = Rect2(-8, 344, 496, 160)
+
+[node name="FrontCloud32" type="Sprite2D" parent="ParallaxBackground/front clopud"]
+position = Vector2(3329.126, -246.01062)
+rotation = 0.0071840957
+texture = ExtResource("26_ug7tc")
+region_enabled = true
+region_rect = Rect2(0, 192, 480, 160)
+
+[node name="FrontCloud33" type="Sprite2D" parent="ParallaxBackground/front clopud"]
+position = Vector2(3027.1262, -247.01059)
+rotation = 0.0071840957
+texture = ExtResource("26_ug7tc")
+region_enabled = true
+region_rect = Rect2(-8, 344, 496, 160)
+
+[node name="FrontCloud34" type="Sprite2D" parent="ParallaxBackground/front clopud"]
+position = Vector2(3636.1262, -242.01056)
+rotation = 0.0071840957
+texture = ExtResource("26_ug7tc")
+region_enabled = true
+region_rect = Rect2(0, 0, 488, 152)
+
+[node name="FrontCloud35" type="Sprite2D" parent="ParallaxBackground/front clopud"]
+position = Vector2(3988.1257, -225.01059)
+rotation = 0.0071840957
+texture = ExtResource("26_ug7tc")
+region_enabled = true
+region_rect = Rect2(0, 192, 480, 160)
+
+[node name="FrontCloud36" type="Sprite2D" parent="ParallaxBackground/front clopud"]
+position = Vector2(3686.1257, -226.01059)
+rotation = 0.0071840957
+texture = ExtResource("26_ug7tc")
+region_enabled = true
+region_rect = Rect2(-8, 344, 496, 160)
+
+[node name="FrontCloud37" type="Sprite2D" parent="ParallaxBackground/front clopud"]
+position = Vector2(4295.126, -221.01056)
+rotation = 0.0071840957
+texture = ExtResource("26_ug7tc")
+region_enabled = true
+region_rect = Rect2(0, 0, 488, 152)
+
+[node name="FrontCloud3" type="Sprite2D" parent="ParallaxBackground/front clopud"]
+position = Vector2(1321.4949, -301.01822)
+rotation = 0.0071840957
+texture = ExtResource("26_ug7tc")
+region_enabled = true
+region_rect = Rect2(0, 192, 480, 160)
+
+[node name="FrontCloud38" type="Sprite2D" parent="ParallaxBackground/front clopud"]
+position = Vector2(1019.4949, -302.01822)
+rotation = 0.0071840957
+texture = ExtResource("26_ug7tc")
+region_enabled = true
+region_rect = Rect2(-8, 344, 496, 160)
+
+[node name="FrontCloud39" type="Sprite2D" parent="ParallaxBackground/front clopud"]
+position = Vector2(1977.4951, -272.01828)
+rotation = 0.0071840957
+texture = ExtResource("26_ug7tc")
+region_enabled = true
+region_rect = Rect2(0, 192, 480, 160)
+
+[node name="FrontCloud40" type="Sprite2D" parent="ParallaxBackground/front clopud"]
+position = Vector2(1675.4951, -273.0183)
+rotation = 0.0071840957
+texture = ExtResource("26_ug7tc")
+region_enabled = true
+region_rect = Rect2(-8, 344, 496, 160)
+
+[node name="FrontCloud41" type="Sprite2D" parent="ParallaxBackground/front clopud"]
+position = Vector2(2284.4949, -268.01822)
+rotation = 0.0071840957
+texture = ExtResource("26_ug7tc")
+region_enabled = true
+region_rect = Rect2(0, 0, 488, 152)
+
+[node name="FrontCloud42" type="Sprite2D" parent="ParallaxBackground/front clopud"]
+position = Vector2(2659.4946, -241.01822)
+rotation = 0.0071840957
+texture = ExtResource("26_ug7tc")
+region_enabled = true
+region_rect = Rect2(0, 192, 480, 160)
+
+[node name="FrontCloud43" type="Sprite2D" parent="ParallaxBackground/front clopud"]
+position = Vector2(2357.4949, -242.01825)
+rotation = 0.0071840957
+texture = ExtResource("26_ug7tc")
+region_enabled = true
+region_rect = Rect2(-8, 344, 496, 160)
+
+[node name="FrontCloud44" type="Sprite2D" parent="ParallaxBackground/front clopud"]
+position = Vector2(3328.4946, -220.01828)
+rotation = 0.0071840957
+texture = ExtResource("26_ug7tc")
+region_enabled = true
+region_rect = Rect2(0, 192, 480, 160)
+
+[node name="FrontCloud45" type="Sprite2D" parent="ParallaxBackground/front clopud"]
+position = Vector2(3026.495, -221.01828)
+rotation = 0.0071840957
+texture = ExtResource("26_ug7tc")
+region_enabled = true
+region_rect = Rect2(-8, 344, 496, 160)
+
+[node name="FrontCloud46" type="Sprite2D" parent="ParallaxBackground/front clopud"]
+position = Vector2(3635.4949, -216.01822)
+rotation = 0.0071840957
+texture = ExtResource("26_ug7tc")
+region_enabled = true
+region_rect = Rect2(0, 0, 488, 152)
+
+[node name="FrontCloud47" type="Sprite2D" parent="ParallaxBackground/front clopud"]
+position = Vector2(3987.4946, -199.01828)
+rotation = 0.0071840957
+texture = ExtResource("26_ug7tc")
+region_enabled = true
+region_rect = Rect2(0, 192, 480, 160)
+
+[node name="FrontCloud48" type="Sprite2D" parent="ParallaxBackground/front clopud"]
+position = Vector2(3685.4944, -200.01822)
+rotation = 0.0071840957
+texture = ExtResource("26_ug7tc")
+region_enabled = true
+region_rect = Rect2(-8, 344, 496, 160)
+
+[node name="FrontCloud49" type="Sprite2D" parent="ParallaxBackground/front clopud"]
+position = Vector2(4294.495, -195.01822)
+rotation = 0.0071840957
+texture = ExtResource("26_ug7tc")
+region_enabled = true
+region_rect = Rect2(0, 0, 488, 152)
+
+[node name="FrontCloud4" type="Sprite2D" parent="ParallaxBackground/front clopud"]
+position = Vector2(1320.7666, -271.02707)
+rotation = 0.0071840957
+texture = ExtResource("26_ug7tc")
+region_enabled = true
+region_rect = Rect2(0, 192, 480, 160)
+
+[node name="FrontCloud50" type="Sprite2D" parent="ParallaxBackground/front clopud"]
+position = Vector2(1018.7666, -272.02707)
+rotation = 0.0071840957
+texture = ExtResource("26_ug7tc")
+region_enabled = true
+region_rect = Rect2(-8, 344, 496, 160)
+
+[node name="FrontCloud51" type="Sprite2D" parent="ParallaxBackground/front clopud"]
+position = Vector2(1976.7668, -242.02713)
+rotation = 0.0071840957
+texture = ExtResource("26_ug7tc")
+region_enabled = true
+region_rect = Rect2(0, 192, 480, 160)
+
+[node name="FrontCloud52" type="Sprite2D" parent="ParallaxBackground/front clopud"]
+position = Vector2(1674.7668, -243.02713)
+rotation = 0.0071840957
+texture = ExtResource("26_ug7tc")
+region_enabled = true
+region_rect = Rect2(-8, 344, 496, 160)
+
+[node name="FrontCloud53" type="Sprite2D" parent="ParallaxBackground/front clopud"]
+position = Vector2(2283.7666, -238.02707)
+rotation = 0.0071840957
+texture = ExtResource("26_ug7tc")
+region_enabled = true
+region_rect = Rect2(0, 0, 488, 152)
+
+[node name="FrontCloud54" type="Sprite2D" parent="ParallaxBackground/front clopud"]
+position = Vector2(2658.7664, -211.02704)
+rotation = 0.0071840957
+texture = ExtResource("26_ug7tc")
+region_enabled = true
+region_rect = Rect2(0, 192, 480, 160)
+
+[node name="FrontCloud55" type="Sprite2D" parent="ParallaxBackground/front clopud"]
+position = Vector2(2356.7666, -212.02713)
+rotation = 0.0071840957
+texture = ExtResource("26_ug7tc")
+region_enabled = true
+region_rect = Rect2(-8, 344, 496, 160)
+
+[node name="FrontCloud56" type="Sprite2D" parent="ParallaxBackground/front clopud"]
+position = Vector2(3327.7664, -190.02716)
+rotation = 0.0071840957
+texture = ExtResource("26_ug7tc")
+region_enabled = true
+region_rect = Rect2(0, 192, 480, 160)
+
+[node name="FrontCloud57" type="Sprite2D" parent="ParallaxBackground/front clopud"]
+position = Vector2(3025.7666, -191.02713)
+rotation = 0.0071840957
+texture = ExtResource("26_ug7tc")
+region_enabled = true
+region_rect = Rect2(-8, 344, 496, 160)
+
+[node name="FrontCloud58" type="Sprite2D" parent="ParallaxBackground/front clopud"]
+position = Vector2(3634.7666, -186.02707)
+rotation = 0.0071840957
+texture = ExtResource("26_ug7tc")
+region_enabled = true
+region_rect = Rect2(0, 0, 488, 152)
+
+[node name="FrontCloud59" type="Sprite2D" parent="ParallaxBackground/front clopud"]
+position = Vector2(3986.766, -169.02713)
+rotation = 0.0071840957
+texture = ExtResource("26_ug7tc")
+region_enabled = true
+region_rect = Rect2(0, 192, 480, 160)
+
+[node name="FrontCloud60" type="Sprite2D" parent="ParallaxBackground/front clopud"]
+position = Vector2(3684.7659, -170.02707)
+rotation = 0.0071840957
+texture = ExtResource("26_ug7tc")
+region_enabled = true
+region_rect = Rect2(-8, 344, 496, 160)
+
+[node name="FrontCloud61" type="Sprite2D" parent="ParallaxBackground/front clopud"]
+position = Vector2(4293.7666, -165.02707)
+rotation = 0.0071840957
+texture = ExtResource("26_ug7tc")
+region_enabled = true
+region_rect = Rect2(0, 0, 488, 152)
+
+[node name="FrontCloud5" type="Sprite2D" parent="ParallaxBackground/front clopud"]
+position = Vector2(1320.4751, -259.03058)
+rotation = 0.0071840957
+texture = ExtResource("26_ug7tc")
+region_enabled = true
+region_rect = Rect2(0, 192, 480, 160)
+
+[node name="FrontCloud74" type="Sprite2D" parent="ParallaxBackground/front clopud"]
+position = Vector2(6582.1865, -176.37122)
+rotation = 0.0071840957
+texture = ExtResource("26_ug7tc")
+region_enabled = true
+region_rect = Rect2(0, 0, 488, 152)
+
+[node name="FrontCloud6" type="Sprite2D" parent="ParallaxBackground/front clopud"]
+position = Vector2(3608.4578, -252.38007)
+rotation = 0.0071840957
+texture = ExtResource("26_ug7tc")
+region_enabled = true
+region_rect = Rect2(0, 192, 480, 160)
+
+[node name="FrontCloud75" type="Sprite2D" parent="ParallaxBackground/front clopud"]
+position = Vector2(3306.4578, -253.38007)
+rotation = 0.0071840957
+texture = ExtResource("26_ug7tc")
+region_enabled = true
+region_rect = Rect2(-8, 344, 496, 160)
+
+[node name="FrontCloud76" type="Sprite2D" parent="ParallaxBackground/front clopud"]
+position = Vector2(4264.458, -223.38013)
+rotation = 0.0071840957
+texture = ExtResource("26_ug7tc")
+region_enabled = true
+region_rect = Rect2(0, 192, 480, 160)
+
+[node name="FrontCloud77" type="Sprite2D" parent="ParallaxBackground/front clopud"]
+position = Vector2(3962.458, -224.38013)
+rotation = 0.0071840957
+texture = ExtResource("26_ug7tc")
+region_enabled = true
+region_rect = Rect2(-8, 344, 496, 160)
+
+[node name="FrontCloud78" type="Sprite2D" parent="ParallaxBackground/front clopud"]
+position = Vector2(4571.458, -219.38007)
+rotation = 0.0071840957
+texture = ExtResource("26_ug7tc")
+region_enabled = true
+region_rect = Rect2(0, 0, 488, 152)
+
+[node name="FrontCloud79" type="Sprite2D" parent="ParallaxBackground/front clopud"]
+position = Vector2(4946.4575, -192.38004)
+rotation = 0.0071840957
+texture = ExtResource("26_ug7tc")
+region_enabled = true
+region_rect = Rect2(0, 192, 480, 160)
+
+[node name="FrontCloud80" type="Sprite2D" parent="ParallaxBackground/front clopud"]
+position = Vector2(4644.458, -193.38013)
+rotation = 0.0071840957
+texture = ExtResource("26_ug7tc")
+region_enabled = true
+region_rect = Rect2(-8, 344, 496, 160)
+
+[node name="FrontCloud81" type="Sprite2D" parent="ParallaxBackground/front clopud"]
+position = Vector2(5615.4575, -171.38016)
+rotation = 0.0071840957
+texture = ExtResource("26_ug7tc")
+region_enabled = true
+region_rect = Rect2(0, 192, 480, 160)
+
+[node name="FrontCloud82" type="Sprite2D" parent="ParallaxBackground/front clopud"]
+position = Vector2(5313.458, -172.38013)
+rotation = 0.0071840957
+texture = ExtResource("26_ug7tc")
+region_enabled = true
+region_rect = Rect2(-8, 344, 496, 160)
+
+[node name="FrontCloud83" type="Sprite2D" parent="ParallaxBackground/front clopud"]
+position = Vector2(5922.458, -167.38007)
+rotation = 0.0071840957
+texture = ExtResource("26_ug7tc")
+region_enabled = true
+region_rect = Rect2(0, 0, 488, 152)
+
+[node name="FrontCloud84" type="Sprite2D" parent="ParallaxBackground/front clopud"]
+position = Vector2(6274.457, -150.38013)
+rotation = 0.0071840957
+texture = ExtResource("26_ug7tc")
+region_enabled = true
+region_rect = Rect2(0, 192, 480, 160)
+
+[node name="FrontCloud85" type="Sprite2D" parent="ParallaxBackground/front clopud"]
+position = Vector2(5972.457, -151.38007)
+rotation = 0.0071840957
+texture = ExtResource("26_ug7tc")
+region_enabled = true
+region_rect = Rect2(-8, 344, 496, 160)
+
+[node name="FrontCloud86" type="Sprite2D" parent="ParallaxBackground/front clopud"]
+position = Vector2(6581.458, -146.38007)
+rotation = 0.0071840957
+texture = ExtResource("26_ug7tc")
+region_enabled = true
+region_rect = Rect2(0, 0, 488, 152)
+
+[node name="FrontCloud7" type="Sprite2D" parent="ParallaxBackground/front clopud"]
+position = Vector2(3608.1663, -240.38358)
+rotation = 0.0071840957
+texture = ExtResource("26_ug7tc")
+region_enabled = true
+region_rect = Rect2(0, 192, 480, 160)
+
+[node name="FrontCloud87" type="Sprite2D" parent="ParallaxBackground/front clopud"]
+position = Vector2(6581.191, -135.38327)
+rotation = 0.0071840957
+texture = ExtResource("26_ug7tc")
+region_enabled = true
+region_rect = Rect2(0, 0, 488, 152)
+
+[node name="FrontCloud8" type="Sprite2D" parent="ParallaxBackground/front clopud"]
+position = Vector2(3607.4622, -211.39212)
+rotation = 0.0071840957
+texture = ExtResource("26_ug7tc")
+region_enabled = true
+region_rect = Rect2(0, 192, 480, 160)
+
+[node name="FrontCloud88" type="Sprite2D" parent="ParallaxBackground/front clopud"]
+position = Vector2(3305.4622, -212.39212)
+rotation = 0.0071840957
+texture = ExtResource("26_ug7tc")
+region_enabled = true
+region_rect = Rect2(-8, 344, 496, 160)
+
+[node name="FrontCloud89" type="Sprite2D" parent="ParallaxBackground/front clopud"]
+position = Vector2(4263.4624, -182.39218)
+rotation = 0.0071840957
+texture = ExtResource("26_ug7tc")
+region_enabled = true
+region_rect = Rect2(0, 192, 480, 160)
+
+[node name="FrontCloud90" type="Sprite2D" parent="ParallaxBackground/front clopud"]
+position = Vector2(3961.4624, -183.39218)
+rotation = 0.0071840957
+texture = ExtResource("26_ug7tc")
+region_enabled = true
+region_rect = Rect2(-8, 344, 496, 160)
+
+[node name="FrontCloud91" type="Sprite2D" parent="ParallaxBackground/front clopud"]
+position = Vector2(4570.4624, -178.39212)
+rotation = 0.0071840957
+texture = ExtResource("26_ug7tc")
+region_enabled = true
+region_rect = Rect2(0, 0, 488, 152)
+
+[node name="FrontCloud92" type="Sprite2D" parent="ParallaxBackground/front clopud"]
+position = Vector2(4945.462, -151.39209)
+rotation = 0.0071840957
+texture = ExtResource("26_ug7tc")
+region_enabled = true
+region_rect = Rect2(0, 192, 480, 160)
+
+[node name="FrontCloud93" type="Sprite2D" parent="ParallaxBackground/front clopud"]
+position = Vector2(4643.4624, -152.39218)
+rotation = 0.0071840957
+texture = ExtResource("26_ug7tc")
+region_enabled = true
+region_rect = Rect2(-8, 344, 496, 160)
+
+[node name="FrontCloud94" type="Sprite2D" parent="ParallaxBackground/front clopud"]
+position = Vector2(5614.462, -130.39221)
+rotation = 0.0071840957
+texture = ExtResource("26_ug7tc")
+region_enabled = true
+region_rect = Rect2(0, 192, 480, 160)
+
+[node name="FrontCloud95" type="Sprite2D" parent="ParallaxBackground/front clopud"]
+position = Vector2(5312.4624, -131.39218)
+rotation = 0.0071840957
+texture = ExtResource("26_ug7tc")
+region_enabled = true
+region_rect = Rect2(-8, 344, 496, 160)
+
+[node name="FrontCloud96" type="Sprite2D" parent="ParallaxBackground/front clopud"]
+position = Vector2(5921.4624, -126.39212)
+rotation = 0.0071840957
+texture = ExtResource("26_ug7tc")
+region_enabled = true
+region_rect = Rect2(0, 0, 488, 152)
+
+[node name="FrontCloud97" type="Sprite2D" parent="ParallaxBackground/front clopud"]
+position = Vector2(6273.4614, -109.39218)
+rotation = 0.0071840957
+texture = ExtResource("26_ug7tc")
+region_enabled = true
+region_rect = Rect2(0, 192, 480, 160)
+
+[node name="FrontCloud98" type="Sprite2D" parent="ParallaxBackground/front clopud"]
+position = Vector2(5971.4614, -110.39212)
+rotation = 0.0071840957
+texture = ExtResource("26_ug7tc")
+region_enabled = true
+region_rect = Rect2(-8, 344, 496, 160)
+
+[node name="FrontCloud99" type="Sprite2D" parent="ParallaxBackground/front clopud"]
+position = Vector2(6580.4624, -105.39212)
+rotation = 0.0071840957
+texture = ExtResource("26_ug7tc")
+region_enabled = true
+region_rect = Rect2(0, 0, 488, 152)
+
+[node name="FrontCloud9" type="Sprite2D" parent="ParallaxBackground/front clopud"]
+position = Vector2(3607.1707, -199.39563)
+rotation = 0.0071840957
+texture = ExtResource("26_ug7tc")
+region_enabled = true
+region_rect = Rect2(0, 192, 480, 160)
+
+[node name="FrontCloud100" type="Sprite2D" parent="ParallaxBackground/front clopud"]
+position = Vector2(6597.1904, -93.98264)
+rotation = 0.0071840957
+texture = ExtResource("26_ug7tc")
+region_enabled = true
+region_rect = Rect2(0, 0, 488, 152)
+
+[node name="FrontCloud10" type="Sprite2D" parent="ParallaxBackground/front clopud"]
+position = Vector2(3623.4614, -169.99149)
+rotation = 0.0071840957
+texture = ExtResource("26_ug7tc")
+region_enabled = true
+region_rect = Rect2(0, 192, 480, 160)
+
+[node name="FrontCloud101" type="Sprite2D" parent="ParallaxBackground/front clopud"]
+position = Vector2(3321.4614, -170.99149)
+rotation = 0.0071840957
+texture = ExtResource("26_ug7tc")
+region_enabled = true
+region_rect = Rect2(-8, 344, 496, 160)
+
+[node name="FrontCloud102" type="Sprite2D" parent="ParallaxBackground/front clopud"]
+position = Vector2(4279.462, -140.99155)
+rotation = 0.0071840957
+texture = ExtResource("26_ug7tc")
+region_enabled = true
+region_rect = Rect2(0, 192, 480, 160)
+
+[node name="FrontCloud103" type="Sprite2D" parent="ParallaxBackground/front clopud"]
+position = Vector2(3977.4617, -141.99155)
+rotation = 0.0071840957
+texture = ExtResource("26_ug7tc")
+region_enabled = true
+region_rect = Rect2(-8, 344, 496, 160)
+
+[node name="FrontCloud104" type="Sprite2D" parent="ParallaxBackground/front clopud"]
+position = Vector2(4586.462, -136.99149)
+rotation = 0.0071840957
+texture = ExtResource("26_ug7tc")
+region_enabled = true
+region_rect = Rect2(0, 0, 488, 152)
+
+[node name="FrontCloud105" type="Sprite2D" parent="ParallaxBackground/front clopud"]
+position = Vector2(4961.4614, -109.99146)
+rotation = 0.0071840957
+texture = ExtResource("26_ug7tc")
+region_enabled = true
+region_rect = Rect2(0, 192, 480, 160)
+
+[node name="FrontCloud106" type="Sprite2D" parent="ParallaxBackground/front clopud"]
+position = Vector2(4659.462, -110.991554)
+rotation = 0.0071840957
+texture = ExtResource("26_ug7tc")
+region_enabled = true
+region_rect = Rect2(-8, 344, 496, 160)
+
+[node name="FrontCloud107" type="Sprite2D" parent="ParallaxBackground/front clopud"]
+position = Vector2(5630.4614, -88.991585)
+rotation = 0.0071840957
+texture = ExtResource("26_ug7tc")
+region_enabled = true
+region_rect = Rect2(0, 192, 480, 160)
+
+[node name="FrontCloud108" type="Sprite2D" parent="ParallaxBackground/front clopud"]
+position = Vector2(5328.462, -89.991554)
+rotation = 0.0071840957
+texture = ExtResource("26_ug7tc")
+region_enabled = true
+region_rect = Rect2(-8, 344, 496, 160)
+
+[node name="FrontCloud109" type="Sprite2D" parent="ParallaxBackground/front clopud"]
+position = Vector2(5937.462, -84.99149)
+rotation = 0.0071840957
+texture = ExtResource("26_ug7tc")
+region_enabled = true
+region_rect = Rect2(0, 0, 488, 152)
+
+[node name="FrontCloud110" type="Sprite2D" parent="ParallaxBackground/front clopud"]
+position = Vector2(6289.461, -67.991554)
+rotation = 0.0071840957
+texture = ExtResource("26_ug7tc")
+region_enabled = true
+region_rect = Rect2(0, 192, 480, 160)
+
+[node name="FrontCloud111" type="Sprite2D" parent="ParallaxBackground/front clopud"]
+position = Vector2(5987.461, -68.99149)
+rotation = 0.0071840957
+texture = ExtResource("26_ug7tc")
+region_enabled = true
+region_rect = Rect2(-8, 344, 496, 160)
+
+[node name="FrontCloud112" type="Sprite2D" parent="ParallaxBackground/front clopud"]
+position = Vector2(6596.462, -63.991493)
+rotation = 0.0071840957
+texture = ExtResource("26_ug7tc")
+region_enabled = true
+region_rect = Rect2(0, 0, 488, 152)
+
+[node name="FrontCloud11" type="Sprite2D" parent="ParallaxBackground/front clopud"]
+position = Vector2(3623.17, -157.995)
+rotation = 0.0071840957
+texture = ExtResource("26_ug7tc")
+region_enabled = true
+region_rect = Rect2(0, 192, 480, 160)
+
+[node name="FrontCloud62" type="Sprite2D" parent="ParallaxBackground/front clopud"]
+position = Vector2(1018.4753, -260.03058)
+rotation = 0.0071840957
+texture = ExtResource("26_ug7tc")
+region_enabled = true
+region_rect = Rect2(-8, 344, 496, 160)
+
+[node name="FrontCloud63" type="Sprite2D" parent="ParallaxBackground/front clopud"]
+position = Vector2(1976.4756, -230.03067)
+rotation = 0.0071840957
+texture = ExtResource("26_ug7tc")
+region_enabled = true
+region_rect = Rect2(0, 192, 480, 160)
+
+[node name="FrontCloud64" type="Sprite2D" parent="ParallaxBackground/front clopud"]
+position = Vector2(1674.4756, -231.0307)
+rotation = 0.0071840957
+texture = ExtResource("26_ug7tc")
+region_enabled = true
+region_rect = Rect2(-8, 344, 496, 160)
+
+[node name="FrontCloud65" type="Sprite2D" parent="ParallaxBackground/front clopud"]
+position = Vector2(2283.4753, -226.03058)
+rotation = 0.0071840957
+texture = ExtResource("26_ug7tc")
+region_enabled = true
+region_rect = Rect2(0, 0, 488, 152)
+
+[node name="FrontCloud66" type="Sprite2D" parent="ParallaxBackground/front clopud"]
+position = Vector2(2658.475, -199.03058)
+rotation = 0.0071840957
+texture = ExtResource("26_ug7tc")
+region_enabled = true
+region_rect = Rect2(0, 192, 480, 160)
+
+[node name="FrontCloud67" type="Sprite2D" parent="ParallaxBackground/front clopud"]
+position = Vector2(2356.4753, -200.0307)
+rotation = 0.0071840957
+texture = ExtResource("26_ug7tc")
+region_enabled = true
+region_rect = Rect2(-8, 344, 496, 160)
+
+[node name="FrontCloud68" type="Sprite2D" parent="ParallaxBackground/front clopud"]
+position = Vector2(3327.4749, -178.0307)
+rotation = 0.0071840957
+texture = ExtResource("26_ug7tc")
+region_enabled = true
+region_rect = Rect2(0, 192, 480, 160)
+
+[node name="FrontCloud69" type="Sprite2D" parent="ParallaxBackground/front clopud"]
+position = Vector2(3025.475, -179.03067)
+rotation = 0.0071840957
+texture = ExtResource("26_ug7tc")
+region_enabled = true
+region_rect = Rect2(-8, 344, 496, 160)
+
+[node name="FrontCloud70" type="Sprite2D" parent="ParallaxBackground/front clopud"]
+position = Vector2(3634.475, -174.03061)
+rotation = 0.0071840957
+texture = ExtResource("26_ug7tc")
+region_enabled = true
+region_rect = Rect2(0, 0, 488, 152)
+
+[node name="FrontCloud71" type="Sprite2D" parent="ParallaxBackground/front clopud"]
+position = Vector2(3986.4746, -157.03067)
+rotation = 0.0071840957
+texture = ExtResource("26_ug7tc")
+region_enabled = true
+region_rect = Rect2(0, 192, 480, 160)
+
+[node name="FrontCloud72" type="Sprite2D" parent="ParallaxBackground/front clopud"]
+position = Vector2(3684.4744, -158.03061)
+rotation = 0.0071840957
+texture = ExtResource("26_ug7tc")
+region_enabled = true
+region_rect = Rect2(-8, 344, 496, 160)
+
+[node name="FrontCloud73" type="Sprite2D" parent="ParallaxBackground/front clopud"]
+position = Vector2(4293.475, -153.03061)
+rotation = 0.0071840957
+texture = ExtResource("26_ug7tc")
+region_enabled = true
+region_rect = Rect2(0, 0, 488, 152)
