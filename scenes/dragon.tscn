@@ -1,11 +1,11 @@
-[gd_scene load_steps=18 format=3 uid="uid://b6kmikotf0jy1"]
+[gd_scene load_steps=23 format=3 uid="uid://b6kmikotf0jy1"]
 
 [ext_resource type="Texture2D" uid="uid://b4xvu5ofa4puf" path="res://assests/dragon.png" id="1_vfigm"]
 [ext_resource type="Script" uid="uid://bdajsoefkhq4l" path="res://scripts/dragon.gd" id="2_7fr0w"]
 [ext_resource type="Texture2D" uid="uid://c5a3qol6id667" path="res://assests/dragon chomp.png" id="4_kcfnc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y46cm"]
-size = Vector2(209.65607, 281.18723)
+size = Vector2(209.65607, 173.14511)
 
 [sub_resource type="Animation" id="Animation_2yk6i"]
 length = 0.001
@@ -149,15 +149,73 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lmr38"]
 size = Vector2(199, 208)
 
+[sub_resource type="Animation" id="Animation_lmr38"]
+resource_name = "ALTERNATEEONE"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.4, 0.9),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.06296129, -0.06283185307179626]
+}
+
+[sub_resource type="Animation" id="Animation_7fr0w"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.06296129]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_kcfnc"]
+_data = {
+&"ALTERNATEEONE": SubResource("Animation_lmr38"),
+&"RESET": SubResource("Animation_7fr0w")
+}
+
+[sub_resource type="Animation" id="Animation_fe7o6"]
+resource_name = "ALTERNATYE2"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.39999998, 0.9),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [-0.06283185307179626, 0.06283185307179626]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_mn7pc"]
+_data = {
+&"ALTERNATYE2": SubResource("Animation_fe7o6")
+}
+
 [node name="head" type="Node2D"]
 script = ExtResource("2_7fr0w")
 
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(196.40697, 0.5982555)
+position = Vector2(142.38745, 1.0046078)
 rotation = 1.5632741
-scale = Vector2(0.99999976, 0.99999976)
+scale = Vector2(0.9999997, 0.9999997)
 shape = SubResource("RectangleShape2D_y46cm")
 
 [node name="lower jaw" type="Node2D" parent="."]
@@ -230,6 +288,118 @@ frame_progress = 0.76866525
 [node name="CollisionShape2D" type="CollisionShape2D" parent="playerdetector"]
 position = Vector2(131, 2)
 shape = SubResource("RectangleShape2D_lmr38")
+
+[node name="spine" type="Sprite2D" parent="."]
+z_index = -3
+position = Vector2(-90, -7)
+rotation = 0.06296129
+texture = ExtResource("1_vfigm")
+region_enabled = true
+region_rect = Rect2(224, -16, 96, 80)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="spine"]
+libraries = {
+&"": SubResource("AnimationLibrary_kcfnc")
+}
+autoplay = "ALTERNATEEONE"
+
+[node name="spine2" type="Sprite2D" parent="."]
+z_index = -3
+position = Vector2(-155, -7)
+rotation = 0.037699107
+texture = ExtResource("1_vfigm")
+region_enabled = true
+region_rect = Rect2(224, -16, 96, 80)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="spine2"]
+libraries = {
+&"": SubResource("AnimationLibrary_mn7pc")
+}
+autoplay = "ALTERNATYE2"
+
+[node name="spine3" type="Sprite2D" parent="."]
+z_index = -3
+position = Vector2(-231.5265, -7)
+rotation = 0.06296129
+texture = ExtResource("1_vfigm")
+region_enabled = true
+region_rect = Rect2(224, -16, 96, 80)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="spine3"]
+libraries = {
+&"": SubResource("AnimationLibrary_kcfnc")
+}
+autoplay = "ALTERNATEEONE"
+
+[node name="spine4" type="Sprite2D" parent="."]
+z_index = -3
+position = Vector2(-296.5265, -7)
+rotation = 0.037699107
+texture = ExtResource("1_vfigm")
+region_enabled = true
+region_rect = Rect2(224, -16, 96, 80)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="spine4"]
+libraries = {
+&"": SubResource("AnimationLibrary_mn7pc")
+}
+autoplay = "ALTERNATYE2"
+
+[node name="spine5" type="Sprite2D" parent="."]
+z_index = -3
+position = Vector2(-371, -10.059109)
+rotation = 0.06296129
+texture = ExtResource("1_vfigm")
+region_enabled = true
+region_rect = Rect2(224, -16, 96, 80)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="spine5"]
+libraries = {
+&"": SubResource("AnimationLibrary_kcfnc")
+}
+autoplay = "ALTERNATEEONE"
+
+[node name="spine6" type="Sprite2D" parent="."]
+z_index = -3
+position = Vector2(-436, -10.059113)
+rotation = 0.037699107
+texture = ExtResource("1_vfigm")
+region_enabled = true
+region_rect = Rect2(224, -16, 96, 80)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="spine6"]
+libraries = {
+&"": SubResource("AnimationLibrary_mn7pc")
+}
+autoplay = "ALTERNATYE2"
+
+[node name="spine7" type="Sprite2D" parent="."]
+z_index = -3
+position = Vector2(-512.5264, -10.059109)
+rotation = 0.06296129
+texture = ExtResource("1_vfigm")
+region_enabled = true
+region_rect = Rect2(224, -16, 96, 80)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="spine7"]
+libraries = {
+&"": SubResource("AnimationLibrary_kcfnc")
+}
+autoplay = "ALTERNATEEONE"
+
+[node name="spine8" type="Sprite2D" parent="."]
+z_index = -3
+position = Vector2(-577.5265, -10.059113)
+rotation = 0.037699107
+texture = ExtResource("1_vfigm")
+region_enabled = true
+region_rect = Rect2(224, -16, 96, 80)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="spine8"]
+libraries = {
+&"": SubResource("AnimationLibrary_mn7pc")
+}
+autoplay = "ALTERNATYE2"
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
