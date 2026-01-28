@@ -292,4 +292,4 @@ tile_set = SubResource("TileSet_4kk03")
 format = 2
 
 [node name="head" parent="." instance=ExtResource("4_xu6lg")]
-position = Vector2(-115, -64)
+position = Vector2(-216, -77)

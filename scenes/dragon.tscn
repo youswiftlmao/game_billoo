@@ -1,12 +1,11 @@
-[gd_scene load_steps=17 format=3 uid="uid://b6kmikotf0jy1"]
+[gd_scene load_steps=18 format=3 uid="uid://b6kmikotf0jy1"]
 
 [ext_resource type="Texture2D" uid="uid://b4xvu5ofa4puf" path="res://assests/dragon.png" id="1_vfigm"]
-[ext_resource type="Script" uid="uid://cwkbht7tsaq0o" path="res://scripts/area_2d.gd" id="2_5q8uj"]
 [ext_resource type="Script" uid="uid://bdajsoefkhq4l" path="res://scripts/dragon.gd" id="2_7fr0w"]
 [ext_resource type="Texture2D" uid="uid://c5a3qol6id667" path="res://assests/dragon chomp.png" id="4_kcfnc"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_7fr0w"]
-radius = 60.827633
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y46cm"]
+size = Vector2(209.65607, 174.37025)
 
 [sub_resource type="Animation" id="Animation_2yk6i"]
 length = 0.001
@@ -25,14 +24,14 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("../DEADZONE2/CollisionShape2D:disabled")
+tracks/1/path = NodePath("../DEADZONE2/CollisionShape2D:scale")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
+"update": 0,
+"values": [Vector2(1e-05, 1e-05)]
 }
 
 [sub_resource type="Animation" id="Animation_y46cm"]
@@ -52,14 +51,14 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("../DEADZONE2/CollisionShape2D:disabled")
+tracks/1/path = NodePath("../DEADZONE2/CollisionShape2D:scale")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.8, 1),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 1,
-"values": [true, false, true]
+"times": PackedFloat32Array(0, 0.76666665, 0.8, 0.9963447, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1e-05, 1e-05), Vector2(1e-05, 1e-05), Vector2(1, 1), Vector2(1, 1), Vector2(1e-05, 1e-05)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_fe7o6"]
@@ -70,6 +69,9 @@ _data = {
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7fr0w"]
 size = Vector2(122.000015, 7.000002)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2yk6i"]
+size = Vector2(131.00002, 4.000003)
 
 [sub_resource type="Animation" id="Animation_kr2gv"]
 length = 0.001
@@ -84,18 +86,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [0.0]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("../DEADZONE1/CollisionShape2D:disabled")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
 }
 
 [sub_resource type="Animation" id="Animation_mn7pc"]
@@ -115,14 +105,14 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("../DEADZONE1/CollisionShape2D:disabled")
+tracks/1/path = NodePath("../DEADZONE1/CollisionShape2D:scale")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.81, 1),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 1,
-"values": [true, false, true]
+"times": PackedFloat32Array(0, 0.76666665, 0.8000001, 0.9963447, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1e-05, 1e-05), Vector2(1e-05, 1e-05), Vector2(1, 1), Vector2(1, 1), Vector2(1e-05, 1e-05)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_el11r"]
@@ -156,23 +146,19 @@ animations = [{
 "speed": 4.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lmr38"]
+size = Vector2(199, 208)
+
 [node name="head" type="Node2D"]
 script = ExtResource("2_7fr0w")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-z_index = -1
-position = Vector2(-84, 1)
-texture = ExtResource("1_vfigm")
-region_enabled = true
-region_rect = Rect2(226, 1, 101, 61)
-
 [node name="Area2D" type="Area2D" parent="."]
-script = ExtResource("2_5q8uj")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(29.000002, -4.000001)
+position = Vector2(143, 1)
 rotation = 1.5632741
-shape = SubResource("CircleShape2D_7fr0w")
+scale = Vector2(0.9999998, 0.9999998)
+shape = SubResource("RectangleShape2D_y46cm")
 
 [node name="lower jaw" type="Node2D" parent="."]
 position = Vector2(-45, 0)
@@ -197,7 +183,13 @@ scale = Vector2(0.99999994, 0.99999994)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="lower jaw/DEADZONE2"]
 position = Vector2(-20.999987, -6.499995)
+scale = Vector2(1e-05, 1e-05)
 shape = SubResource("RectangleShape2D_7fr0w")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="lower jaw"]
+position = Vector2(55.499977, 5.999999)
+scale = Vector2(0.9999997, 0.9999997)
+shape = SubResource("RectangleShape2D_2yk6i")
 
 [node name="upper jaw" type="Node2D" parent="."]
 position = Vector2(-45, 0)
@@ -220,13 +212,26 @@ scale = Vector2(0.99999994, 0.99999994)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="upper jaw/DEADZONE1"]
 position = Vector2(-20.999987, 7.749997)
-scale = Vector2(0.9999995, 0.9999995)
+scale = Vector2(1e-05, 1e-05)
 shape = SubResource("RectangleShape2D_kcfnc")
-disabled = true
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="upper jaw"]
+position = Vector2(55.499973, 1.999999)
+scale = Vector2(0.99999964, 0.99999964)
+shape = SubResource("RectangleShape2D_2yk6i")
 
 [node name="DRAGON" type="AnimatedSprite2D" parent="."]
+visible = false
 sprite_frames = SubResource("SpriteFrames_y46cm")
 frame_progress = 0.76866525
 
+[node name="playerdetector" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="playerdetector"]
+position = Vector2(41.5, 0)
+shape = SubResource("RectangleShape2D_lmr38")
+
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
+[connection signal="body_entered" from="playerdetector" to="." method="_on_playerdetector_body_entered"]
+[connection signal="body_exited" from="playerdetector" to="." method="_on_playerdetector_body_exited"]

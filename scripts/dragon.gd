@@ -1,20 +1,25 @@
 extends Node2D
 
+var move := false
 var player_inside := false
 var player: Node = null
 var shake_active := false
+var speed := 80
 
 func _ready() -> void:
 	$DRAGON.play("default")
 	$"lower jaw".hide()
 	$"upper jaw".hide()
-
-	player = get_tree().get_root().find_child("player", true, false)
-
-
+	
+	player = get_tree().get_root().find_child("player", true, false) 
+func _physics_process(delta: float) -> void:
+	if move:
+		position.x += speed * delta	
 func _on_area_2d_body_entered(body: Node2D) -> void:
+
 	if body.name == "player":
 		player_inside = true
+
 
 		$DRAGON.hide()
 
@@ -36,7 +41,7 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 
 
 		call_deferred("shake_loop")
-		loop_jaws()
+		call_deferred("loop_jaws")
 
 
 func _on_area_2d_body_exited(body: Node2D) -> void:
@@ -80,3 +85,14 @@ func reset_dragon() -> void:
 	$"upper jaw".hide()
 	$DRAGON.play("default")
 	
+
+
+func _on_playerdetector_body_entered(body: Node2D) -> void:
+	if body.name == "player":
+		move = true
+		
+
+
+func _on_playerdetector_body_exited(body: Node2D) -> void:
+	if body.name == "player":
+		return
