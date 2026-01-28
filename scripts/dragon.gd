@@ -4,7 +4,7 @@ var move := false
 var player_inside := false
 var player: Node = null
 var shake_active := false
-var speed := 80
+const  speed := 180
 
 func _ready() -> void:
 	$DRAGON.play("default")

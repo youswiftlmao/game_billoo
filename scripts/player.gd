@@ -1,5 +1,6 @@
 extends CharacterBody2D
 
+@onready var camera := $Camera2D
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var glow := $CanvasLayer/ColorRect
 
@@ -17,7 +18,7 @@ var HP = 100
 var player_alive = true 
 
 var attack_ip = false
-
+var zoom_tween: Tween
 
 var took_damage = false
 var can_move = true
@@ -33,7 +34,7 @@ var facing_right := true
 func _ready() -> void:
 
 	
-	$CoinLabel.visible = true
+	$GUI/CoinLabel.visible = true
 	update_coin_label()
 	
 	collision_nodes = [
@@ -215,7 +216,7 @@ func _on_regen_timeout() -> void:
 	
 	
 func updhp():
-	var hpbar = $healtbar
+	var hpbar = $GUI/healtbar
 	hpbar.value = HP
 
 	
@@ -250,9 +251,11 @@ func _on_hurtbox_area_entered(area: Area2D) -> void:
 	elif area.name.begins_with("DEADZONE"):
 		HP = 0
 		print("bitten by dragon", HP)
+	if area.name.begins_with("CAMBIG"):
+			smooth_zoom(Vector2(2, 2))
 func  update_coin_label():
-	$CoinLabel.visible = true
-	$CoinLabel.text = str(coins) + "/" + str(total_coins)
+	$GUI/CoinLabel.visible = true
+	$GUI/CoinLabel.text = str(coins) + "/" + str(total_coins)
 
 		
 func flip_collisions(right: bool) -> void:
@@ -263,3 +266,8 @@ func flip_collisions(right: bool) -> void:
 
 	for node in collision_nodes:
 		node.position.x = original_x[node] * (1 if right else -1)
+func smooth_zoom(target: Vector2) -> void:
+	if zoom_tween:
+		zoom_tween.kill()
+	zoom_tween = create_tween()
+	zoom_tween.tween_property(camera, "zoom", target, 1.2).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)

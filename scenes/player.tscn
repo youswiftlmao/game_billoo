@@ -247,6 +247,10 @@ z_index = 4096
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -25.0
+offset_top = -9.0
+offset_right = -25.0
+offset_bottom = -9.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
@@ -256,22 +260,6 @@ script = ExtResource("7_y4r1p")
 [node name="regen" type="Timer" parent="."]
 wait_time = 10.0
 autostart = true
-
-[node name="healtbar" type="ProgressBar" parent="."]
-modulate = Color(0.5333924, 0.0014055142, 0.70975846, 1)
-z_index = 10
-offset_left = -146.60008
-offset_top = -87.28002
-offset_right = 623.39984
-offset_bottom = 19.72004
-scale = Vector2(0.11685489, 0.11685489)
-show_percentage = false
-
-[node name="Bar" type="Sprite2D" parent="."]
-z_index = 10
-position = Vector2(-94.60009, -80.28002)
-scale = Vector2(1.1599988, 1.1599988)
-texture = ExtResource("6_tuyoq")
 
 [node name="hurtbox" type="Area2D" parent="."]
 
@@ -286,21 +274,43 @@ amount = 150
 lifetime = 10.0
 process_material = SubResource("ParticleProcessMaterial_smehm")
 
-[node name="CoinLabel" type="Label" parent="."]
-offset_left = 115.0
-offset_top = -88.99999
-offset_right = 282.49948
-offset_bottom = 29.000008
-scale = Vector2(0.19722064, 0.15777424)
+[node name="GUI" type="CanvasLayer" parent="."]
+
+[node name="CoinLabel" type="Label" parent="GUI"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -141.0
+offset_top = 28.999998
+offset_right = 26.499512
+offset_bottom = 147.0
+grow_horizontal = 0
+scale = Vector2(0.64722764, 0.5177747)
 theme_override_colors/font_color = Color(0.78431374, 0.6627451, 0, 1)
 theme_override_colors/font_shadow_color = Color(0.5372549, 0.42745098, 0, 1)
 theme_override_fonts/font = ExtResource("8_smehm")
 theme_override_font_sizes/font_size = 109
 
-[node name="Coin" type="Sprite2D" parent="."]
-position = Vector2(101.999985, -80)
-scale = Vector2(1.3148067, 1.3148067)
+[node name="Coin" type="Sprite2D" parent="GUI/CoinLabel"]
+position = Vector2(-65.91608, 57.043457)
+scale = Vector2(6.666679, 8.333468)
 texture = ExtResource("9_ur7pv")
+
+[node name="healtbar" type="ProgressBar" parent="GUI"]
+modulate = Color(0.5333924, 0.0014055142, 0.70975846, 1)
+z_index = 10
+offset_left = 40.0
+offset_top = 25.0
+offset_right = 3514.3945
+offset_bottom = 504.22684
+scale = Vector2(0.10937911, 0.10937911)
+show_percentage = false
+
+[node name="Bar" type="Sprite2D" parent="GUI"]
+z_index = 10
+position = Vector2(261.66666, 52.5)
+scale = Vector2(4.895231, 4.8952312)
+texture = ExtResource("6_tuyoq")
 
 [connection signal="body_entered" from="phitbox" to="." method="_on_phitbox_body_entered"]
 [connection signal="body_exited" from="phitbox" to="." method="_on_phitbox_body_exited"]

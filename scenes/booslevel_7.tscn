@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://bikbu7lwsfiw1"]
+[gd_scene load_steps=11 format=3 uid="uid://bikbu7lwsfiw1"]
 
 [ext_resource type="PackedScene" uid="uid://c36gx83vrkgu0" path="res://scenes/player.tscn" id="1_yhqux"]
 [ext_resource type="Texture2D" uid="uid://c3qaq8pfb10q4" path="res://addons/TILESHEET ALL DONE.png" id="2_qo1d4"]
@@ -274,9 +274,13 @@ texture = ExtResource("3_3jbdx")
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_p2okq")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yhqux"]
+size = Vector2(171, 158)
+
 [node name="BOOSLEVEL7" type="Node2D"]
 
 [node name="player" parent="." instance=ExtResource("1_yhqux")]
+position = Vector2(87, -43)
 
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2(-34, 47)
@@ -292,4 +296,11 @@ tile_set = SubResource("TileSet_4kk03")
 format = 2
 
 [node name="head" parent="." instance=ExtResource("4_xu6lg")]
-position = Vector2(-216, -77)
+position = Vector2(-86, -62)
+
+[node name="CAMBIG" type="Area2D" parent="."]
+position = Vector2(256, -112)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CAMBIG"]
+position = Vector2(9.5, 30)
+shape = SubResource("RectangleShape2D_yhqux")

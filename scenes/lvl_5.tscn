@@ -879,7 +879,7 @@ position = Vector2(159, -232)
 texture = ExtResource("20_70q4v")
 
 [node name="bckcloud" type="ParallaxLayer" parent="ParallaxBackground"]
-position = Vector2(-1623, 86)
+position = Vector2(-1612, 103)
 motion_scale = Vector2(0.08, 0.06)
 script = ExtResource("21_mweoq")
 
@@ -1028,7 +1028,7 @@ region_enabled = true
 region_rect = Rect2(8, 208, 536, 248)
 
 [node name="midcloud" type="ParallaxLayer" parent="ParallaxBackground"]
-position = Vector2(-1577, -5)
+position = Vector2(-1566, 12)
 scale = Vector2(0.7664397, 0.7664397)
 motion_scale = Vector2(0.08, 0.06)
 script = ExtResource("23_x6wrt")
@@ -2206,7 +2206,7 @@ region_enabled = true
 region_rect = Rect2(0, 8, 480, 112)
 
 [node name="front clopud" type="ParallaxLayer" parent="ParallaxBackground"]
-position = Vector2(-1082, 502)
+position = Vector2(-1071, 519)
 rotation = -0.024279619
 motion_scale = Vector2(0.08, 0.06)
 script = ExtResource("25_p6iuc")
