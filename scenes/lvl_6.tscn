@@ -894,7 +894,7 @@ position = Vector2(2904, -101)
 position = Vector2(3797, -167)
 
 [node name="door" parent="." instance=ExtResource("19_m2gqb")]
-position = Vector2(4168, -161)
+position = Vector2(4170, -163)
 
 [node name="Dooraaaa" type="Sprite2D" parent="door"]
 z_index = 2841
