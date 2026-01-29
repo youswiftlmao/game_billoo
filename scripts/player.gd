@@ -26,6 +26,9 @@ var can_move = true
 
 var coins = 0
 var total_coins = 5
+var flowers = 0
+var total_flowers = 5
+var flowers_unlocked = false
 
 var collision_nodes := []
 var original_x := {}
@@ -245,17 +248,29 @@ func _on_hurtbox_area_entered(area: Area2D) -> void:
 		coins = coins + 1
 		update_coin_label()
 		print(coins)
+	elif area.name.begins_with("flower") and flowers_unlocked:
+		flowers += 1
+		update_flower_label()
+		area.queue_free()
 	elif  area.name.begins_with("invispike"):
 		HP = 0
 		print("youve been trolled bwah ", HP)
 	elif area.name.begins_with("DEADZONE"):
 		HP = 0
 		print("bitten by dragon", HP)
+		
 	if area.name.begins_with("CAMBIG"):
 			smooth_zoom(Vector2(2, 2))
 func  update_coin_label():
 	$GUI/CoinLabel.visible = true
 	$GUI/CoinLabel.text = str(coins) + "/" + str(total_coins)
+	
+func update_flower_label():
+	if !flowers_unlocked:
+		return
+	$GUI/FlowerLabel/Coinflowe.visible = true
+	$GUI/FlowerLabel.visible = true
+	$GUI/FlowerLabel.text = str(flowers) + "/" + str(total_flowers)
 
 		
 func flip_collisions(right: bool) -> void:
@@ -271,3 +286,14 @@ func smooth_zoom(target: Vector2) -> void:
 		zoom_tween.kill()
 	zoom_tween = create_tween()
 	zoom_tween.tween_property(camera, "zoom", target, 1.2).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
+
+
+func _on_dialog_dfinished():
+	print("PLAYER RECEIVED DIALOG FINISH")
+	flowers_unlocked = true
+	$GUI/FlowerLabel.visible = true
+	$GUI/FlowerLabel/Coinflowe.visible = true
+	update_flower_label()
+
+	var bridge = get_node("../bridge")
+	bridge.start_moving()

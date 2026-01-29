@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://7363sgt0dv5x"]
+
+[ext_resource type="Texture2D" uid="uid://bulfbbudvyusy" path="res://assests/bridge.png" id="1_7ct4w"]
+[ext_resource type="Script" uid="uid://pd7yxmrd0pp7" path="res://scripts/bridge.gd" id="1_im2sa"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_im2sa"]
+size = Vector2(160, 16)
+
+[node name="bridge" type="StaticBody2D"]
+script = ExtResource("1_im2sa")
+
+[node name="Bridge" type="Sprite2D" parent="."]
+texture = ExtResource("1_7ct4w")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_im2sa")

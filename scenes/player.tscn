@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://c36gx83vrkgu0"]
+[gd_scene load_steps=36 format=3 uid="uid://c36gx83vrkgu0"]
 
 [ext_resource type="Script" uid="uid://db84nu0oqvdeq" path="res://scripts/player.gd" id="1_onrkg"]
 [ext_resource type="Texture2D" uid="uid://ds8uqskraqnob" path="res://assests/WORKING ATTACK.png" id="2_dqkch"]
@@ -10,6 +10,7 @@
 [ext_resource type="Script" uid="uid://coeprq2xfxp0e" path="res://scripts/fade.gd" id="7_y4r1p"]
 [ext_resource type="FontFile" uid="uid://bh6jvsa7eqolq" path="res://fonts/Jersey10-Regular.ttf" id="8_smehm"]
 [ext_resource type="Texture2D" uid="uid://cid0ejiyecl0b" path="res://assests/coin.png" id="9_ur7pv"]
+[ext_resource type="Texture2D" uid="uid://bepla7k6fmk7f" path="res://assests/sunpetal.png" id="10_d2wvv"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_y4r1p"]
 atlas = ExtResource("2_dqkch")
@@ -295,6 +296,27 @@ theme_override_font_sizes/font_size = 109
 position = Vector2(-65.91608, 57.043457)
 scale = Vector2(6.666679, 8.333468)
 texture = ExtResource("9_ur7pv")
+
+[node name="FlowerLabel" type="Label" parent="GUI"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -141.0
+offset_top = 111.999985
+offset_right = 26.499512
+offset_bottom = 229.99998
+grow_horizontal = 0
+scale = Vector2(0.64722764, 0.5177747)
+theme_override_colors/font_color = Color(0.7137255, 0.44705883, 0.27058825, 1)
+theme_override_colors/font_shadow_color = Color(0.5921569, 0.3254902, 0.14117648, 1)
+theme_override_fonts/font = ExtResource("8_smehm")
+theme_override_font_sizes/font_size = 109
+
+[node name="Coinflowe" type="Sprite2D" parent="GUI/FlowerLabel"]
+visible = false
+position = Vector2(-65.91608, 57.043457)
+scale = Vector2(6.666679, 8.333468)
+texture = ExtResource("10_d2wvv")
 
 [node name="healtbar" type="ProgressBar" parent="GUI"]
 modulate = Color(0.5333924, 0.0014055142, 0.70975846, 1)

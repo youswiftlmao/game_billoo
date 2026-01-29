@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://12iavocprvqs"]
+
+[ext_resource type="Texture2D" uid="uid://bepla7k6fmk7f" path="res://assests/sunpetal.png" id="1_8x8dx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yoh7s"]
+size = Vector2(11, 18)
+
+[node name="flower" type="Area2D"]
+
+[node name="Sunpetal" type="Sprite2D" parent="."]
+texture = ExtResource("1_8x8dx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, -1)
+shape = SubResource("RectangleShape2D_yoh7s")
