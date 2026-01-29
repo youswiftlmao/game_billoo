@@ -1,0 +1,63 @@
+[gd_scene load_steps=9 format=3 uid="uid://c2fxmrgensk2v"]
+
+[ext_resource type="Script" uid="uid://c0j8jvvtj7ohr" path="res://scripts/mistyap.gd" id="1_fmycj"]
+[ext_resource type="Texture2D" uid="uid://cjfuef8ttk0ov" path="res://assests/cat.png" id="1_p52fb"]
+[ext_resource type="PackedScene" uid="uid://tloitsakw5lm" path="res://scenes/dialogue.tscn" id="2_fmycj"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fmycj"]
+atlas = ExtResource("1_p52fb")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8r2ml"]
+atlas = ExtResource("1_p52fb")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_l73r0"]
+animations = [{
+"frames": [{
+"duration": 3.01,
+"texture": SubResource("AtlasTexture_fmycj")
+}, {
+"duration": 0.41,
+"texture": SubResource("AtlasTexture_8r2ml")
+}],
+"loop": true,
+"name": &"default",
+"speed": 1.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_fmycj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8r2ml"]
+size = Vector2(138.68987, 76.09535)
+
+[node name="misty" type="CharacterBody2D"]
+scale = Vector2(1.629535, 1.629535)
+script = ExtResource("1_fmycj")
+
+[node name="Cat" type="AnimatedSprite2D" parent="."]
+position = Vector2(7.9777365, -3.6820316)
+scale = Vector2(0.5949327, 0.5949327)
+sprite_frames = SubResource("SpriteFrames_l73r0")
+autoplay = "default"
+frame_progress = 0.34583113
+
+[node name="dialogue" parent="." instance=ExtResource("2_fmycj")]
+offset_left = 10.432425
+offset_top = -7.364065
+offset_right = 50.432426
+offset_bottom = 32.635933
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 5.5230474)
+shape = SubResource("CircleShape2D_fmycj")
+
+[node name="TalkArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TalkArea"]
+position = Vector2(4.909376, -6.750392)
+scale = Vector2(0.9999997, 0.9999997)
+shape = SubResource("RectangleShape2D_8r2ml")
+
+[connection signal="body_entered" from="TalkArea" to="." method="_on_talk_area_body_entered"]
+[connection signal="body_exited" from="TalkArea" to="." method="_on_talk_area_body_exited"]
