@@ -503,10 +503,10 @@ texture = ExtResource("8_ughyh")
 region_enabled = true
 region_rect = Rect2(222, 0, 34, 96)
 
-[node name="lvl20_3" parent="." instance=ExtResource("8_y7kp8")]
+[node name="lvl20_3" parent="door" instance=ExtResource("8_y7kp8")]
 z_index = 4096
-position = Vector2(-1489.0001, 162)
-scale = Vector2(-1.1599903, 1.0000025)
+position = Vector2(189.00012, -1)
+scale = Vector2(1.1599903, 1.0000025)
 script = ExtResource("10_5ycdb")
 
 [node name="coin2" parent="." instance=ExtResource("9_ughyh")]
