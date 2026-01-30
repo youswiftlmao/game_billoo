@@ -1,0 +1,45 @@
+[gd_scene load_steps=4 format=3 uid="uid://cfcyxn5nkddwh"]
+
+[ext_resource type="Texture2D" uid="uid://bg3lnv5o38o4l" path="res://assests/Sprite-0003.png" id="1_f14c7"]
+[ext_resource type="Script" uid="uid://cpe5px7x14hes" path="res://scripts/billoyap.gd" id="1_t7mop"]
+[ext_resource type="FontFile" uid="uid://dtnymhkbxnnaa" path="res://fonts/MadouFutoMaruGothic-d9Xo7.ttf" id="2_t7mop"]
+
+[node name="billoyap" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_t7mop")
+d_file = "res://dialouguye/BILLOENDING.json"
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+layout_mode = 0
+offset_top = -34.0
+offset_right = 63.0
+offset_bottom = -7.0
+texture = ExtResource("1_f14c7")
+axis_stretch_horizontal = 2
+
+[node name="name" type="RichTextLabel" parent="NinePatchRect"]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 2.9999962
+offset_right = 83.0
+offset_bottom = 42.999996
+scale = Vector2(0.39658868, 0.39658868)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/normal_font = ExtResource("2_t7mop")
+text = "name:"
+
+[node name="text" type="RichTextLabel" parent="NinePatchRect"]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 10.0
+offset_right = 378.66666
+offset_bottom = 63.33333
+scale = Vector2(0.3, 0.3)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/normal_font = ExtResource("2_t7mop")
+text = "blah blah get my cookies"

@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://c2gmmkf32qe8a"]
+
+[ext_resource type="Texture2D" uid="uid://dsevv0okgxvnc" path="res://assests/BILOO.png" id="2_55lyl"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4poy1"]
+atlas = ExtResource("2_55lyl")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4ijay"]
+atlas = ExtResource("2_55lyl")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tmqcw"]
+animations = [{
+"frames": [{
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_4poy1")
+}, {
+"duration": 0.8,
+"texture": SubResource("AtlasTexture_4ijay")
+}],
+"loop": true,
+"name": &"default",
+"speed": 1.0
+}]
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_tmqcw")
+autoplay = "default"
+frame_progress = 0.586583
